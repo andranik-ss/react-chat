@@ -1,0 +1,14 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "jsx-quotes": ["error", "prefer-single"],
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreUrls": true,
+        "ignoreComments": false
+      }
+    ]
+  }
+}
