@@ -6,6 +6,15 @@ import IconButton from 'material-ui/IconButton';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Typography from 'material-ui/Typography';
 import Toolbar from 'material-ui/Toolbar';
+import TextField from 'material-ui/TextField';
+import BottomNavigation, {
+  BottomNavigationAction
+} from 'material-ui/BottomNavigation';
+import RestoreIcon from 'material-ui-icons/Restore';
+import ExploreIcon from 'material-ui-icons/Explore';
+import Paper from 'material-ui/Paper';
+import Button from 'material-ui/Button';
+import AddIcon from 'material-ui-icons/Add';
 
 const drawerWidth = 320;
 
@@ -33,13 +42,33 @@ const styles = theme => ({
   'appBar-right': {
     marginRight: drawerWidth
   },
+  toolbar: {
+    justifyContent: 'space-between'
+  },
+  drawerBar: {
+    position: 'absolute',
+    width: drawerWidth,
+    boxShadow: 'none',
+    borderBottom: '1px solid #E0E0E0',
+    backgroundColor: '#fff'
+  },
   drawerPaper: {
     position: 'relative',
     height: '100%',
+    width: drawerWidth,
+    justifyContent: 'space-between'
+  },
+  bottomNav: {
     width: drawerWidth
   },
-  drawerHeader: theme.mixins.toolbar,
+  floatingActionButton: {
+    position: 'absolute',
+    bottom: '72px',
+    right: '24px'
+  },
   content: {
+    display: 'flex',
+    justifyContent: 'center',
     backgroundColor: theme.palette.background.default,
     width: '100%',
     padding: theme.spacing.unit * 3,
@@ -53,20 +82,22 @@ const styles = theme => ({
 });
 
 class App extends React.Component {
+  state = {
+    value: 0
+  };
+
   render() {
     const { classes } = this.props;
+    const { value } = this.state;
 
     return (
       <div className={classes.appFrame}>
         <AppBar className={classes.appBar}>
-          <Toolbar>
+          <Toolbar className={classes.toolbar}>
             <Typography variant='title' color='inherit' noWrap>
-              dogecodes chat
+              DogeCodes React Chat
             </Typography>
-            <IconButton
-              aria-haspopup='true'
-              color='inherit'
-            >
+            <IconButton aria-haspopup='true' color='inherit'>
               <AccountCircle />
             </IconButton>
           </Toolbar>
@@ -77,12 +108,37 @@ class App extends React.Component {
             paper: classes.drawerPaper
           }}
         >
-          <div className={classes.drawerHeader} />
+          <AppBar className={classes.drawerBar} color='default'>
+            <Toolbar>
+              <TextField fullWidth placeholder='Search chats ...' />
+            </Toolbar>
+          </AppBar>
+          <div />
+          <Button
+            variant='fab'
+            color='primary'
+            aria-label='add'
+            className={classes.floatingActionButton}
+          >
+            <AddIcon />
+          </Button>
+          <BottomNavigation value={value} showLabels>
+            <BottomNavigationAction label='My chats' icon={<RestoreIcon />} />
+            <BottomNavigationAction label='Favorites' icon={<ExploreIcon />} />
+          </BottomNavigation>
         </Drawer>
         <main className={classes.content}>
-          <Typography>
-            {'You think water moves fast? You should see ice.'}
-          </Typography>
+          <Paper style={{ width: '350px', padding: '25px', position: 'absolute', alignSelf: 'center' }}>
+            <Typography variant='display1'>{'Start messaging…'}</Typography>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <Typography style={{ marginTop: '10px' }}>
+                {'Use Global to explore communities around here.'}
+              </Typography>
+              <Typography>
+                {'Use Recents to see your recent conversations.'}
+              </Typography>
+            </div>
+          </Paper>
         </main>
       </div>
     );
