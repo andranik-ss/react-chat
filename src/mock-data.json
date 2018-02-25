@@ -1,0 +1,82 @@
+{
+  "chats": [
+    {
+      "title": "React chat"
+    },
+    {
+      "title": "1C:Enterprise chat"
+    },
+    {
+      "title": "JavaScript chat"
+    },
+    {
+      "title": "PHP chat"
+    }
+  ],
+  "messages": [
+    {
+      "sender": "someone",
+      "content": "Привет"
+    },
+    {
+      "sender": "me",
+      "content": "Здарова"
+    },
+    {
+      "sender": "someone",
+      "content": "Как дела ?"
+    },
+    {
+      "sender": "me",
+      "content": "Все отлично, спасибо!"
+    },
+    {
+      "sender": "someone",
+      "content": "Hello"
+    },
+    {
+      "sender": "me",
+      "content": "Hi"
+    },
+    {
+      "sender": "someone",
+      "content": "How are you ?"
+    },
+    {
+      "sender": "me",
+      "content": "Good thanks!"
+    },
+    {
+      "sender": "someone",
+      "content": "Hello"
+    },
+    {
+      "sender": "me",
+      "content": "Hi"
+    },
+    {
+      "sender": "someone",
+      "content": "How are you ?"
+    },
+    {
+      "sender": "me",
+      "content": "Good thanks!"
+    },
+    {
+      "sender": "someone",
+      "content": "Hello"
+    },
+    {
+      "sender": "me",
+      "content": "Hi"
+    },
+    {
+      "sender": "someone",
+      "content": "How are you ?"
+    },
+    {
+      "sender": "me",
+      "content": "Good thanks!"
+    }
+  ]
+}

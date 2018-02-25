@@ -2,99 +2,123 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import AccountCircle from 'material-ui-icons/AccountCircle';
-import Typography from 'material-ui/Typography';
 import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
+import List, { ListItem, ListItemText } from 'material-ui/List';
+import Avatar from 'material-ui/Avatar';
+import Button from 'material-ui/Button';
 import BottomNavigation, {
   BottomNavigationAction
 } from 'material-ui/BottomNavigation';
+import Paper from 'material-ui/Paper';
+import Input from 'material-ui/Input';
+import IconButton from 'material-ui/IconButton';
+import AccountCircle from 'material-ui-icons/AccountCircle';
 import RestoreIcon from 'material-ui-icons/Restore';
 import ExploreIcon from 'material-ui-icons/Explore';
-import Paper from 'material-ui/Paper';
-import Button from 'material-ui/Button';
 import AddIcon from 'material-ui-icons/Add';
 
-const drawerWidth = 320;
+import { chats, messages } from './mock-data';
 
 const styles = theme => ({
   root: {
-    width: '100%',
-    height: 430,
-    marginTop: theme.spacing.unit * 3,
-    zIndex: 1,
-    overflow: 'hidden'
-  },
-  appFrame: {
     position: 'relative',
     display: 'flex',
     width: '100%',
-    height: '100%'
+    height: '100%',
+    backgroundColor: theme.palette.background.default
   },
   appBar: {
-    position: 'absolute',
-    width: `calc(100% - ${drawerWidth}px)`
-  },
-  'appBar-left': {
-    marginLeft: drawerWidth
-  },
-  'appBar-right': {
-    marginRight: drawerWidth
-  },
-  toolbar: {
-    justifyContent: 'space-between'
-  },
-  drawerBar: {
-    position: 'absolute',
-    width: drawerWidth,
-    boxShadow: 'none',
-    borderBottom: '1px solid #E0E0E0',
-    backgroundColor: '#fff'
+    position: 'fixed',
+    width: `calc(100% - 320px)`
   },
   drawerPaper: {
     position: 'relative',
     height: '100%',
-    width: drawerWidth,
-    justifyContent: 'space-between'
+    width: 320
   },
-  bottomNav: {
-    width: drawerWidth
+  drawerHeader: {
+    ...theme.mixins.toolbar,
+    paddingLeft: theme.spacing.unit * 3,
+    paddingRight: theme.spacing.unit * 3
   },
-  floatingActionButton: {
+  chatsList: {
+    height: 'calc(100% - 56px)',
+    overflowY: 'scroll'
+  },
+  newChatButton: {
     position: 'absolute',
-    bottom: '72px',
-    right: '24px'
+    left: 'auto',
+    right: theme.spacing.unit * 3,
+    bottom: theme.spacing.unit * 3 + 48 // + bottom navigation
   },
-  content: {
+  chatLayout: {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: theme.palette.background.default,
+    alignItems: 'center',
+    paddingTop: '64px',
+    height: '100%',
+    overflow: 'hidden',
+    width: 'calc(100% - 320px)'
+  },
+  title: {
+    flex: 1
+  },
+  messagesWrapper: {
+    overflowX: 'scroll',
+    height: '100%',
     width: '100%',
-    padding: theme.spacing.unit * 3,
-    height: 'calc(100% - 56px)',
-    marginTop: 56,
-    [theme.breakpoints.up('sm')]: {
-      height: 'calc(100% - 64px)',
-      marginTop: 64
-    }
+    paddingTop: theme.spacing.unit * 3,
+    paddingBottom: '120px'
+  },
+  messageInputWrapper: {
+    position: 'fixed',
+    left: 'auto',
+    right: 0,
+    bottom: 0,
+    width: `calc(100% - 320px)`,
+    padding: theme.spacing.unit * 3
+  },
+  messageInput: {
+    padding: theme.spacing.unit * 2
+  },
+  messageWrapper: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 3}px`
+  },
+  messageWrapperFromMe: {
+    justifyContent: 'flex-end'
+  },
+  message: {
+    maxWidth: '70%',
+    minWidth: '10%',
+    padding: theme.spacing.unit,
+    marginLeft: theme.spacing.unit * 2
+  },
+  messageFromMe: {
+    marginRight: theme.spacing.unit * 2,
+    backgroundColor: '#e6dcff'
   }
 });
 
 class App extends React.Component {
-  state = {
-    value: 0
-  };
-
   render() {
     const { classes } = this.props;
-    const { value } = this.state;
 
     return (
-      <div className={classes.appFrame}>
-        <AppBar className={classes.appBar}>
-          <Toolbar className={classes.toolbar}>
-            <Typography variant='title' color='inherit' noWrap>
+      <div className={classes.root}>
+        <AppBar color='primary' className={classes.appBar}>
+          <Toolbar>
+            <Typography
+              variant='title'
+              color='inherit'
+              noWrap
+              className={classes.title}
+            >
               DogeCodes React Chat
             </Typography>
             <IconButton aria-haspopup='true' color='inherit'>
@@ -108,37 +132,72 @@ class App extends React.Component {
             paper: classes.drawerPaper
           }}
         >
-          <AppBar className={classes.drawerBar} color='default'>
-            <Toolbar>
-              <TextField fullWidth placeholder='Search chats ...' />
-            </Toolbar>
-          </AppBar>
-          <div />
+          <div className={classes.drawerHeader}>
+            <TextField
+              fullWidth
+              margin='normal'
+              placeholder='Search chats...'
+            />
+          </div>
+          <Divider />
+          <List className={classes.chatsList}>
+            {chats.map((chat, index) => (
+              <ListItem key={index} button>
+                <Avatar>{chat.title && chat.title[0]}</Avatar>
+                <ListItemText primary={chat.title} />
+              </ListItem>
+            ))}
+          </List>
           <Button
             variant='fab'
             color='primary'
-            aria-label='add'
-            className={classes.floatingActionButton}
+            className={classes.newChatButton}
           >
             <AddIcon />
           </Button>
-          <BottomNavigation value={value} showLabels>
-            <BottomNavigationAction label='My chats' icon={<RestoreIcon />} />
-            <BottomNavigationAction label='Favorites' icon={<ExploreIcon />} />
+          <BottomNavigation showLabels>
+            <BottomNavigationAction label='My Chats' icon={<RestoreIcon />} />
+            <BottomNavigationAction label='Explore' icon={<ExploreIcon />} />
           </BottomNavigation>
         </Drawer>
-        <main className={classes.content}>
-          <Paper style={{ width: '350px', padding: '25px', position: 'absolute', alignSelf: 'center' }}>
-            <Typography variant='display1'>{'Start messaging…'}</Typography>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography style={{ marginTop: '10px' }}>
-                {'Use Global to explore communities around here.'}
-              </Typography>
-              <Typography>
-                {'Use Recents to see your recent conversations.'}
-              </Typography>
-            </div>
-          </Paper>
+        <main className={classes.chatLayout}>
+          <div className={classes.messagesWrapper}>
+            {messages &&
+              messages.map((message, index) => {
+                const isMessageFromMe = message.sender === 'me';
+
+                const userAvatar = <Avatar>{message.sender[0]}</Avatar>;
+
+                return (
+                  <div
+                    key={index}
+                    className={[
+                      classes.messageWrapper,
+                      isMessageFromMe ? classes.messageWrapperFromMe : ''
+                    ].join(' ')}
+                  >
+                    {!isMessageFromMe && userAvatar}
+                    <Paper
+                      className={[
+                        classes.message,
+                        isMessageFromMe ? classes.messageFromMe : ''
+                      ].join(' ')}
+                    >
+                      <Typography variant='caption'>
+                        {message.sender}
+                      </Typography>
+                      <Typography variant='body1'>{message.content}</Typography>
+                    </Paper>
+                    {isMessageFromMe && userAvatar}
+                  </div>
+                );
+              })}
+          </div>
+          <div className={classes.messageInputWrapper}>
+            <Paper className={classes.messageInput} elevation={6}>
+              <Input fullWidth placeholder='Type your message…' />
+            </Paper>
+          </div>
         </main>
       </div>
     );
