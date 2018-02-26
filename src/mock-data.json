@@ -56,27 +56,30 @@
     },
     {
       "sender": "someone",
-      "content": "How are you ?"
+      "content": "Learn Once, Write Anywhere"
     },
     {
       "sender": "me",
-      "content": "Good thanks!"
+      "content":
+        "We don’t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code."
     },
     {
       "sender": "someone",
-      "content": "Hello"
+      "content": "Component-Based"
     },
     {
       "sender": "me",
-      "content": "Hi"
+      "content":
+        "Build encapsulated components that manage their own state, then compose them to make complex UIs."
     },
     {
       "sender": "someone",
-      "content": "How are you ?"
+      "content": "Declarative"
     },
     {
       "sender": "me",
-      "content": "Good thanks!"
+      "content":
+        "React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes."
     }
   ]
 }

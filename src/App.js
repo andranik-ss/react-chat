@@ -15,18 +15,14 @@ const styles = theme => ({
   }
 });
 
-class App extends React.Component {
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <ChatHeader />
-        <Sidebar chats={chats} />
-        <ChatContent messages={messages} />
-      </div>
-    );
-  }
-}
+const App = ({ classes }) => {
+  return (
+    <div className={classes.root}>
+      <ChatHeader />
+      <Sidebar chats={chats} />
+      <ChatContent messages={messages} />
+    </div>
+  );
+};
 
 export default withStyles(styles)(App);
