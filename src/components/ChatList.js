@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import titleInitials from '../utils/title-initials';
+import colorFrom from '../utils/color-from';
 
 const styles = theme => ({
   chatsList: {
@@ -17,7 +18,9 @@ const ChatList = ({ classes, chats }) => {
     <List className={classes.chatsList}>
       {chats.map((chat, index) => (
         <ListItem key={index} button>
-          <Avatar>{chat.title && titleInitials(chat.title)}</Avatar>
+          <Avatar style={{ backgroundColor: colorFrom(chat.title) }}>
+            {chat.title && titleInitials(chat.title)}
+          </Avatar>
           <ListItemText primary={chat.title} />
         </ListItem>
       ))}
