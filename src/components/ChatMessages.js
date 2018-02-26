@@ -38,7 +38,7 @@ class ChatMessages extends Component {
       >
         {messages &&
           messages.map((message, index) => (
-            <ChatMessage message={message} index={index} />
+            <ChatMessage {...message} key={index} />
           ))}
       </div>
     );

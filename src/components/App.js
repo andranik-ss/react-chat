@@ -1,9 +1,9 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-import ChatHeader from './components/ChatHeader';
-import Sidebar from './components/Sidebar';
-import ChatContent from './components/ChatContent';
-import { chats, messages } from './mock-data';
+import ChatHeader from './ChatHeader';
+import Sidebar from './Sidebar';
+import Chat from './Chat';
+import { chats, messages } from '../mock-data';
 
 const styles = theme => ({
   root: {
@@ -20,7 +20,7 @@ const App = ({ classes }) => {
     <div className={classes.root}>
       <ChatHeader />
       <Sidebar chats={chats} />
-      <ChatContent messages={messages} />
+      <Chat messages={messages} />
     </div>
   );
 };

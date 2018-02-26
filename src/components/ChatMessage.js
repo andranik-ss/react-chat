@@ -28,14 +28,14 @@ const styles = theme => ({
   }
 });
 
-const ChatMessage = ({ classes, message, index }) => {
-  const isMessageFromMe = message.sender === 'me';
+const ChatMessage = ({ classes, sender, key, content }) => {
+  const isMessageFromMe = sender === 'me';
 
-  const userAvatar = <Avatar>{titleInitials(message.sender)}</Avatar>;
+  const userAvatar = <Avatar>{titleInitials(sender)}</Avatar>;
 
   return (
     <div
-      key={index}
+      key={key}
       className={classnames(
         classes.messageWrapper,
         isMessageFromMe && classes.messageWrapperFromMe
@@ -48,8 +48,8 @@ const ChatMessage = ({ classes, message, index }) => {
           isMessageFromMe && classes.messageFromMe
         )}
       >
-        <Typography variant='caption'>{message.sender}</Typography>
-        <Typography variant='body1'>{message.content}</Typography>
+        <Typography variant='caption'>{sender}</Typography>
+        <Typography variant='body1'>{content}</Typography>
       </Paper>
       {isMessageFromMe && userAvatar}
     </div>
