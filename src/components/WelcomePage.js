@@ -25,20 +25,16 @@ const styles = theme => ({
 
 class WelcomePage extends React.Component {
   state = {
-    tab: 0
+    activeTab: 0
   };
 
-  handleTabChange = (event, tab) => {
-    this.setState({ tab });
-  };
-
-  handleChangeIndex = index => {
-    this.setState({ tab: index });
+  handleTabChange = (event, value) => {
+    this.setState({ activeTab: value });
   };
 
   render() {
     const { classes } = this.props;
-    const { tab } = this.state;
+    const { activeTab } = this.state;
 
     return (
       <div>
@@ -53,7 +49,7 @@ class WelcomePage extends React.Component {
           <Paper className={classes.authForm}>
             <AppBar position='static' color='default'>
               <Tabs
-                value={this.state.tab}
+                value={activeTab}
                 onChange={this.handleTabChange}
                 indicatorColor='red'
                 fullWidth
@@ -63,8 +59,8 @@ class WelcomePage extends React.Component {
               </Tabs>
             </AppBar>
             <div className={classes.tabWrapper}>
-              {tab === 0 && <LoginForm />}
-              {tab === 1 && <SignUpForm />}
+              {activeTab === 0 && <LoginForm />}
+              {activeTab === 1 && <SignUpForm />}
             </div>
           </Paper>
         </div>
