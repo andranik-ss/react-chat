@@ -15,7 +15,7 @@ const styles = theme => ({
     padding: `${theme.spacing.unit}px ${theme.spacing.unit * 3}px`
   },
   messageWrapperFromMe: {
-    justifyContent: 'flex-end'
+    flexDirection: 'row-reverse'
   },
   message: {
     maxWidth: '70%',
@@ -32,12 +32,6 @@ const styles = theme => ({
 const ChatMessage = ({ classes, sender, key, content }) => {
   const isMessageFromMe = sender === 'me';
 
-  const userAvatar = (
-    <Avatar style={{ backgroundColor: colorFrom(sender) }}>
-      {titleInitials(sender)}
-    </Avatar>
-  );
-
   return (
     <div
       key={key}
@@ -46,7 +40,9 @@ const ChatMessage = ({ classes, sender, key, content }) => {
         isMessageFromMe && classes.messageWrapperFromMe
       )}
     >
-      {!isMessageFromMe && userAvatar}
+      <Avatar style={{ backgroundColor: colorFrom(sender) }}>
+        {titleInitials(sender)}
+      </Avatar>
       <Paper
         className={classnames(
           classes.message,
@@ -56,7 +52,6 @@ const ChatMessage = ({ classes, sender, key, content }) => {
         <Typography variant='caption'>{sender}</Typography>
         <Typography variant='body1'>{content}</Typography>
       </Paper>
-      {isMessageFromMe && userAvatar}
     </div>
   );
 };
