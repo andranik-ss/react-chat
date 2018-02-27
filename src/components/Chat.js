@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-import ChatMessages from './ChatMessages';
-import ChatInputField from './ChatInputField';
+import ChatMessageList from './ChatMessageList';
+import MessageInput from './MessageInput';
 
 const styles = theme => ({
   chatLayout: {
@@ -18,8 +18,8 @@ const styles = theme => ({
 const ChatContent = ({ classes, messages }) => {
   return (
     <main className={classes.chatLayout}>
-      <ChatMessages messages={messages} />
-      <ChatInputField />
+      <ChatMessageList messages={messages} />
+      <MessageInput />
     </main>
   );
 };
