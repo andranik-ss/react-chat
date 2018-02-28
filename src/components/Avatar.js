@@ -6,7 +6,7 @@ import getColor from '../utils/color-from';
 const Avatar = ({ children, colorFrom, ...rest }) => {
   return (
     <MuiAvatar style={{ backgroundColor: getColor(colorFrom) }} {...rest}>
-      {titleInitials(children)}
+      {children && titleInitials(children)}
     </MuiAvatar>
   );
 };
