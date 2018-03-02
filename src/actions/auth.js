@@ -11,13 +11,15 @@ import {
   LOGOUT_FAILURE
 } from '../constants';
 
+const chatApi = 'http://chat-api.simonyan.org';
+
 export function signup(username, password) {
   return dispatch => {
     dispatch({
       type: SIGNUP_REQUEST
     });
 
-    return fetch('http://localhost:8000/v1/signup', {
+    return fetch(`${chatApi}/v1/signup`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -42,7 +44,7 @@ export function signup(username, password) {
 
         // Save JWT to localStorage
         localStorage.setItem('token', json.token);
-        
+
         dispatch({
           type: SIGNUP_SUCCESS,
           payload: json
@@ -63,7 +65,7 @@ export function login(username, password) {
       type: LOGIN_REQUEST
     });
 
-    return fetch('http://localhost:8000/v1/login', {
+    return fetch(`${chatApi}/v1/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -109,7 +111,7 @@ export function logout() {
       type: LOGOUT_REQUEST
     });
 
-    return fetch('http://localhost:8000/v1/logout', {
+    return fetch(`${chatApi}/v1/logout`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
