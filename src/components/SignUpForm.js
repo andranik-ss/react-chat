@@ -1,5 +1,4 @@
 import React from 'react';
-import fetch from 'isomorphic-fetch';
 import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
@@ -71,27 +70,9 @@ class SignUpForm extends React.Component {
       return;
     }
 
-    const {
-      username: { value: username },
-      password: { value: password }
-    } = this.state;
+    const { username, password } = this.state;
 
-    // console.log('SignUp:', username.value, password.value);
-    fetch('http://localhost:8000/v1/signup', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username,
-        password
-      })
-    })
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(reason => console.error(reason));
-    
+    this.props.onSubmit(username.value, password.value);
   };
 
   render() {

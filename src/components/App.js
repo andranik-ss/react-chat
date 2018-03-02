@@ -5,19 +5,25 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import ChatPage from '../containers/ChatPage';
+import WelcomePage from '../containers/WelcomePage';
 
-import ChatPage from './ChatPage';
-import WelcomePage from './WelcomePage';
+import configureStore from '../store';
+
+const store = configureStore();
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/(welcome)?' component={WelcomePage} />
-        <Route path='/chat' component={ChatPage} />
-        <Redirect to='/' />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path='/(welcome)?' component={WelcomePage} />
+          <Route path='/chat' component={ChatPage} />
+          <Redirect to='/' />
+        </Switch>
+      </Router>
+    </Provider>
   );
 };
 
