@@ -1,22 +1,12 @@
 import fetch from 'isomorphic-fetch';
-import {
-  SIGNUP_REQUEST,
-  SIGNUP_SUCCESS,
-  SIGNUP_FAILURE,
-  LOGIN_REQUEST,
-  LOGIN_SUCCESS,
-  LOGIN_FAILURE,
-  LOGOUT_REQUEST,
-  LOGOUT_SUCCESS,
-  LOGOUT_FAILURE
-} from '../constants';
+import * as types from '../constants';
 
 const chatApi = 'http://chat-api.simonyan.org';
 
 export function signup(username, password) {
   return dispatch => {
     dispatch({
-      type: SIGNUP_REQUEST
+      type: types.SIGNUP_REQUEST
     });
 
     return fetch(`${chatApi}/v1/signup`, {
@@ -46,13 +36,13 @@ export function signup(username, password) {
         localStorage.setItem('token', json.token);
 
         dispatch({
-          type: SIGNUP_SUCCESS,
+          type: types.SIGNUP_SUCCESS,
           payload: json
         });
       })
       .catch(reason => {
         dispatch({
-          type: SIGNUP_FAILURE,
+          type: types.SIGNUP_FAILURE,
           payload: reason
         });
       });
@@ -62,7 +52,7 @@ export function signup(username, password) {
 export function login(username, password) {
   return dispatch => {
     dispatch({
-      type: LOGIN_REQUEST
+      type: types.LOGIN_REQUEST
     });
 
     return fetch(`${chatApi}/v1/login`, {
@@ -92,13 +82,13 @@ export function login(username, password) {
         localStorage.setItem('token', json.token);
 
         dispatch({
-          type: LOGIN_SUCCESS,
+          type: types.LOGIN_SUCCESS,
           payload: json
         });
       })
       .catch(reason =>
         dispatch({
-          type: LOGIN_FAILURE,
+          type: types.LOGIN_FAILURE,
           error: reason
         })
       );
@@ -108,11 +98,10 @@ export function login(username, password) {
 export function logout() {
   return dispatch => {
     dispatch({
-      type: LOGOUT_REQUEST
+      type: types.LOGOUT_REQUEST
     });
 
     return fetch(`${chatApi}/v1/logout`, {
-      method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
@@ -128,14 +117,51 @@ export function logout() {
       })
       .then(json =>
         dispatch({
-          type: LOGOUT_SUCCESS
+          type: types.LOGOUT_SUCCESS
         })
       )
       .catch(reason =>
         dispatch({
-          type: LOGOUT_FAILURE,
+          type: types.LOGOUT_FAILURE,
           payload: reason
         })
       );
+  };
+}
+
+export function receiveAuth() {
+  return (dispatch, getState) => {
+    dispatch({
+      type: types.RECEIVE_AUTH_REQUEST
+    });
+
+    const { token } = getState().auth;
+
+    return fetch(`${chatApi}/v1/users/me`, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(response => response.json())
+      .then(json => {
+        if (!json.success) {
+          throw new Error(json.message);
+        }
+        return json;
+      })
+      .then(json =>
+        dispatch({
+          type: types.RECEIVE_AUTH_SUCCESS,
+          payload: json
+        })
+      )
+      .catch(reason => {
+        dispatch({
+          type: types.RECEIVE_AUTH_FAILURE,
+          payload: reason
+        });
+      });
   };
 }

@@ -9,3 +9,9 @@ export const LOGIN_FAILURE = Symbol('LOGIN_FAILURE');
 export const LOGOUT_REQUEST = Symbol('LOGOUT_REQUEST');
 export const LOGOUT_SUCCESS = Symbol('LOGOUT_SUCCESS');
 export const LOGOUT_FAILURE = Symbol('LOGOUT_FAILURE');
+
+export const RECEIVE_AUTH_REQUEST = Symbol('RECEIVE_AUTH_REQUEST');
+export const RECEIVE_AUTH_SUCCESS = Symbol('RECEIVE_AUTH_SUCCESS');
+export const RECEIVE_AUTH_FAILURE = Symbol('RECEIVE_AUTH_FAILURE');
+
+export const REDIRECT = Symbol('REDIRECT');

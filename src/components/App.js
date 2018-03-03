@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import PrivateRoute from '../containers/PrivateRoute';
 import ChatPage from '../containers/ChatPage';
 import WelcomePage from '../containers/WelcomePage';
-
+import history from '../utils/history';
 import configureStore from '../store';
 
 const store = configureStore();
@@ -16,10 +12,10 @@ const store = configureStore();
 const App = () => {
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <Switch>
           <Route exact path='/(welcome)?' component={WelcomePage} />
-          <Route path='/chat' component={ChatPage} />
+          <PrivateRoute path='/chat' component={ChatPage} />
           <Redirect to='/' />
         </Switch>
       </Router>
