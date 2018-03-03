@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
+import { Redirect } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
@@ -29,9 +30,7 @@ class WelcomePage extends React.Component {
   };
 
   componentDidMount() {
-    if (!this.props.isAuthenticated) {
-      this.props.redirect('/welcome');
-    }
+    this.props.receiveAuth();
   }
 
   handleTabChange = (event, value) => {
@@ -39,8 +38,12 @@ class WelcomePage extends React.Component {
   };
 
   render() {
-    const { classes, login, signup } = this.props;
+    const { classes, login, signup, isAuthenticated } = this.props;
     const { activeTab } = this.state;
+
+    if (isAuthenticated) {
+      return <Redirect to='/chat' />;
+    }
 
     return (
       <div>
