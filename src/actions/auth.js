@@ -1,7 +1,9 @@
 import fetch from 'isomorphic-fetch';
 import * as types from '../constants';
+import connectionSettings from '../config/connection-settings';
 
-const chatApi = 'http://chat-api.simonyan.org';
+// Для возможности подмены строки соединения с react-chat-api
+const api = connectionSettings ? connectionSettings['api'] : 'localhost:8000';
 
 export function signup(username, password) {
   return dispatch => {
@@ -9,7 +11,7 @@ export function signup(username, password) {
       type: types.SIGNUP_REQUEST
     });
 
-    return fetch(`${chatApi}/v1/signup`, {
+    return fetch(`http://${api}/v1/signup`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -55,7 +57,7 @@ export function login(username, password) {
       type: types.LOGIN_REQUEST
     });
 
-    return fetch(`${chatApi}/v1/login`, {
+    return fetch(`http://${api}/v1/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -101,7 +103,7 @@ export function logout() {
       type: types.LOGOUT_REQUEST
     });
 
-    return fetch(`${chatApi}/v1/logout`, {
+    return fetch(`http://${api}/v1/logout`, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
@@ -137,13 +139,18 @@ export function receiveAuth() {
 
     const { token } = getState().auth;
 
-    return fetch(`${chatApi}/v1/users/me`, {
+    return fetch(`http://${api}/v1/users/me`, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`
       }
     })
+      // simulate delay from api
+      .then(
+        response =>
+          new Promise(resolve => setTimeout(() => resolve(response), 500))
+      )
       .then(response => response.json())
       .then(json => {
         if (!json.success) {
