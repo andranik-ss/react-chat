@@ -1,9 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import * as types from '../constants';
-import connectionSettings from '../config/connection-settings';
 
-// Для возможности подмены строки соединения с react-chat-api
-const api = connectionSettings ? connectionSettings['api'] : 'localhost:8000';
+const api = 'localhost:8000';
 
 export function signup(username, password) {
   return dispatch => {
