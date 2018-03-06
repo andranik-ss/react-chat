@@ -92,31 +92,27 @@ export function logout() {
 
 export function receiveAuth() {
   return (dispatch, getState) => {
-    dispatch({
-      type: types.RECEIVE_AUTH_REQUEST
-    });
-
     const { token } = getState().auth;
 
-    return (
-      callApi('users/me', token)
-        // simulate delay from api
-        .then(
-          response =>
-            new Promise(resolve => setTimeout(() => resolve(response), 500))
-        )
-        .then(json =>
-          dispatch({
-            type: types.RECEIVE_AUTH_SUCCESS,
-            payload: json
-          })
-        )
-        .catch(reason => {
-          dispatch({
-            type: types.RECEIVE_AUTH_FAILURE,
-            payload: reason
-          });
+    if (!token) {
+      dispatch({
+        type: types.RECEIVE_AUTH_FAILURE,
+        payload: 'Authorization needed'
+      });
+    }
+
+    return callApi('users/me', token)
+      .then(json =>
+        dispatch({
+          type: types.RECEIVE_AUTH_SUCCESS,
+          payload: json
         })
-    );
+      )
+      .catch(reason => {
+        dispatch({
+          type: types.RECEIVE_AUTH_FAILURE,
+          payload: reason
+        });
+      });
   };
 }

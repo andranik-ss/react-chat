@@ -11,11 +11,6 @@ const initialState = {
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
-    case types.RECEIVE_AUTH_REQUEST:
-      return {
-        ...state,
-        sendingAuthCheckRequest: true
-      };
     case types.SIGNUP_SUCCESS:
     case types.LOGIN_SUCCESS:
       return {
@@ -28,7 +23,6 @@ export default function auth(state = initialState, action) {
       return {
         ...state,
         isAuthenticated: true,
-        sendingAuthCheckRequest: false,
         user: action.payload.user
       };
     case types.SIGNUP_FAILURE:
@@ -37,8 +31,7 @@ export default function auth(state = initialState, action) {
     case types.RECEIVE_AUTH_FAILURE:
       return {
         ...state,
-        isAuthenticated: false,
-        sendingAuthCheckRequest: false
+        isAuthenticated: false
       };
     default:
       return state;
