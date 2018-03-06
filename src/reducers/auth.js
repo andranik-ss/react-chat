@@ -6,16 +6,22 @@ const initialState = {
   isAuthenticated: !!token,
   user: null,
   token,
-  sendingAuthCheckRequest: false
+  isChecked: false
 };
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
+    case types.RECEIVE_AUTH_REQUEST:
+      return {
+        ...state,
+        isChecked: false
+      }
     case types.SIGNUP_SUCCESS:
     case types.LOGIN_SUCCESS:
       return {
         ...state,
         isAuthenticated: true,
+        isChecked: true,
         user: action.payload.user,
         token: action.payload.token
       };
@@ -23,6 +29,7 @@ export default function auth(state = initialState, action) {
       return {
         ...state,
         isAuthenticated: true,
+        isChecked: true,
         user: action.payload.user
       };
     case types.SIGNUP_FAILURE:

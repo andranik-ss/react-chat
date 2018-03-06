@@ -101,6 +101,10 @@ export function receiveAuth() {
       });
     }
 
+    dispatch({
+      type: types.RECEIVE_AUTH_REQUEST
+    });
+
     return callApi('users/me', token)
       .then(json =>
         dispatch({
