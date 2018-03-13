@@ -3,7 +3,6 @@ import { withStyles } from 'material-ui/styles';
 import ChatHeader from './ChatHeader';
 import Sidebar from './Sidebar';
 import Chat from './Chat';
-import { messages } from '../mock-data';
 
 const styles = theme => ({
   root: {
@@ -23,12 +22,23 @@ class ChatPage extends React.Component {
   }
 
   render() {
-    const { classes, chats } = this.props;
+    const {
+      classes,
+      chats,
+      setActiveChat,
+      logout,
+      messages,
+      user,
+      editUser
+    } = this.props;
 
     return (
       <div className={classes.root}>
-        <ChatHeader />
-        <Sidebar chats={chats} />
+        <ChatHeader logout={logout} user={user} editUser={editUser} />
+        <Sidebar
+          chats={chats}
+          setActiveChat={setActiveChat}
+        />
         <Chat messages={messages} />
       </div>
     );

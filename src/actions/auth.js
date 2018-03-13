@@ -1,4 +1,5 @@
 import callApi from '../utils/call-api';
+import { redirect } from './services';
 import * as types from '../constants/auth';
 
 export function signup(username, password) {
@@ -76,11 +77,13 @@ export function logout() {
     });
 
     return callApi('/logout')
-      .then(json =>
+      .then(json => {
+        localStorage.removeItem('token');
         dispatch({
           type: types.LOGOUT_SUCCESS
-        })
-      )
+        });
+        dispatch(redirect('/welcome'));
+      })
       .catch(reason =>
         dispatch({
           type: types.LOGOUT_FAILURE,
@@ -95,7 +98,7 @@ export function receiveAuth() {
     const { token } = getState().auth;
 
     if (!token) {
-      dispatch({
+      return dispatch({
         type: types.RECEIVE_AUTH_FAILURE,
         payload: 'Authorization needed'
       });

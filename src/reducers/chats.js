@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 function activeId(state = '', action) {
   switch (action.type) {
     case types.SET_ACTIVE_CHAT:
-      return action.payload;
+      return getId(action.payload.chat);
     case types.UNSET_ACTIVE_CHAT:
       return '';
     default:
@@ -57,3 +57,5 @@ export default combineReducers({
 
 export const getId = chat => chat._id;
 export const getByIds = (state, ids) => ids.map(id => state.byIds[id]);
+export const getMessagesById = (state, id) =>
+  state.byIds[id].messages ? state.byIds[id].messages : [];
