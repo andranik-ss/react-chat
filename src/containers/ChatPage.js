@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
     },
     messages: state.messages,
     user: {
-      active: state.auth.user,
+      ...state.auth.user,
       isCreator: fromChats.isChatCreator(activeChat, state.auth.user),
       isMember: fromChats.isChatMember(activeChat, state.auth.user)
     }

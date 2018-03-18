@@ -14,11 +14,8 @@ class UserMenu extends React.Component {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleClose = data => {
+  handleClose = () => {
     this.setState({ anchorEl: null, editProfile: false });
-    if (data) {
-      this.props.actions.editUser(data);
-    }
   };
 
   handleOpenProfile = () => {
@@ -68,6 +65,7 @@ class UserMenu extends React.Component {
         <UserProfile
           open={this.state.editProfile}
           onClose={this.handleClose}
+          editUser={actions.editUser}
           user={user}
         />
       </React.Fragment>

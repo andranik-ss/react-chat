@@ -26,14 +26,48 @@ const styles = theme => ({
   messageFromMe: {
     marginRight: theme.spacing.unit * 2,
     backgroundColor: '#e6dcff'
+  },
+  statusMessage: {
+    width: '100%',
+    textAlign: 'center'
+  },
+  statusMessageUser: {
+    display: 'inline'
   }
 });
 
-const ChatMessage = ({ classes, sender, user, content, createdAt }) => {
-  const isMessageFromMe = sender._id === user.active._id;
+const ChatMessage = ({
+  classes,
+  sender,
+  user,
+  content,
+  createdAt,
+  statusMessage
+}) => {
+  const isMessageFromMe = sender._id === user._id;
 
   const getSenderName = ({ firstName, lastName, username }) =>
     firstName && lastName ? `${sender.firstName} ${sender.lastName}` : username;
+
+  if (statusMessage) {
+    return (
+      <div className={classes.messageWrapper}>
+        <Typography className={classes.statusMessage}>
+          <Typography
+            variant='caption'
+            style={{ color: getColor(sender._id) }}
+            className={classes.statusMessageUser}
+          >
+            {getSenderName(sender)}
+          </Typography>
+          {content}
+          <Typography variant='caption' component='span'>
+            {moment(createdAt).fromNow()}
+          </Typography>
+        </Typography>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -52,7 +86,7 @@ const ChatMessage = ({ classes, sender, user, content, createdAt }) => {
         <Typography variant='caption' style={{ color: getColor(sender._id) }}>
           {getSenderName(sender)}
         </Typography>
-        <Typography variant='body1'>{content}</Typography>
+        {content}
         <Typography variant='caption' component='span'>
           {moment(createdAt).fromNow()}
         </Typography>

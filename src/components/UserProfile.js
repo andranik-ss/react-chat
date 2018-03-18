@@ -11,23 +11,13 @@ import Button from 'material-ui/Button';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    if (this.props.user) {
-      const {
-        user: { active: { username, lastName, firstName } }
-      } = this.props;
+    const { user: { username, lastName, firstName } } = props;
 
-      this.state = {
-        username,
-        firstName,
-        lastName
-      };
-    } else {
-      this.state = {
-        username: '',
-        firstName: '',
-        lastName: ''
-      };
-    }
+    this.state = {
+      username,
+      firstName,
+      lastName
+    };
   }
 
   handleInputChange = event => {
@@ -40,18 +30,29 @@ class UserProfile extends React.Component {
   };
 
   handleCancel = () => {
+    const { user: { username, lastName, firstName } } = this.props;
+
     this.props.onClose();
+    this.setState({
+      username,
+      firstName,
+      lastName
+    });
   };
 
   handleSave = () => {
-    this.props.onClose(this.state);
+    const { editUser, onClose } = this.props;
+    editUser(this.state).then(() => {
+      onClose();
+    });
   };
 
   render() {
     const { username, firstName, lastName } = this.state;
+    const {open, onClose } = this.props;
 
     return (
-      <Dialog maxWidth='xs' {...this.props}>
+      <Dialog maxWidth='xs' open={open} onClose={onClose}>
         <DialogTitle>Edit profile</DialogTitle>
         <DialogContent>
           <TextField
