@@ -16,30 +16,31 @@ const styles = theme => ({
 
 class ChatPage extends React.Component {
   componentDidMount() {
-    const { fetchMyChats, fetchAllChats } = this.props;
+    const {
+      actions: { fetchMyChats, fetchAllChats, setActiveChat },
+      match: { params: { chatId: activeChatId } }
+    } = this.props;
 
-    Promise.all([fetchAllChats(), fetchMyChats()]);
+    Promise.all([fetchAllChats(), fetchMyChats()]).then(() => {
+      if (activeChatId) {
+        setActiveChat(activeChatId);
+      }
+    });
   }
 
   render() {
-    const {
-      classes,
-      chats,
-      setActiveChat,
-      logout,
-      messages,
-      user,
-      editUser
-    } = this.props;
+    const { classes, chats, messages, user, actions } = this.props;
 
     return (
       <div className={classes.root}>
-        <ChatHeader logout={logout} user={user} editUser={editUser} />
-        <Sidebar
-          chats={chats}
-          setActiveChat={setActiveChat}
+        <ChatHeader user={user} actions={actions} activeChat={chats.active} />
+        <Sidebar chats={chats} actions={actions} />
+        <Chat
+          messages={messages}
+          user={user}
+          actions={actions}
+          activeChat={chats.active}
         />
-        <Chat messages={messages} />
       </div>
     );
   }

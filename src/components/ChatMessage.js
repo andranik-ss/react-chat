@@ -1,9 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
+import moment from 'moment';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Paper from 'material-ui/Paper';
 import Avatar from './Avatar';
+import getColor from '../utils/color-from';
 
 const styles = theme => ({
   messageWrapper: {
@@ -27,8 +29,11 @@ const styles = theme => ({
   }
 });
 
-const ChatMessage = ({ classes, sender, content }) => {
-  const isMessageFromMe = sender === 'me';
+const ChatMessage = ({ classes, sender, user, content, createdAt }) => {
+  const isMessageFromMe = sender._id === user.active._id;
+
+  const getSenderName = ({ firstName, lastName, username }) =>
+    firstName && lastName ? `${sender.firstName} ${sender.lastName}` : username;
 
   return (
     <div
@@ -37,15 +42,20 @@ const ChatMessage = ({ classes, sender, content }) => {
         isMessageFromMe && classes.messageWrapperFromMe
       )}
     >
-      <Avatar colorFrom={sender}>{sender}</Avatar>
+      <Avatar colorFrom={sender._id}>{getSenderName(sender)}</Avatar>
       <Paper
         className={classnames(
           classes.message,
           isMessageFromMe && classes.messageFromMe
         )}
       >
-        <Typography variant='caption'>{sender}</Typography>
+        <Typography variant='caption' style={{ color: getColor(sender._id) }}>
+          {getSenderName(sender)}
+        </Typography>
         <Typography variant='body1'>{content}</Typography>
+        <Typography variant='caption' component='span'>
+          {moment(createdAt).fromNow()}
+        </Typography>
       </Paper>
     </div>
   );

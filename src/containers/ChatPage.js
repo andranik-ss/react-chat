@@ -1,34 +1,53 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchAllChats, fetchMyChats, setActiveChat } from '../actions/chats';
+import { withRouter } from 'react-router-dom';
+import * as chatActions from '../actions/chats';
 import { editUser } from '../actions/user';
 import { logout } from '../actions/auth';
+import { sendMessage } from '../actions/messages';
 import * as fromChats from '../reducers/chats';
 import ChatPage from '../components/ChatPage';
 
-const mapStateToProps = state => ({
-  chats: {
-    all: fromChats.getByIds(state.chats, state.chats.allIds),
-    my: fromChats.getByIds(state.chats, state.chats.myIds),
-    activeId: state.chats.activeId
-  },
-  messages:
-    state.chats.activeId !== ''
-      ? fromChats.getMessagesById(state.chats, state.chats.activeId)
-      : [],
-  user: state.auth.user
-});
+const mapStateToProps = (state, ownProps) => {
+  const activeChat = state.chats.byIds[ownProps.match.params.chatId];
+
+  return {
+    chats: {
+      all: fromChats.getByIds(state.chats, state.chats.allIds),
+      my: fromChats.getByIds(state.chats, state.chats.myIds),
+      active: activeChat
+    },
+    messages: state.messages,
+    user: {
+      active: state.auth.user,
+      isCreator: fromChats.isChatCreator(activeChat, state.auth.user),
+      isMember: fromChats.isChatMember(activeChat, state.auth.user)
+    }
+  };
+};
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    {
-      fetchAllChats,
-      fetchMyChats,
-      setActiveChat,
-      logout,
-      editUser
-    },
+    { ...chatActions, logout, editUser, sendMessage },
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChatPage);
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const activeChatId = ownProps.match.params.chatId;
+
+  return {
+    ...stateProps,
+    ...ownProps,
+    actions: {
+      ...dispatchProps,
+      joinChat: () => dispatchProps.joinChat(activeChatId),
+      leaveChat: () => dispatchProps.leaveChat(activeChatId),
+      deleteChat: () => dispatchProps.deleteChat(activeChatId),
+      sendMessage: content => dispatchProps.sendMessage(activeChatId, content)
+    }
+  };
+};
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps, mergeProps)(ChatPage)
+);

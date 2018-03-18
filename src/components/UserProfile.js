@@ -12,7 +12,9 @@ class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     if (this.props.user) {
-      const { user: { username, lastName, firstName } } = this.props;
+      const {
+        user: { active: { username, lastName, firstName } }
+      } = this.props;
 
       this.state = {
         username,
@@ -27,7 +29,7 @@ class UserProfile extends React.Component {
       };
     }
   }
-  
+
   handleInputChange = event => {
     event.persist();
     const { name, value } = event.target;

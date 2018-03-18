@@ -28,16 +28,31 @@ const styles = theme => ({
 
 class Sidebar extends React.Component {
   state = {
-    activeAction: 0
+    activeAction: 0,
+    searchValue: ''
   };
 
-  handleChangeActiveAction = (e, value) => {
+  handleChangeActiveAction = (e, value) =>
     this.setState({ activeAction: value });
-  };
+
+  handleSearchValueChange = event =>
+    this.setState({
+      searchValue: event.target.value
+    });
+
+  filterChats = chats =>
+    chats
+      .filter(chat =>
+        chat.title.toLowerCase().includes(this.state.searchValue.toLowerCase())
+      )
+      .sort(
+        (one, two) =>
+          one.title.toLowerCase() <= two.title.toLowerCase() ? -1 : 1
+      );
 
   render() {
-    const { classes, chats, setActiveChat } = this.props;
-    const { activeAction } = this.state;
+    const { classes, chats, actions } = this.props;
+    const { activeAction, searchValue } = this.state;
 
     return (
       <Drawer
@@ -47,15 +62,21 @@ class Sidebar extends React.Component {
         }}
       >
         <div className={classes.drawerHeader}>
-          <TextField fullWidth margin='normal' placeholder='Search chats...' />
+          <TextField
+            fullWidth
+            margin='normal'
+            placeholder='Search chats...'
+            onChange={this.handleSearchValueChange}
+            value={searchValue}
+          />
         </div>
         <Divider />
         <ChatList
-          chats={activeAction === 0 ? chats.my : chats.all}
-          activeId={chats.activeId}
-          setActiveChat={setActiveChat}
+          chats={this.filterChats(activeAction === 0 ? chats.my : chats.all)}
+          activeId={chats.active && chats.active._id}
+          setActiveChat={actions.setActiveChat}
         />
-        <NewChatButton />
+        <NewChatButton createChat={actions.createChat} />
         <BottomNavigation
           showLabels
           value={this.state.activeAction}
