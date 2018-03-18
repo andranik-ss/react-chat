@@ -177,12 +177,6 @@ export function leaveChat(chatId) {
           payload: data
         });
 
-        dispatch(redirect('/chat'));
-
-        dispatch({
-          type: types.UNSET_ACTIVE_CHAT
-        });
-
         return data;
       })
       .catch(reason =>
