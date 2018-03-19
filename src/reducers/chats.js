@@ -21,9 +21,8 @@ function allIds(state = [], action) {
     case types.DELETE_CHAT_SUCCESS:
     case types.RECIEVE_DELETED_CHAT:
       return state.filter(chatId => chatId !== getId(action.payload.chat));
-    case types.CREATE_CHAT_SUCCESS:
     case types.RECIEVE_NEW_CHAT:
-      return [...state].concat(getId(action.payload.chat));
+      return [...state, getId(action.payload.chat)];
     default:
       return state;
   }
