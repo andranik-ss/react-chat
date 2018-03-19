@@ -21,7 +21,7 @@ function allIds(state = [], action) {
     case types.DELETE_CHAT_SUCCESS:
     case types.RECIEVE_DELETED_CHAT:
       return state.filter(chatId => chatId !== getId(action.payload.chat));
-    case types.CREATE_NEW_CHAT_SUCCESS:
+    case types.CREATE_CHAT_SUCCESS:
     case types.RECIEVE_NEW_CHAT:
       return [...state].concat(getId(action.payload.chat));
     default:
@@ -34,7 +34,7 @@ function myIds(state = [], action) {
     case types.FETCH_MY_CHATS_SUCCESS:
       return action.payload.chats.map(chat => getId(chat));
     case types.JOIN_CHAT_SUCCESS:
-    case types.CREATE_NEW_CHAT_SUCCESS:
+    case types.CREATE_CHAT_SUCCESS:
       return [...state].concat(getId(action.payload.chat));
     case types.LEAVE_CHAT_SUCCESS:
     case types.DELETE_CHAT_SUCCESS:
@@ -60,7 +60,7 @@ function byIds(state = {}, action) {
         )
       };
     case types.JOIN_CHAT_SUCCESS:
-    case types.CREATE_NEW_CHAT_SUCCESS:
+    case types.CREATE_CHAT_SUCCESS:
     case types.LEAVE_CHAT_SUCCESS:
     case types.RECIEVE_NEW_CHAT:
       return {

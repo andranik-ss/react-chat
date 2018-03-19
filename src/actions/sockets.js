@@ -10,7 +10,11 @@ let socket = null;
 
 export const socketsConnect = () => {
   return (dispatch, getState) => {
-    const { token } = getState().auth;
+    const { services: { isFetching }, auth: { token } } = getState();
+
+    if (isFetching.sockets) {
+      return Promise.resolve();
+    }
 
     dispatch({
       type: types.SOCKETS_CONNECTION_REQUEST

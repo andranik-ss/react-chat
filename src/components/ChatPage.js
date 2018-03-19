@@ -3,6 +3,7 @@ import { withStyles } from 'material-ui/styles';
 import ChatHeader from './ChatHeader';
 import Sidebar from './Sidebar';
 import Chat from './Chat';
+import ErrorMessage from './ErrorMessage';
 
 const styles = theme => ({
   root: {
@@ -52,7 +53,7 @@ class ChatPage extends React.Component {
   }
 
   render() {
-    const { classes, chats, messages, user, actions } = this.props;
+    const { classes, chats, messages, user, actions, error } = this.props;
 
     return (
       <div className={classes.root}>
@@ -64,6 +65,7 @@ class ChatPage extends React.Component {
           actions={actions}
           activeChat={chats.active}
         />
+        <ErrorMessage error={error} />
       </div>
     );
   }

@@ -3,12 +3,16 @@ import callApi from '../utils/call-api';
 
 export function editUser(data) {
   return (dispatch, getState) => {
+    const { services: { isFetching }, auth: { token } } = getState();
+
+    if (isFetching.editUser) {
+      return Promise.resolve();
+    }
+
     dispatch({
       type: types.EDIT_USER_REQUEST,
       payload: data
     });
-
-    const { token } = getState().auth;
 
     return callApi(
       '/users/me',
@@ -25,7 +29,7 @@ export function editUser(data) {
       .catch(reason =>
         dispatch({
           type: types.EDIT_USER_FAILURE,
-          error: reason
+          payload: reason
         })
       );
   };

@@ -22,7 +22,8 @@ const mapStateToProps = (state, ownProps) => {
       ...state.auth.user,
       isCreator: fromChats.isChatCreator(activeChat, state.auth.user),
       isMember: fromChats.isChatMember(activeChat, state.auth.user)
-    }
+    },
+    error: state.services.errors.chat
   };
 };
 
