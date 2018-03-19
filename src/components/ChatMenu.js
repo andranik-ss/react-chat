@@ -18,7 +18,7 @@ class LongMenu extends React.Component {
 
   render() {
     const { anchorEl } = this.state;
-    const { actions, user } = this.props;
+    const { actions, user, isConnected } = this.props;
 
     let action = {};
     if (user.isCreator) {
@@ -41,6 +41,7 @@ class LongMenu extends React.Component {
           aria-haspopup='true'
           onClick={this.handleClick}
           color='inherit'
+          disabled={!isConnected}
         >
           <MoreVertIcon />
         </IconButton>

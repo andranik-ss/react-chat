@@ -53,17 +53,31 @@ class ChatPage extends React.Component {
   }
 
   render() {
-    const { classes, chats, messages, user, actions, error } = this.props;
+    const {
+      classes,
+      chats,
+      messages,
+      user,
+      actions,
+      error,
+      isConnected
+    } = this.props;
 
     return (
       <div className={classes.root}>
-        <ChatHeader user={user} actions={actions} activeChat={chats.active} />
-        <Sidebar chats={chats} actions={actions} />
+        <ChatHeader
+          user={user}
+          actions={actions}
+          activeChat={chats.active}
+          isConnected={isConnected}
+        />
+        <Sidebar chats={chats} actions={actions} isConnected={isConnected} />
         <Chat
           messages={messages}
           user={user}
           actions={actions}
           activeChat={chats.active}
+          isConnected={isConnected}
         />
         <ErrorMessage error={error} />
       </div>

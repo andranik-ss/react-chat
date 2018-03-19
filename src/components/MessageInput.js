@@ -29,6 +29,7 @@ class MessageInput extends React.Component {
         value={this.state.value}
         onChange={this.handleValueChange}
         onKeyPress={this.handleKeyPress}
+        disabled={this.props.disabled}
       />
     );
   }

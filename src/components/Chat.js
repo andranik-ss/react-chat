@@ -29,25 +29,33 @@ const styles = theme => ({
   }
 });
 
-const ChatContent = ({ classes, messages, user, actions, activeChat }) => {
+const ChatContent = ({
+  classes,
+  messages,
+  user,
+  actions,
+  activeChat,
+  isConnected
+}) => {
   return (
     <main className={classes.chatLayout}>
       {activeChat ? (
         <React.Fragment>
-          <ChatMessageList
-            messages={messages}
-            user={user}
-          />
+          <ChatMessageList messages={messages} user={user} />
           <div className={classes.messageInputWrapper}>
             <Paper className={classes.messageInput} elevation={6}>
               {user.isCreator || user.isMember ? (
-                <MessageInput sendMessage={actions.sendMessage} />
+                <MessageInput
+                  sendMessage={actions.sendMessage}
+                  disabled={!isConnected}
+                />
               ) : (
                 <Button
                   variant='raised'
                   color='primary'
                   fullWidth
                   onClick={actions.joinChat}
+                  disabled={!isConnected}
                 >
                   Join
                 </Button>

@@ -26,7 +26,7 @@ class UserMenu extends React.Component {
   };
 
   render() {
-    const { actions, user } = this.props;
+    const { actions, user, isConnected } = this.props;
     const { anchorEl } = this.state;
 
     return (
@@ -36,6 +36,7 @@ class UserMenu extends React.Component {
           aria-haspopup='true'
           onClick={this.handleClick}
           color='inherit'
+          disabled={!isConnected}
         >
           <AccountCircle />
         </IconButton>

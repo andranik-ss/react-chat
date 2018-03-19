@@ -14,7 +14,7 @@ const styles = theme => ({
   }
 });
 
-const ChatList = ({ classes, chats, setActiveChat, activeChat }) => {
+const ChatList = ({ classes, chats, setActiveChat, activeChat, disabled }) => {
   return (
     <List className={classes.chatsList}>
       {chats && chats.length ? (
@@ -22,6 +22,7 @@ const ChatList = ({ classes, chats, setActiveChat, activeChat }) => {
           <ChatListItem
             key={chat._id}
             active={activeChat && activeChat._id === chat._id}
+            disabled={disabled}
             chatId={chat._id}
             {...chat}
           />
