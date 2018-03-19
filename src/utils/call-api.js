@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-const server = 'http://chat-api.simonyan.org';
+const server = 'http://localhost:8000';
 const version = 'v1';
 
 export default function callApi(endpoint, token, options, data) {

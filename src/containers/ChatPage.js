@@ -2,9 +2,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as chatActions from '../actions/chats';
+import * as socketActions from '../actions/sockets';
 import { editUser } from '../actions/user';
 import { logout } from '../actions/auth';
-import { sendMessage } from '../actions/messages';
 import * as fromChats from '../reducers/chats';
 import ChatPage from '../components/ChatPage';
 
@@ -28,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { ...chatActions, logout, editUser, sendMessage },
+    { ...chatActions, logout, editUser, ...socketActions },
     dispatch
   );
 
@@ -43,7 +43,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       joinChat: () => dispatchProps.joinChat(activeChatId),
       leaveChat: () => dispatchProps.leaveChat(activeChatId),
       deleteChat: () => dispatchProps.deleteChat(activeChatId),
-      sendMessage: content => dispatchProps.sendMessage(activeChatId, content)
+      sendMessage: content => dispatchProps.sendMessage(activeChatId, content),
     }
   };
 };

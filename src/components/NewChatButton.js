@@ -31,12 +31,12 @@ class NewChatButton extends React.Component {
   };
 
   handleInputChange = event => {
-    event.persist();
-    const { name, value } = event.target;
-    this.setState(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    this.setState({
+      newChat: {
+        value: event.target.value,
+        isValid: true
+      }
+    });
   };
 
   handleCreate = () => {
@@ -51,10 +51,13 @@ class NewChatButton extends React.Component {
       }));
     }
 
-    this.props.createChat(this.state.newChat).then(() =>
+    this.props.createChat(newChat.value).then(() =>
       this.setState({
         open: false,
-        newChat: ''
+        newChat: {
+          value: '',
+          isValid: true
+        }
       })
     );
   };

@@ -73,7 +73,7 @@ class Sidebar extends React.Component {
         <Divider />
         <ChatList
           chats={this.filterChats(activeAction === 0 ? chats.my : chats.all)}
-          activeId={chats.active && chats.active._id}
+          activeChat={chats.active}
           setActiveChat={actions.setActiveChat}
         />
         <NewChatButton createChat={actions.createChat} />

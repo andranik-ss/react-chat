@@ -17,15 +17,38 @@ const styles = theme => ({
 class ChatPage extends React.Component {
   componentDidMount() {
     const {
-      actions: { fetchMyChats, fetchAllChats, setActiveChat },
+      actions: {
+        fetchMyChats,
+        fetchAllChats,
+        setActiveChat,
+        socketsConnect,
+        mountChat
+      },
       match: { params: { chatId: activeChatId } }
     } = this.props;
 
-    Promise.all([fetchAllChats(), fetchMyChats()]).then(() => {
-      if (activeChatId) {
-        setActiveChat(activeChatId);
-      }
-    });
+    Promise.all([fetchAllChats(), fetchMyChats()])
+      .then(() => socketsConnect())
+      .then(() => {
+        if (activeChatId) {
+          setActiveChat(activeChatId);
+          mountChat(activeChatId);
+        }
+      });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {
+      match: { params },
+      actions: { setActiveChat, unmountChat, mountChat }
+    } = this.props;
+    const { params: nextParams } = nextProps.match;
+
+    if (nextParams.chatId && params.chatId !== nextParams.chatId) {
+      setActiveChat(nextParams.chatId);
+      unmountChat(params.chatId);
+      mountChat(nextParams.chatId);
+    }
   }
 
   render() {
