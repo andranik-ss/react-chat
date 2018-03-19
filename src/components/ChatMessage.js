@@ -60,7 +60,7 @@ const ChatMessage = ({
           >
             {getSenderName(sender)}
           </Typography>
-          {content}
+          <Typography>{content}</Typography>
           <Typography variant='caption' component='span'>
             {moment(createdAt).fromNow()}
           </Typography>
@@ -86,7 +86,7 @@ const ChatMessage = ({
         <Typography variant='caption' style={{ color: getColor(sender._id) }}>
           {getSenderName(sender)}
         </Typography>
-        {content}
+        <Typography>{content}</Typography>
         <Typography variant='caption' component='span'>
           {moment(createdAt).fromNow()}
         </Typography>

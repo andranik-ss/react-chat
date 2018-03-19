@@ -9,15 +9,20 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
 class UserProfile extends React.Component {
-  constructor(props) {
-    super(props);
-    const { user: { username, lastName, firstName } } = props;
+  state = {
+    username: '',
+    firstName: '',
+    lastName: ''
+  };
 
-    this.state = {
+  componentWillReceiveProps(nextProps) {
+    const { user: { username, lastName, firstName } } = nextProps;
+
+    this.setState({
       username,
       firstName,
       lastName
-    };
+    });
   }
 
   handleInputChange = event => {
@@ -42,14 +47,14 @@ class UserProfile extends React.Component {
 
   handleSave = () => {
     const { editUser, onClose } = this.props;
-    editUser(this.state).then(() => {
-      onClose();
-    });
+
+    onClose();
+    editUser(this.state);
   };
 
   render() {
     const { username, firstName, lastName } = this.state;
-    const {open, onClose } = this.props;
+    const { open, onClose } = this.props;
 
     return (
       <Dialog maxWidth='xs' open={open} onClose={onClose}>
