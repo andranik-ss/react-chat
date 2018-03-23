@@ -7,8 +7,8 @@ import Avatar from './Avatar';
 
 const styles = theme => ({
   activeItem: {
-    backgroundColor: theme.palette.grey[200]
-  }
+    backgroundColor: theme.palette.grey[200],
+  },
 });
 
 const ChatListItem = ({
@@ -17,7 +17,7 @@ const ChatListItem = ({
   title,
   chatId,
   active,
-  createdAt
+  createdAt,
 }) => (
   <ListItem
     button

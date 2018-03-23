@@ -3,16 +3,16 @@ import Input from 'material-ui/Input';
 
 class MessageInput extends React.Component {
   state = {
-    value: ''
+    value: '',
   };
 
-  handleValueChange = event => {
+  handleValueChange = (event) => {
     this.setState({
-      value: event.target.value
+      value: event.target.value,
     });
   };
 
-  handleKeyPress = event => {
+  handleKeyPress = (event) => {
     const { value } = this.state;
 
     if (event.key === 'Enter' && value) {
@@ -25,7 +25,7 @@ class MessageInput extends React.Component {
     return (
       <Input
         fullWidth
-        placeholder='Type your message…'
+        placeholder="Type your message…"
         value={this.state.value}
         onChange={this.handleValueChange}
         onKeyPress={this.handleKeyPress}

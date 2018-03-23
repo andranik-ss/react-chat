@@ -11,13 +11,13 @@ export default function callApi(endpoint, token, options, data) {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      ...authHeaders
+      ...authHeaders,
     },
     body: JSON.stringify(data),
-    ...options
+    ...options,
   })
     .then(response => response.json())
-    .then(json => {
+    .then((json) => {
       if (!json.success) {
         throw new Error(json.message);
       }

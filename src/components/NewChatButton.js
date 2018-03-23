@@ -3,7 +3,7 @@ import { withStyles } from 'material-ui/styles';
 import Dialog, {
   DialogActions,
   DialogContent,
-  DialogTitle
+  DialogTitle,
 } from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
@@ -14,28 +14,28 @@ const styles = theme => ({
     position: 'absolute',
     left: 'auto',
     right: theme.spacing.unit * 3,
-    bottom: theme.spacing.unit * 3 + 48 // + bottom navigation
+    bottom: (theme.spacing.unit * 3) + 48, // + bottom navigation
   },
   dialog: {
-    minWidth: '200px'
-  }
+    minWidth: '200px',
+  },
 });
 
 class NewChatButton extends React.Component {
   state = {
     newChat: {
       value: '',
-      isValid: true
+      isValid: true,
     },
-    open: false
+    open: false,
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     this.setState({
       newChat: {
         value: event.target.value,
-        isValid: true
-      }
+        isValid: true,
+      },
     });
   };
 
@@ -46,26 +46,25 @@ class NewChatButton extends React.Component {
         ...prevState,
         newChat: {
           value: '',
-          isValid: false
-        }
+          isValid: false,
+        },
       }));
     }
 
-    this.props.createChat(newChat.value).then(() =>
+    return this.props.createChat(newChat.value).then(() =>
       this.setState({
         open: false,
         newChat: {
           value: '',
-          isValid: true
-        }
-      })
-    );
+          isValid: true,
+        },
+      }));
   };
 
   handleNewChat = () => {
     this.setState(prevState => ({
       ...prevState,
-      open: !prevState.open
+      open: !prevState.open,
     }));
   };
 
@@ -76,8 +75,8 @@ class NewChatButton extends React.Component {
     return (
       <React.Fragment>
         <Button
-          variant='fab'
-          color='primary'
+          variant="fab"
+          color="primary"
           className={classes.newChatButton}
           onClick={this.handleNewChat}
           disabled={disabled}
@@ -85,7 +84,7 @@ class NewChatButton extends React.Component {
           <AddIcon />
         </Button>
         <Dialog
-          maxWidth='xs'
+          maxWidth="xs"
           fullWidth
           open={open}
           onClose={this.handleNewChat}
@@ -95,16 +94,16 @@ class NewChatButton extends React.Component {
             <TextField
               fullWidth
               required
-              label='New chat'
-              placeholder='Type chat name ...'
-              name='newChat'
+              label="New chat"
+              placeholder="Type chat name ..."
+              name="newChat"
               value={newChat.value}
               error={!newChat.isValid}
               onChange={this.handleInputChange}
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleCreate} color='primary'>
+            <Button onClick={this.handleCreate} color="primary">
               Create
             </Button>
           </DialogActions>

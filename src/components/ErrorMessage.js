@@ -5,11 +5,7 @@ import CloseIcon from 'material-ui-icons/Close';
 
 class ErrorMessage extends React.Component {
   state = {
-    open: false
-  };
-
-  handleCloseSnackbar = (event, reason) => {
-    this.setState({ open: false });
+    open: false,
   };
 
   componentWillReceiveProps(nextProps) {
@@ -17,6 +13,10 @@ class ErrorMessage extends React.Component {
       this.setState({ open: true });
     }
   }
+
+  handleCloseSnackbar = () => {
+    this.setState({ open: false });
+  };
 
   render() {
     const { error } = this.props;
@@ -29,7 +29,7 @@ class ErrorMessage extends React.Component {
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'left'
+          horizontal: 'left',
         }}
         open={this.state.open}
         autoHideDuration={6000}
@@ -37,13 +37,13 @@ class ErrorMessage extends React.Component {
         message={<span>{error.message}</span>}
         action={[
           <IconButton
-            key='close'
-            aria-label='Close'
-            color='inherit'
+            key="close"
+            aria-label="Close"
+            color="inherit"
             onClick={this.handleCloseSnackbar}
           >
             <CloseIcon />
-          </IconButton>
+          </IconButton>,
         ]}
       />
     );

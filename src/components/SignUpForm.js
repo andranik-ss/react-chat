@@ -7,63 +7,63 @@ const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   button: {
-    marginTop: theme.spacing.unit * 2
-  }
+    marginTop: theme.spacing.unit * 2,
+  },
 });
 
 class SignUpForm extends React.Component {
   state = {
     username: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     password: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     repeatedPassword: {
       value: '',
-      isValid: true
-    }
+      isValid: true,
+    },
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     event.persist();
     const { name, value } = event.target;
     this.setState(prevState => ({
       [name]: {
         ...prevState[name],
-        value
-      }
+        value,
+      },
     }));
   };
 
   validate = () => {
     const {
       password: { value: pwd },
-      repeatedPassword: { value: repeatPwd }
+      repeatedPassword: { value: repeatPwd },
     } = this.state;
 
     const isValid = pwd === repeatPwd;
 
     this.setState(prevState => ({
       password: {
-        ...prevState['password'],
-        isValid
+        ...prevState.password,
+        isValid,
       },
       repeatedPassword: {
-        ...prevState['repeatedPassword'],
-        isValid
-      }
+        ...prevState.repeatedPassword,
+        isValid,
+      },
     }));
 
     return isValid;
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     if (!this.validate()) {
@@ -84,10 +84,10 @@ class SignUpForm extends React.Component {
         <TextField
           fullWidth
           required
-          label='Username'
-          placeholder='Type your username ...'
-          name='username'
-          margin='normal'
+          label="Username"
+          placeholder="Type your username ..."
+          name="username"
+          margin="normal"
           username={username.value}
           onChange={this.handleInputChange}
           error={!username.isValid}
@@ -95,11 +95,11 @@ class SignUpForm extends React.Component {
         <TextField
           fullWidth
           required
-          label='Password'
-          placeholder='Type your password ...'
-          name='password'
-          type='password'
-          margin='normal'
+          label="Password"
+          placeholder="Type your password ..."
+          name="password"
+          type="password"
+          margin="normal"
           username={password.value}
           onChange={this.handleInputChange}
           error={!password.isValid}
@@ -107,20 +107,20 @@ class SignUpForm extends React.Component {
         <TextField
           fullWidth
           required
-          label='Repeat password'
-          placeholder='Repeat your password ...'
-          name='repeatedPassword'
-          type='password'
-          margin='normal'
+          label="Repeat password"
+          placeholder="Repeat your password ..."
+          name="repeatedPassword"
+          type="password"
+          margin="normal"
           username={repeatedPassword.value}
           onChange={this.handleInputChange}
           error={!repeatedPassword.isValid}
         />
         <Button
-          variant='raised'
-          color='primary'
+          variant="raised"
+          color="primary"
           className={classes.button}
-          type='submit'
+          type="submit"
         >
           SignUp
         </Button>

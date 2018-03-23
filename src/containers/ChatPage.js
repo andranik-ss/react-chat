@@ -15,23 +15,25 @@ const mapStateToProps = (state, ownProps) => {
     chats: {
       all: fromChats.getByIds(state.chats, state.chats.allIds),
       my: fromChats.getByIds(state.chats, state.chats.myIds),
-      active: activeChat
+      active: activeChat,
     },
     messages: state.messages,
     user: {
       ...state.auth.user,
       isCreator: fromChats.isChatCreator(activeChat, state.auth.user),
-      isMember: fromChats.isChatMember(activeChat, state.auth.user)
+      isMember: fromChats.isChatMember(activeChat, state.auth.user),
     },
     error: state.services.errors.chat,
-    isConnected: state.services.isConnected
+    isConnected: state.services.isConnected,
   };
 };
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { ...chatActions, logout, editUser, ...socketActions },
-    dispatch
+    {
+      ...chatActions, logout, editUser, ...socketActions,
+    },
+    dispatch,
   );
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
@@ -46,10 +48,8 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       leaveChat: () => dispatchProps.leaveChat(activeChatId),
       deleteChat: () => dispatchProps.deleteChat(activeChatId),
       sendMessage: content => dispatchProps.sendMessage(activeChatId, content),
-    }
+    },
   };
 };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps, mergeProps)(ChatPage)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps, mergeProps)(ChatPage));

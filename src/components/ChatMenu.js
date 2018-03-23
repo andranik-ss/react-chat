@@ -5,10 +5,10 @@ import MoreVertIcon from 'material-ui-icons/MoreVert';
 
 class LongMenu extends React.Component {
   state = {
-    anchorEl: null
+    anchorEl: null,
   };
 
-  handleClick = event => {
+  handleClick = (event) => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
@@ -24,29 +24,29 @@ class LongMenu extends React.Component {
     if (user.isCreator) {
       action = {
         name: 'Delete',
-        onClick: actions.deleteChat
+        onClick: actions.deleteChat,
       };
     } else {
       action = {
         name: 'Leave',
-        onClick: actions.leaveChat
+        onClick: actions.leaveChat,
       };
     }
 
     return (
       <React.Fragment>
         <IconButton
-          aria-label='More'
+          aria-label="More"
           aria-owns={anchorEl ? 'chat-menu' : null}
-          aria-haspopup='true'
+          aria-haspopup="true"
           onClick={this.handleClick}
-          color='inherit'
+          color="inherit"
           disabled={!isConnected}
         >
           <MoreVertIcon />
         </IconButton>
         <Menu
-          id='long-menu'
+          id="long-menu"
           anchorEl={this.state.anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
@@ -59,7 +59,6 @@ class LongMenu extends React.Component {
           >
             {action.name}
           </MenuItem>
-          ))}
         </Menu>
       </React.Fragment>
     );

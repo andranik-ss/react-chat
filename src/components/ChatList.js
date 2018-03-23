@@ -1,39 +1,40 @@
+/* eslint no-underscore-dangle: 0 */
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import List from 'material-ui/List';
 import Typography from 'material-ui/Typography';
 import ChatListItem from './ChatListItem';
 
-const styles = theme => ({
+const styles = () => ({
   chatsList: {
     height: 'calc(100% - 56px)',
-    overflowY: 'scroll'
+    overflowY: 'scroll',
   },
   noChats: {
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
-const ChatList = ({ classes, chats, setActiveChat, activeChat, disabled }) => {
-  return (
-    <List className={classes.chatsList}>
-      {chats && chats.length ? (
-        chats.map(chat => (
-          <ChatListItem
-            key={chat._id}
-            active={activeChat && activeChat._id === chat._id}
-            disabled={disabled}
-            chatId={chat._id}
-            {...chat}
-          />
-        ))
-      ) : (
-        <Typography variant='subheading' className={classes.noChats}>
-          There is no chats yet...
-        </Typography>
-      )}
-    </List>
-  );
-};
+const ChatList = ({
+  classes, chats, activeChat, disabled,
+}) => (
+  <List className={classes.chatsList}>
+    {chats && chats.length ? (
+      chats.map(chat => (
+        <ChatListItem
+          key={chat._id}
+          active={activeChat && activeChat._id === chat._id}
+          disabled={disabled}
+          chatId={chat._id}
+          {...chat}
+        />
+      ))
+    ) : (
+      <Typography variant="subheading" className={classes.noChats}>
+        There is no chats yet...
+      </Typography>
+    )}
+  </List>
+);
 
 export default withStyles(styles)(ChatList);

@@ -14,20 +14,20 @@ const styles = theme => ({
   content: {
     display: 'flex',
     paddingTop: '64px',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   authForm: {
     marginTop: '24px',
-    width: '500px'
+    width: '500px',
   },
   tabWrapper: {
-    padding: theme.spacing.unit * 3
-  }
+    padding: theme.spacing.unit * 3,
+  },
 });
 
 class WelcomePage extends React.Component {
   state = {
-    activeTab: 0
+    activeTab: 0,
   };
 
   componentDidMount() {
@@ -39,33 +39,35 @@ class WelcomePage extends React.Component {
   };
 
   render() {
-    const { classes, login, signup, isAuthenticated, error } = this.props;
+    const {
+      classes, login, signup, isAuthenticated, error,
+    } = this.props;
     const { activeTab } = this.state;
 
     if (isAuthenticated) {
-      return <Redirect to='/chat' />;
+      return <Redirect to="/chat" />;
     }
 
     return (
       <div>
-        <AppBar color='primary'>
+        <AppBar color="primary">
           <Toolbar>
-            <Typography variant='title' color='inherit' noWrap>
+            <Typography variant="title" color="inherit" noWrap>
               DogeCodes React Chat
             </Typography>
           </Toolbar>
         </AppBar>
         <div className={classes.content}>
           <Paper className={classes.authForm}>
-            <AppBar position='static' color='default'>
+            <AppBar position="static" color="default">
               <Tabs
                 value={activeTab}
                 onChange={this.handleTabChange}
-                indicatorColor='red'
+                indicatorColor="red"
                 fullWidth
               >
-                <Tab label='LOGIN' />
-                <Tab label='SIGN UP' />
+                <Tab label="LOGIN" />
+                <Tab label="SIGN UP" />
               </Tabs>
             </AppBar>
             <div className={classes.tabWrapper}>

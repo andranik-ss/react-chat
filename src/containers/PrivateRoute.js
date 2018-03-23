@@ -28,7 +28,7 @@ class PrivateRoute extends React.Component {
             <Redirect
               to={{
                 pathname: '/welcome',
-                state: { from: props.location }
+                state: { from: props.location },
               }}
             />
           ))
@@ -40,17 +40,15 @@ class PrivateRoute extends React.Component {
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
-  isChecked: state.auth.isChecked
+  isChecked: state.auth.isChecked,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      receiveAuth
+      receiveAuth,
     },
-    dispatch
+    dispatch,
   );
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(PrivateRoute)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PrivateRoute));

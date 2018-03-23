@@ -14,19 +14,19 @@ const styles = theme => ({
     paddingTop: '64px',
     height: '100%',
     overflow: 'hidden',
-    width: 'calc(100% - 320px)'
+    width: 'calc(100% - 320px)',
   },
   messageInputWrapper: {
     position: 'fixed',
     left: 'auto',
     right: 0,
     bottom: 0,
-    width: `calc(100% - 320px)`,
-    padding: theme.spacing.unit * 3
+    width: 'calc(100% - 320px)',
+    padding: theme.spacing.unit * 3,
   },
   messageInput: {
-    padding: theme.spacing.unit * 2
-  }
+    padding: theme.spacing.unit * 2,
+  },
 });
 
 const ChatContent = ({
@@ -35,24 +35,23 @@ const ChatContent = ({
   user,
   actions,
   activeChat,
-  isConnected
-}) => {
-  return (
-    <main className={classes.chatLayout}>
-      {activeChat ? (
-        <React.Fragment>
-          <ChatMessageList messages={messages} user={user} />
-          <div className={classes.messageInputWrapper}>
-            <Paper className={classes.messageInput} elevation={6}>
-              {user.isCreator || user.isMember ? (
-                <MessageInput
-                  sendMessage={actions.sendMessage}
-                  disabled={!isConnected}
-                />
+  isConnected,
+}) => (
+  <main className={classes.chatLayout}>
+    {activeChat ? (
+      <React.Fragment>
+        <ChatMessageList messages={messages} user={user} />
+        <div className={classes.messageInputWrapper}>
+          <Paper className={classes.messageInput} elevation={6}>
+            {user.isCreator || user.isMember ? (
+              <MessageInput
+                sendMessage={actions.sendMessage}
+                disabled={!isConnected}
+              />
               ) : (
                 <Button
-                  variant='raised'
-                  color='primary'
+                  variant="raised"
+                  color="primary"
                   fullWidth
                   onClick={actions.joinChat}
                   disabled={!isConnected}
@@ -60,14 +59,13 @@ const ChatContent = ({
                   Join
                 </Button>
               )}
-            </Paper>
-          </div>
-        </React.Fragment>
+          </Paper>
+        </div>
+      </React.Fragment>
       ) : (
         <InfoPaper />
       )}
-    </main>
-  );
-};
+  </main>
+);
 
 export default withStyles(styles)(ChatContent);

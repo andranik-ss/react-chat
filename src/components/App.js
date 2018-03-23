@@ -5,16 +5,14 @@ import ChatPage from '../containers/ChatPage';
 import WelcomePage from '../containers/WelcomePage';
 import history from '../utils/history';
 
-const App = () => {
-  return (
-    <Router history={history}>
-      <Switch>
-        <Route exact path='/(welcome)?' component={WelcomePage} />
-        <PrivateRoute path='/chat/:chatId?' component={ChatPage} />
-        <Redirect to='/' />
-      </Switch>
-    </Router>
-  );
-};
+const App = () => (
+  <Router history={history}>
+    <Switch>
+      <Route exact path="/(welcome)?" component={WelcomePage} />
+      <PrivateRoute path="/chat/:chatId?" component={ChatPage} />
+      <Redirect to="/" />
+    </Switch>
+  </Router>
+);
 
 export default App;

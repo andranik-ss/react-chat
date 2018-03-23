@@ -7,37 +7,37 @@ const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   button: {
-    marginTop: theme.spacing.unit * 2
-  }
+    marginTop: theme.spacing.unit * 2,
+  },
 });
 
 class LoginForm extends React.Component {
   state = {
     username: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     password: {
       value: '',
-      isValid: true
-    }
+      isValid: true,
+    },
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     event.persist();
     const { name, value } = event.target;
     this.setState(prevState => ({
       [name]: {
         ...prevState[name],
-        value
-      }
+        value,
+      },
     }));
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     const { username, password } = this.state;
@@ -54,10 +54,10 @@ class LoginForm extends React.Component {
         <TextField
           fullWidth
           required
-          label='Username'
-          placeholder='Type your username ...'
-          name='username'
-          margin='normal'
+          label="Username"
+          placeholder="Type your username ..."
+          name="username"
+          margin="normal"
           username={username.value}
           onChange={this.handleInputChange}
           error={!username.isValid}
@@ -65,20 +65,20 @@ class LoginForm extends React.Component {
         <TextField
           fullWidth
           required
-          label='Password'
-          placeholder='Type your password ...'
-          name='password'
-          type='password'
-          margin='normal'
+          label="Password"
+          placeholder="Type your password ..."
+          name="password"
+          type="password"
+          margin="normal"
           username={password.value}
           onChange={this.handleInputChange}
           error={!password.isValid}
         />
         <Button
-          variant='raised'
-          color='primary'
+          variant="raised"
+          color="primary"
           className={classes.button}
-          type='submit'
+          type="submit"
         >
           Login
         </Button>

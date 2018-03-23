@@ -1,5 +1,5 @@
-import * as types from '../constants';
 import { combineReducers } from 'redux';
+import * as types from '../constants';
 
 const intialState = {
   isFetching: {
@@ -15,13 +15,13 @@ const intialState = {
     leaveChat: false,
     deleteChat: false,
     sockets: false,
-    editUser: false
+    editUser: false,
   },
   errors: {
     auth: null,
-    chat: null
+    chat: null,
   },
-  isConnected: false
+  isConnected: false,
 };
 
 export const isFetching = (state = intialState.isFetching, action) => {
@@ -149,5 +149,5 @@ export const isConnected = (state = intialState.isConnected, action) => {
 export default combineReducers({
   isFetching,
   errors,
-  isConnected
+  isConnected,
 });

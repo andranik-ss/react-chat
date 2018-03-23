@@ -11,8 +11,8 @@ const styles = theme => ({
     display: 'flex',
     width: '100%',
     height: '100%',
-    backgroundColor: theme.palette.background.default
-  }
+    backgroundColor: theme.palette.background.default,
+  },
 });
 
 class ChatPage extends React.Component {
@@ -23,9 +23,9 @@ class ChatPage extends React.Component {
         fetchAllChats,
         setActiveChat,
         socketsConnect,
-        mountChat
+        mountChat,
       },
-      match: { params: { chatId: activeChatId } }
+      match: { params: { chatId: activeChatId } },
     } = this.props;
 
     Promise.all([fetchAllChats(), fetchMyChats()])
@@ -41,7 +41,7 @@ class ChatPage extends React.Component {
   componentWillReceiveProps(nextProps) {
     const {
       match: { params },
-      actions: { setActiveChat, unmountChat, mountChat }
+      actions: { setActiveChat, unmountChat, mountChat },
     } = this.props;
     const { params: nextParams } = nextProps.match;
 
@@ -60,7 +60,7 @@ class ChatPage extends React.Component {
       user,
       actions,
       error,
-      isConnected
+      isConnected,
     } = this.props;
 
     return (
