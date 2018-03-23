@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { Redirect } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
@@ -26,6 +27,19 @@ const styles = theme => ({
 });
 
 class WelcomePage extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    login: PropTypes.func.isRequired,
+    signup: PropTypes.func.isRequired,
+    receiveAuth: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    error: PropTypes.instanceOf(Error),
+  };
+
+  static defaultProps = {
+    error: null,
+  };
+
   state = {
     activeTab: 0,
   };

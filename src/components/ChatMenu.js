@@ -1,9 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
 
-class LongMenu extends React.Component {
+class ChatMenu extends React.Component {
+  static propTypes = {
+    user: PropTypes.shape({
+      isCreator: PropTypes.bool.isRequired,
+    }).isRequired,
+    isConnected: PropTypes.bool.isRequired,
+    actions: PropTypes.shape({
+      deleteChat: PropTypes.func.isRequired,
+      leaveChat: PropTypes.func.isRequired,
+    }).isRequired,
+  };
+
   state = {
     anchorEl: null,
   };
@@ -65,4 +77,4 @@ class LongMenu extends React.Component {
   }
 }
 
-export default LongMenu;
+export default ChatMenu;

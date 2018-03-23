@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
@@ -29,7 +30,7 @@ const styles = theme => ({
   },
 });
 
-const ChatContent = ({
+const Chat = ({
   classes, messages, user, actions, activeChat, isConnected,
 }) => (
   <main className={classes.chatLayout}>
@@ -60,4 +61,34 @@ const ChatContent = ({
   </main>
 );
 
-export default withStyles(styles)(ChatContent);
+Chat.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  activeChat: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+  user: PropTypes.shape({
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    username: PropTypes.string.isRequired,
+    isMember: PropTypes.bool.isRequired,
+    isCreator: PropTypes.bool.isRequired,
+  }).isRequired,
+  messages: PropTypes.arrayOf(PropTypes.shape({
+    chatId: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    sender: PropTypes.object.isRequired,
+    createdAt: PropTypes.string.isRequired,
+  })).isRequired,
+  isConnected: PropTypes.bool.isRequired,
+  actions: PropTypes.shape({
+    joinChat: PropTypes.func.isRequired,
+    sendMessage: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+Chat.defaultProps = {
+  activeChat: null,
+};
+
+export default withStyles(styles)(Chat);

@@ -1,10 +1,21 @@
 import React from 'react';
-// import { withStyles } from 'material-ui/styles';
+import PropTypes from 'prop-types';
 import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
 class UserProfile extends React.Component {
+  static propTypes = {
+    user: PropTypes.shape({
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      username: PropTypes.string,
+    }).isRequired,
+    open: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
+    editUser: PropTypes.func.isRequired,
+  };
+
   state = {
     username: '',
     firstName: '',

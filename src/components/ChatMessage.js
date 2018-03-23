@@ -1,5 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import moment from 'moment';
 import { withStyles } from 'material-ui/styles';
@@ -56,7 +57,7 @@ const ChatMessage = ({
           >
             {getSenderName(sender)}
           </Typography>
-          <Typography>{content}</Typography>
+          {content}
           <Typography variant="caption" component="span">
             {moment(createdAt).fromNow()}
           </Typography>
@@ -77,13 +78,34 @@ const ChatMessage = ({
         <Typography variant="caption" style={{ color: getColor(sender._id) }}>
           {getSenderName(sender)}
         </Typography>
-        <Typography>{content}</Typography>
+        {content}
         <Typography variant="caption" component="span">
           {moment(createdAt).fromNow()}
         </Typography>
       </Paper>
     </div>
   );
+};
+
+ChatMessage.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  sender: PropTypes.shape({
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    username: PropTypes.string,
+  }).isRequired,
+  user: PropTypes.shape({
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    username: PropTypes.string,
+  }).isRequired,
+  content: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  statusMessage: PropTypes.bool,
+};
+
+ChatMessage.defaultProps = {
+  statusMessage: false,
 };
 
 export default withStyles(styles)(ChatMessage);

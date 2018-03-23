@@ -1,10 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import UserProfile from './UserProfile';
 
 class UserMenu extends React.Component {
+  static propTypes = {
+    user: PropTypes.shape({
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      username: PropTypes.string.isRequired,
+    }).isRequired,
+    isConnected: PropTypes.bool.isRequired,
+    actions: PropTypes.shape({
+      logout: PropTypes.func.isRequired,
+      editUser: PropTypes.func.isRequired,
+    }).isRequired,
+  };
+
   state = {
     anchorEl: null,
     editProfile: false,
