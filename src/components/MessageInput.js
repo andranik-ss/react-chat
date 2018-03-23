@@ -1,31 +1,38 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
-
-import Paper from 'material-ui/Paper';
 import Input from 'material-ui/Input';
 
-const styles = theme => ({
-  messageInputWrapper: {
-    position: 'fixed',
-    left: 'auto',
-    right: 0,
-    bottom: 0,
-    width: `calc(100% - 320px)`,
-    padding: theme.spacing.unit * 3
-  },
-  messageInput: {
-    padding: theme.spacing.unit * 2
+class MessageInput extends React.Component {
+  state = {
+    value: ''
+  };
+
+  handleValueChange = event => {
+    this.setState({
+      value: event.target.value
+    });
+  };
+
+  handleKeyPress = event => {
+    const { value } = this.state;
+
+    if (event.key === 'Enter' && value) {
+      this.props.sendMessage(value);
+      this.setState({ value: '' });
+    }
+  };
+
+  render() {
+    return (
+      <Input
+        fullWidth
+        placeholder='Type your message…'
+        value={this.state.value}
+        onChange={this.handleValueChange}
+        onKeyPress={this.handleKeyPress}
+        disabled={this.props.disabled}
+      />
+    );
   }
-});
+}
 
-const ChatInputField = ({classes}) => {
-  return (
-    <div className={classes.messageInputWrapper}>
-      <Paper className={classes.messageInput} elevation={6}>
-        <Input fullWidth placeholder='Type your message…' />
-      </Paper>
-    </div>
-  );
-};
-
-export default withStyles(styles)(ChatInputField);
+export default MessageInput;

@@ -1,25 +1,37 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-
-import List, { ListItem, ListItemText } from 'material-ui/List';
-import Avatar from './Avatar';
+import List from 'material-ui/List';
+import Typography from 'material-ui/Typography';
+import ChatListItem from './ChatListItem';
 
 const styles = theme => ({
   chatsList: {
     height: 'calc(100% - 56px)',
     overflowY: 'scroll'
+  },
+  noChats: {
+    textAlign: 'center'
   }
 });
 
-const ChatList = ({ classes, chats }) => {
+const ChatList = ({ classes, chats, setActiveChat, activeChat, disabled }) => {
   return (
     <List className={classes.chatsList}>
-      {chats.map((chat, index) => (
-        <ListItem key={index} button>
-          <Avatar colorFrom={chat.title}>{chat.title}</Avatar>
-          <ListItemText primary={chat.title} />
-        </ListItem>
-      ))}
+      {chats && chats.length ? (
+        chats.map(chat => (
+          <ChatListItem
+            key={chat._id}
+            active={activeChat && activeChat._id === chat._id}
+            disabled={disabled}
+            chatId={chat._id}
+            {...chat}
+          />
+        ))
+      ) : (
+        <Typography variant='subheading' className={classes.noChats}>
+          There is no chats yet...
+        </Typography>
+      )}
     </List>
   );
 };

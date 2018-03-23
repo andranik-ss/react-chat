@@ -6,7 +6,7 @@ const initialState = {
   isAuthenticated: !!token,
   user: null,
   token,
-  sendingAuthCheckRequest: false
+  isChecked: false
 };
 
 export default function auth(state = initialState, action) {
@@ -14,13 +14,14 @@ export default function auth(state = initialState, action) {
     case types.RECEIVE_AUTH_REQUEST:
       return {
         ...state,
-        sendingAuthCheckRequest: true
+        isChecked: false
       };
     case types.SIGNUP_SUCCESS:
     case types.LOGIN_SUCCESS:
       return {
         ...state,
         isAuthenticated: true,
+        isChecked: true,
         user: action.payload.user,
         token: action.payload.token
       };
@@ -28,7 +29,7 @@ export default function auth(state = initialState, action) {
       return {
         ...state,
         isAuthenticated: true,
-        sendingAuthCheckRequest: false,
+        isChecked: true,
         user: action.payload.user
       };
     case types.SIGNUP_FAILURE:
@@ -38,7 +39,12 @@ export default function auth(state = initialState, action) {
       return {
         ...state,
         isAuthenticated: false,
-        sendingAuthCheckRequest: false
+        token: undefined
+      };
+    case types.EDIT_USER_SUCCESS:
+      return {
+        ...state,
+        user: action.payload.user
       };
     default:
       return state;

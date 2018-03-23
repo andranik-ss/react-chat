@@ -14,7 +14,7 @@ class PrivateRoute extends React.Component {
     const {
       component: Component,
       isAuthenticated,
-      sendingAuthCheckRequest,
+      isChecked,
       ...rest
     } = this.props;
 
@@ -22,9 +22,8 @@ class PrivateRoute extends React.Component {
       <Route
         {...rest}
         render={props =>
-          (isAuthenticated && sendingAuthCheckRequest && <ProgressBar />) ||
-          (isAuthenticated &&
-            !sendingAuthCheckRequest && <Component {...props} />) ||
+          (isAuthenticated && isChecked && <Component {...props} />) ||
+          (isAuthenticated && !isChecked && <ProgressBar />) ||
           (!isAuthenticated && (
             <Redirect
               to={{
@@ -41,7 +40,7 @@ class PrivateRoute extends React.Component {
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
-  sendingAuthCheckRequest: state.auth.sendingAuthCheckRequest
+  isChecked: state.auth.isChecked
 });
 
 const mapDispatchToProps = dispatch =>

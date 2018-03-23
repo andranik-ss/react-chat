@@ -27,7 +27,7 @@ class ChatMessages extends Component {
   };
 
   render() {
-    const { classes, messages } = this.props;
+    const { classes, messages, user } = this.props;
 
     return (
       <div
@@ -38,7 +38,7 @@ class ChatMessages extends Component {
       >
         {messages &&
           messages.map((message, index) => (
-            <ChatMessage {...message} key={index} />
+            <ChatMessage {...message} key={index} user={user} />
           ))}
       </div>
     );

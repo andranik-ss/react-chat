@@ -1,6 +1,8 @@
 import React from 'react';
 import { LinearProgress } from 'material-ui/Progress';
 
-const ProgressBar = () => <LinearProgress mode='query' color='secondary' />;
+const ProgressBar = props => (
+  <LinearProgress color='secondary' variant='query' {...props} />
+);
 
 export default ProgressBar;

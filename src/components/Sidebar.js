@@ -4,10 +4,14 @@ import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
+import BottomNavigation, {
+  BottomNavigationAction
+} from 'material-ui/BottomNavigation';
+import RestoreIcon from 'material-ui-icons/Restore';
+import ExploreIcon from 'material-ui-icons/Explore';
 
 import ChatList from './ChatList';
 import NewChatButton from './NewChatButton';
-import ChatNavigation from './ChatNavigation';
 
 const styles = theme => ({
   drawerPaper: {
@@ -22,23 +26,72 @@ const styles = theme => ({
   }
 });
 
-const Sidebar = ({ classes, chats }) => {
-  return (
-    <Drawer
-      variant='permanent'
-      classes={{
-        paper: classes.drawerPaper
-      }}
-    >
-      <div className={classes.drawerHeader}>
-        <TextField fullWidth margin='normal' placeholder='Search chats...' />
-      </div>
-      <Divider />
-      <ChatList chats={chats} />
-      <NewChatButton />
-      <ChatNavigation />
-    </Drawer>
-  );
-};
+class Sidebar extends React.Component {
+  state = {
+    activeAction: 0,
+    searchValue: ''
+  };
+
+  handleChangeActiveAction = (e, value) =>
+    this.setState({ activeAction: value });
+
+  handleSearchValueChange = event =>
+    this.setState({
+      searchValue: event.target.value
+    });
+
+  filterChats = chats =>
+    chats
+      .filter(chat =>
+        chat.title.toLowerCase().includes(this.state.searchValue.toLowerCase())
+      )
+      .sort(
+        (one, two) =>
+          one.title.toLowerCase() <= two.title.toLowerCase() ? -1 : 1
+      );
+
+  render() {
+    const { classes, chats, actions, isConnected } = this.props;
+    const { activeAction, searchValue } = this.state;
+
+    return (
+      <Drawer
+        variant='permanent'
+        classes={{
+          paper: classes.drawerPaper
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <TextField
+            fullWidth
+            margin='normal'
+            placeholder='Search chats...'
+            onChange={this.handleSearchValueChange}
+            value={searchValue}
+          />
+        </div>
+        <Divider />
+        <ChatList
+          chats={this.filterChats(activeAction === 0 ? chats.my : chats.all)}
+          activeChat={chats.active}
+          setActiveChat={actions.setActiveChat}
+          disabled={!isConnected}
+        />
+        <NewChatButton
+          createChat={actions.createChat}
+          disabled={!isConnected}
+        />
+        <BottomNavigation
+          showLabels
+          value={this.state.activeAction}
+          onChange={this.handleChangeActiveAction}
+        >
+          <BottomNavigationAction label='My Chats' icon={<RestoreIcon />} />
+          <BottomNavigationAction label='Explore' icon={<ExploreIcon />} />
+        </BottomNavigation>
+      </Drawer>
+    );
+  }
+}
 
 export default withStyles(styles)(Sidebar);
