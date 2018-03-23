@@ -12,12 +12,7 @@ const styles = theme => ({
 });
 
 const ChatListItem = ({
-  classes,
-  disabled,
-  title,
-  chatId,
-  active,
-  createdAt,
+  classes, disabled, title, chatId, active, createdAt,
 }) => (
   <ListItem
     button

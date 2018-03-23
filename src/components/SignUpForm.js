@@ -42,10 +42,7 @@ class SignUpForm extends React.Component {
   };
 
   validate = () => {
-    const {
-      password: { value: pwd },
-      repeatedPassword: { value: repeatPwd },
-    } = this.state;
+    const { password: { value: pwd }, repeatedPassword: { value: repeatPwd } } = this.state;
 
     const isValid = pwd === repeatPwd;
 
@@ -116,12 +113,7 @@ class SignUpForm extends React.Component {
           onChange={this.handleInputChange}
           error={!repeatedPassword.isValid}
         />
-        <Button
-          variant="raised"
-          color="primary"
-          className={classes.button}
-          type="submit"
-        >
+        <Button variant="raised" color="primary" className={classes.button} type="submit">
           SignUp
         </Button>
       </form>

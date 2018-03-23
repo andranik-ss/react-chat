@@ -31,7 +31,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      ...chatActions, logout, editUser, ...socketActions,
+      ...chatActions,
+      logout,
+      editUser,
+      ...socketActions,
     },
     dispatch,
   );

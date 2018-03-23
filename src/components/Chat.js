@@ -30,12 +30,7 @@ const styles = theme => ({
 });
 
 const ChatContent = ({
-  classes,
-  messages,
-  user,
-  actions,
-  activeChat,
-  isConnected,
+  classes, messages, user, actions, activeChat, isConnected,
 }) => (
   <main className={classes.chatLayout}>
     {activeChat ? (
@@ -44,27 +39,24 @@ const ChatContent = ({
         <div className={classes.messageInputWrapper}>
           <Paper className={classes.messageInput} elevation={6}>
             {user.isCreator || user.isMember ? (
-              <MessageInput
-                sendMessage={actions.sendMessage}
+              <MessageInput sendMessage={actions.sendMessage} disabled={!isConnected} />
+            ) : (
+              <Button
+                variant="raised"
+                color="primary"
+                fullWidth
+                onClick={actions.joinChat}
                 disabled={!isConnected}
-              />
-              ) : (
-                <Button
-                  variant="raised"
-                  color="primary"
-                  fullWidth
-                  onClick={actions.joinChat}
-                  disabled={!isConnected}
-                >
-                  Join
-                </Button>
-              )}
+              >
+                Join
+              </Button>
+            )}
           </Paper>
         </div>
       </React.Fragment>
-      ) : (
-        <InfoPaper />
-      )}
+    ) : (
+      <InfoPaper />
+    )}
   </main>
 );
 

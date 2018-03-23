@@ -19,11 +19,7 @@ class ChatPage extends React.Component {
   componentDidMount() {
     const {
       actions: {
-        fetchMyChats,
-        fetchAllChats,
-        setActiveChat,
-        socketsConnect,
-        mountChat,
+        fetchMyChats, fetchAllChats, setActiveChat, socketsConnect, mountChat,
       },
       match: { params: { chatId: activeChatId } },
     } = this.props;
@@ -39,10 +35,7 @@ class ChatPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const {
-      match: { params },
-      actions: { setActiveChat, unmountChat, mountChat },
-    } = this.props;
+    const { match: { params }, actions: { setActiveChat, unmountChat, mountChat } } = this.props;
     const { params: nextParams } = nextProps.match;
 
     if (nextParams.chatId && params.chatId !== nextParams.chatId) {
@@ -54,13 +47,7 @@ class ChatPage extends React.Component {
 
   render() {
     const {
-      classes,
-      chats,
-      messages,
-      user,
-      actions,
-      error,
-      isConnected,
+      classes, chats, messages, user, actions, error, isConnected,
     } = this.props;
 
     return (

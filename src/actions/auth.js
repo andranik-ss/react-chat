@@ -14,12 +14,7 @@ export function signup(username, password) {
       type: types.SIGNUP_REQUEST,
     });
 
-    return callApi(
-      'signup',
-      undefined,
-      { method: 'POST' },
-      { username, password },
-    )
+    return callApi('signup', undefined, { method: 'POST' }, { username, password })
       .then((json) => {
         if (!json.token) {
           throw new Error('Token has not been provided!');
@@ -54,12 +49,7 @@ export function login(username, password) {
       type: types.LOGIN_REQUEST,
     });
 
-    return callApi(
-      '/login',
-      undefined,
-      { method: 'POST' },
-      { username, password },
-    )
+    return callApi('/login', undefined, { method: 'POST' }, { username, password })
       .then((json) => {
         if (!json.token) {
           throw new Error('Token has not been provided!');

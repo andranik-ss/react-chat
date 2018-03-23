@@ -12,10 +12,7 @@ class PrivateRoute extends React.Component {
 
   render() {
     const {
-      component: Component,
-      isAuthenticated,
-      isChecked,
-      ...rest
+      component: Component, isAuthenticated, isChecked, ...rest
     } = this.props;
 
     return (

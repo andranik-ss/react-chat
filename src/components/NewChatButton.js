@@ -1,10 +1,6 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-import Dialog, {
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-} from 'material-ui/Dialog';
+import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import AddIcon from 'material-ui-icons/Add';
@@ -14,7 +10,7 @@ const styles = theme => ({
     position: 'absolute',
     left: 'auto',
     right: theme.spacing.unit * 3,
-    bottom: (theme.spacing.unit * 3) + 48, // + bottom navigation
+    bottom: theme.spacing.unit * 3 + 48, // + bottom navigation
   },
   dialog: {
     minWidth: '200px',
@@ -83,12 +79,7 @@ class NewChatButton extends React.Component {
         >
           <AddIcon />
         </Button>
-        <Dialog
-          maxWidth="xs"
-          fullWidth
-          open={open}
-          onClose={this.handleNewChat}
-        >
+        <Dialog maxWidth="xs" fullWidth open={open} onClose={this.handleNewChat}>
           <DialogTitle>Create new chat</DialogTitle>
           <DialogContent>
             <TextField

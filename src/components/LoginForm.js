@@ -74,12 +74,7 @@ class LoginForm extends React.Component {
           onChange={this.handleInputChange}
           error={!password.isValid}
         />
-        <Button
-          variant="raised"
-          color="primary"
-          className={classes.button}
-          type="submit"
-        >
+        <Button variant="raised" color="primary" className={classes.button} type="submit">
           Login
         </Button>
       </form>

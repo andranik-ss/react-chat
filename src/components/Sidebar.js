@@ -30,8 +30,7 @@ class Sidebar extends React.Component {
     searchValue: '',
   };
 
-  handleChangeActiveAction = (e, value) =>
-    this.setState({ activeAction: value });
+  handleChangeActiveAction = (e, value) => this.setState({ activeAction: value });
 
   handleSearchValueChange = event =>
     this.setState({
@@ -40,10 +39,8 @@ class Sidebar extends React.Component {
 
   filterChats = chats =>
     chats
-      .filter(chat =>
-        chat.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
-      .sort((one, two) =>
-        (one.title.toLowerCase() <= two.title.toLowerCase() ? -1 : 1));
+      .filter(chat => chat.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
+      .sort((one, two) => (one.title.toLowerCase() <= two.title.toLowerCase() ? -1 : 1));
 
   render() {
     const {
@@ -74,10 +71,7 @@ class Sidebar extends React.Component {
           setActiveChat={actions.setActiveChat}
           disabled={!isConnected}
         />
-        <NewChatButton
-          createChat={actions.createChat}
-          disabled={!isConnected}
-        />
+        <NewChatButton createChat={actions.createChat} disabled={!isConnected} />
         <BottomNavigation
           showLabels
           value={this.state.activeAction}

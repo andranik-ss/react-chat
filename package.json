@@ -10,6 +10,9 @@
     "material-ui-icons": "^1.0.0-beta.17",
     "moment": "^2.21.0",
     "react": "^16.2.0",
+    "react-app-rewire-eslint": "^0.2.3",
+    "react-app-rewire-polyfills": "^0.2.0",
+    "react-app-rewired": "^1.5.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
@@ -20,14 +23,6 @@
     "socket.io-client": "^2.0.4",
     "typeface-roboto": "^0.0.54"
   },
-  "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject",
-    "lint": "eslint ./src/**/*.js",
-    "lint:fix": "npm run lint -- --fix"
-  },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "eslint": "^4.19.1",
@@ -35,8 +30,22 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "react-app-rewire-eslint": "^0.2.3",
-    "react-app-rewire-polyfills": "^0.2.0",
-    "react-app-rewired": "^1.5.0"
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier-eslint-cli": "^4.7.1"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "lint": "eslint 'src/**/*.js'",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier-eslint --write '**/*{.js,.json}'",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.js": ["yarn lint:fix", "yarn format", "git add"],
+    "**/*.json": ["yarn format", "git add"]
   }
 }
