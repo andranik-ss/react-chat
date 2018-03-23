@@ -49,7 +49,7 @@ export function login(username, password) {
       type: types.LOGIN_REQUEST,
     });
 
-    return callApi('/login', undefined, { method: 'POST' }, { username, password })
+    return callApi('login', undefined, { method: 'POST' }, { username, password })
       .then((json) => {
         if (!json.token) {
           throw new Error('Token has not been provided!');
@@ -83,7 +83,7 @@ export function logout() {
       type: types.LOGOUT_REQUEST,
     });
 
-    return callApi('/logout')
+    return callApi('logout')
       .then((json) => {
         localStorage.removeItem('token');
         dispatch({

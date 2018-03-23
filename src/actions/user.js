@@ -15,7 +15,7 @@ export function editUser(data) {
       payload: data,
     });
 
-    return callApi('/users/me', token, { method: 'POST' }, { data: { ...data } })
+    return callApi('users/me', token, { method: 'POST' }, { data })
       .then((json) => {
         dispatch({
           type: types.EDIT_USER_SUCCESS,
