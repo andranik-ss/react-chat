@@ -18,7 +18,7 @@ export function editUser(data) {
       '/users/me',
       token,
       { method: 'POST' },
-      { data: { ...data } }
+      { data }
     )
       .then(json => {
         dispatch({

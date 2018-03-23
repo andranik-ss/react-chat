@@ -20,33 +20,25 @@ class LongMenu extends React.Component {
     const { anchorEl } = this.state;
     const { actions, user, isConnected } = this.props;
 
-    let action = {};
-    if (user.isCreator) {
-      action = {
-        name: 'Delete',
-        onClick: actions.deleteChat
-      };
-    } else {
-      action = {
-        name: 'Leave',
-        onClick: actions.leaveChat
-      };
-    }
+    const action = {
+      name: user.isCreator ? 'Delete' : 'Leave',
+      onClick: user.isCreator ? actions.deleteChat : actions.leaveChat
+    };
 
     return (
       <React.Fragment>
         <IconButton
-          aria-label='More'
+          aria-label="More"
           aria-owns={anchorEl ? 'chat-menu' : null}
-          aria-haspopup='true'
+          aria-haspopup="true"
           onClick={this.handleClick}
-          color='inherit'
+          color="inherit"
           disabled={!isConnected}
         >
           <MoreVertIcon />
         </IconButton>
         <Menu
-          id='long-menu'
+          id="long-menu"
           anchorEl={this.state.anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}

@@ -55,7 +55,7 @@ export function login(username, password) {
     });
 
     return callApi(
-      '/login',
+      'login',
       undefined,
       { method: 'POST' },
       { username, password }
@@ -94,7 +94,7 @@ export function logout() {
       type: types.LOGOUT_REQUEST
     });
 
-    return callApi('/logout')
+    return callApi('logout')
       .then(json => {
         localStorage.removeItem('token');
         dispatch({
