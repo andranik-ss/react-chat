@@ -30,7 +30,7 @@ class MessageInput extends React.Component {
     return (
       <Input
         fullWidth
-        placeholder="Type your message…"
+        placeholder='Type your message…'
         value={this.state.value}
         onChange={this.handleValueChange}
         onKeyPress={this.handleKeyPress}

@@ -64,43 +64,43 @@ class UserProfile extends React.Component {
     const { open, onClose } = this.props;
 
     return (
-      <Dialog maxWidth="xs" open={open} onClose={onClose}>
+      <Dialog maxWidth='xs' open={open} onClose={onClose}>
         <DialogTitle>Edit profile</DialogTitle>
         <DialogContent>
           <TextField
             fullWidth
             required
-            label="Username"
-            placeholder="Type your username ..."
-            name="username"
-            margin="normal"
+            label='Username'
+            placeholder='Type your username ...'
+            name='username'
+            margin='normal'
             value={username}
             onChange={this.handleInputChange}
           />
           <TextField
             fullWidth
-            label="First name"
-            placeholder="Type your first name ..."
-            name="firstName"
-            margin="normal"
+            label='First name'
+            placeholder='Type your first name ...'
+            name='firstName'
+            margin='normal'
             value={firstName}
             onChange={this.handleInputChange}
           />
           <TextField
             fullWidth
-            label="Last name"
-            placeholder="Type your last name ..."
-            name="lastName"
-            margin="normal"
+            label='Last name'
+            placeholder='Type your last name ...'
+            name='lastName'
+            margin='normal'
             value={lastName}
             onChange={this.handleInputChange}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.handleCancel} color="primary">
+          <Button onClick={this.handleCancel} color='primary'>
             Cancel
           </Button>
-          <Button onClick={this.handleSave} color="primary">
+          <Button onClick={this.handleSave} color='primary'>
             Save
           </Button>
         </DialogActions>

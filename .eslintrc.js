@@ -8,5 +8,6 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'warn',
     quotes: ['error', 'single'],
+    'jsx-quotes': ['error', 'prefer-single'],
   },
 };

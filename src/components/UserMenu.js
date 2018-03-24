@@ -47,15 +47,15 @@ class UserMenu extends React.Component {
       <React.Fragment>
         <IconButton
           aria-owns={anchorEl ? 'simple-menu' : null}
-          aria-haspopup="true"
+          aria-haspopup='true'
           onClick={this.handleClick}
-          color="inherit"
+          color='inherit'
           disabled={!isConnected}
         >
           <AccountCircle />
         </IconButton>
         <Menu
-          id="simple-menu"
+          id='simple-menu'
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}

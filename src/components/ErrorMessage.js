@@ -46,9 +46,9 @@ class ErrorMessage extends React.Component {
         message={<span>{error.message}</span>}
         action={[
           <IconButton
-            key="close"
-            aria-label="Close"
-            color="inherit"
+            key='close'
+            aria-label='Close'
+            color='inherit'
             onClick={this.handleCloseSnackbar}
           >
             <CloseIcon />

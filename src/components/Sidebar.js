@@ -63,7 +63,7 @@ class Sidebar extends React.Component {
 
     return (
       <Drawer
-        variant="permanent"
+        variant='permanent'
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -71,8 +71,8 @@ class Sidebar extends React.Component {
         <div className={classes.drawerHeader}>
           <TextField
             fullWidth
-            margin="normal"
-            placeholder="Search chats..."
+            margin='normal'
+            placeholder='Search chats...'
             onChange={this.handleSearchValueChange}
             value={searchValue}
           />
@@ -90,8 +90,8 @@ class Sidebar extends React.Component {
           value={this.state.activeAction}
           onChange={this.handleChangeActiveAction}
         >
-          <BottomNavigationAction label="My Chats" icon={<RestoreIcon />} />
-          <BottomNavigationAction label="Explore" icon={<ExploreIcon />} />
+          <BottomNavigationAction label='My Chats' icon={<RestoreIcon />} />
+          <BottomNavigationAction label='Explore' icon={<ExploreIcon />} />
         </BottomNavigation>
       </Drawer>
     );

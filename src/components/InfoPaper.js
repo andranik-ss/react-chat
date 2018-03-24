@@ -12,13 +12,13 @@ const styles = theme => ({
 
 const InfoPaper = ({ classes }) => (
   <Paper className={classes.paper}>
-    <Typography variant="display1" gutterBottom>
+    <Typography variant='display1' gutterBottom>
       Start messaging…
     </Typography>
-    <Typography variant="body1" gutterBottom>
+    <Typography variant='body1' gutterBottom>
       Use <strong>Global</strong> to explore communities around here.
     </Typography>
-    <Typography variant="body1" gutterBottom>
+    <Typography variant='body1' gutterBottom>
       Use <strong>Recents</strong> to see your recent conversations.
     </Typography>
   </Paper>

@@ -79,30 +79,30 @@ class NewChatButton extends React.Component {
     return (
       <React.Fragment>
         <Button
-          variant="fab"
-          color="primary"
+          variant='fab'
+          color='primary'
           className={classes.newChatButton}
           onClick={this.handleNewChat}
           disabled={disabled}
         >
           <AddIcon />
         </Button>
-        <Dialog maxWidth="xs" fullWidth open={open} onClose={this.handleNewChat}>
+        <Dialog maxWidth='xs' fullWidth open={open} onClose={this.handleNewChat}>
           <DialogTitle>Create new chat</DialogTitle>
           <DialogContent>
             <TextField
               fullWidth
               required
-              label="New chat"
-              placeholder="Type chat name ..."
-              name="newChat"
+              label='New chat'
+              placeholder='Type chat name ...'
+              name='newChat'
               value={newChat.value}
               error={!newChat.isValid}
               onChange={this.handleInputChange}
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleCreate} color="primary">
+            <Button onClick={this.handleCreate} color='primary'>
               Create
             </Button>
           </DialogActions>

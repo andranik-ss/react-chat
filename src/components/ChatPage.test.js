@@ -81,7 +81,7 @@ describe('<ChatPage />', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <MemoryRouter initialEntries={['/chat/1']}>
-        <Route path="/chat/:chatId?" render={props => <ChatPage {...mockProps} {...props} />} />
+        <Route path='/chat/:chatId?' render={props => <ChatPage {...mockProps} {...props} />} />
       </MemoryRouter>,
       div,
     );

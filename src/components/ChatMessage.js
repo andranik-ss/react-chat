@@ -51,14 +51,14 @@ const ChatMessage = ({
       <div className={classes.messageWrapper}>
         <Typography className={classes.statusMessage}>
           <Typography
-            variant="caption"
+            variant='caption'
             style={{ color: getColor(sender._id) }}
             className={classes.statusMessageUser}
           >
             {getSenderName(sender)}
           </Typography>
           {content}
-          <Typography variant="caption" component="span">
+          <Typography variant='caption' component='span'>
             {moment(createdAt).fromNow()}
           </Typography>
         </Typography>
@@ -75,11 +75,11 @@ const ChatMessage = ({
     >
       <Avatar colorFrom={sender._id}>{getSenderName(sender)}</Avatar>
       <Paper className={classnames(classes.message, isMessageFromMe && classes.messageFromMe)}>
-        <Typography variant="caption" style={{ color: getColor(sender._id) }}>
+        <Typography variant='caption' style={{ color: getColor(sender._id) }}>
           {getSenderName(sender)}
         </Typography>
         {content}
-        <Typography variant="caption" component="span">
+        <Typography variant='caption' component='span'>
           {moment(createdAt).fromNow()}
         </Typography>
       </Paper>

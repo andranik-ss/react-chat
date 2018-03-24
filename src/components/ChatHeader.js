@@ -22,12 +22,12 @@ const styles = theme => ({
 const ChatHeader = ({
   classes, actions, user, activeChat, isConnected,
 }) => (
-  <AppBar color="primary" className={classes.appBar}>
+  <AppBar color='primary' className={classes.appBar}>
     <Toolbar>
       {activeChat ? (
         <React.Fragment>
           <Avatar colorFrom={activeChat.title}>{activeChat.title}</Avatar>
-          <Typography variant="title" color="inherit" className={classes.title}>
+          <Typography variant='title' color='inherit' className={classes.title}>
             {activeChat.title}
             {(user.isCreator || user.isMember) && (
               <ChatMenu user={user} actions={actions} isConnected={isConnected} />
@@ -35,7 +35,7 @@ const ChatHeader = ({
           </Typography>
         </React.Fragment>
       ) : (
-        <Typography variant="title" color="inherit" className={classes.title}>
+        <Typography variant='title' color='inherit' className={classes.title}>
           DogeCodes React Chat
         </Typography>
       )}

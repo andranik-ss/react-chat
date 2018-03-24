@@ -22,7 +22,7 @@ describe('<WelcomePage />', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <MemoryRouter initialEntries={['/']}>
-        <Route path="/(welcome)?" render={props => <WelcomePage {...mockProps} {...props} />} />
+        <Route path='/(welcome)?' render={props => <WelcomePage {...mockProps} {...props} />} />
       </MemoryRouter>,
       div,
     );
@@ -33,7 +33,7 @@ describe('<WelcomePage />', () => {
   it('renders correctly', () => {
     const tree = renderer
       .create(<MemoryRouter initialEntries={['/']}>
-          <Route path="/(welcome)?" render={props => <WelcomePage {...mockProps} {...props} />} />
+          <Route path='/(welcome)?' render={props => <WelcomePage {...mockProps} {...props} />} />
               </MemoryRouter>)
       .toJSON();
 

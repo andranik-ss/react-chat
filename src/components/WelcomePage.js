@@ -59,29 +59,29 @@ class WelcomePage extends React.Component {
     const { activeTab } = this.state;
 
     if (isAuthenticated) {
-      return <Redirect to="/chat" />;
+      return <Redirect to='/chat' />;
     }
 
     return (
       <div>
-        <AppBar color="primary">
+        <AppBar color='primary'>
           <Toolbar>
-            <Typography variant="title" color="inherit" noWrap>
+            <Typography variant='title' color='inherit' noWrap>
               DogeCodes React Chat
             </Typography>
           </Toolbar>
         </AppBar>
         <div className={classes.content}>
           <Paper className={classes.authForm}>
-            <AppBar position="static" color="default">
+            <AppBar position='static' color='default'>
               <Tabs
                 value={activeTab}
                 onChange={this.handleTabChange}
-                indicatorColor="red"
+                indicatorColor='red'
                 fullWidth
               >
-                <Tab label="LOGIN" />
-                <Tab label="SIGN UP" />
+                <Tab label='LOGIN' />
+                <Tab label='SIGN UP' />
               </Tabs>
             </AppBar>
             <div className={classes.tabWrapper}>

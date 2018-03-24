@@ -8,9 +8,9 @@ import history from '../utils/history';
 const App = () => (
   <Router history={history}>
     <Switch>
-      <Route exact path="/(welcome)?" component={WelcomePage} />
-      <PrivateRoute path="/chat/:chatId?" component={ChatPage} />
-      <Redirect to="/" />
+      <Route exact path='/(welcome)?' component={WelcomePage} />
+      <PrivateRoute path='/chat/:chatId?' component={ChatPage} />
+      <Redirect to='/' />
     </Switch>
   </Router>
 );

@@ -87,10 +87,10 @@ class SignUpForm extends React.Component {
         <TextField
           fullWidth
           required
-          label="Username"
-          placeholder="Type your username ..."
-          name="username"
-          margin="normal"
+          label='Username'
+          placeholder='Type your username ...'
+          name='username'
+          margin='normal'
           username={username.value}
           onChange={this.handleInputChange}
           error={!username.isValid}
@@ -98,11 +98,11 @@ class SignUpForm extends React.Component {
         <TextField
           fullWidth
           required
-          label="Password"
-          placeholder="Type your password ..."
-          name="password"
-          type="password"
-          margin="normal"
+          label='Password'
+          placeholder='Type your password ...'
+          name='password'
+          type='password'
+          margin='normal'
           username={password.value}
           onChange={this.handleInputChange}
           error={!password.isValid}
@@ -110,16 +110,16 @@ class SignUpForm extends React.Component {
         <TextField
           fullWidth
           required
-          label="Repeat password"
-          placeholder="Repeat your password ..."
-          name="repeatedPassword"
-          type="password"
-          margin="normal"
+          label='Repeat password'
+          placeholder='Repeat your password ...'
+          name='repeatedPassword'
+          type='password'
+          margin='normal'
           username={repeatedPassword.value}
           onChange={this.handleInputChange}
           error={!repeatedPassword.isValid}
         />
-        <Button variant="raised" color="primary" className={classes.button} type="submit">
+        <Button variant='raised' color='primary' className={classes.button} type='submit'>
           SignUp
         </Button>
       </form>

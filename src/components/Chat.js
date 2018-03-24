@@ -43,8 +43,8 @@ const Chat = ({
               <MessageInput sendMessage={actions.sendMessage} disabled={!isConnected} />
             ) : (
               <Button
-                variant="raised"
-                color="primary"
+                variant='raised'
+                color='primary'
                 fullWidth
                 onClick={actions.joinChat}
                 disabled={!isConnected}
