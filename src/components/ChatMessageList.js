@@ -27,7 +27,11 @@ class ChatMessageList extends React.Component {
       content: PropTypes.string.isRequired,
       sender: PropTypes.object.isRequired,
       createdAt: PropTypes.string.isRequired,
-    })).isRequired,
+    })),
+  };
+
+  static defaultProps = {
+    messages: null,
   };
 
   componentDidMount() {

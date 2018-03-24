@@ -24,7 +24,7 @@ const ChatList = ({
       chats.map(chat => (
         <ChatListItem
           key={chat._id}
-          active={activeChat && activeChat._id === chat._id}
+          active={Boolean(activeChat && activeChat._id === chat._id)}
           disabled={disabled}
           chatId={chat._id}
           {...chat}

@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WelcomePage /> renders correctly 1`] = `
+<div>
+  <header
+    className="MuiPaper-root-111 MuiPaper-shadow4-117 MuiAppBar-root-103 MuiAppBar-positionFixed-104 MuiAppBar-colorPrimary-109 mui-fixed"
+  >
+    <div
+      className="MuiToolbar-root-138 MuiToolbar-gutters-139"
+    >
+      <h2
+        className="MuiTypography-root-140 MuiTypography-title-146 MuiTypography-colorInherit-159 MuiTypography-noWrap-156"
+      >
+        DogeCodes React Chat
+      </h2>
+    </div>
+  </header>
+  <div
+    className="WelcomePage-content-100"
+  >
+    <div
+      className="MuiPaper-root-111 MuiPaper-shadow2-115 MuiPaper-rounded-112 WelcomePage-authForm-101"
+    >
+      <header
+        className="MuiPaper-root-111 MuiPaper-shadow4-117 MuiAppBar-root-103 MuiAppBar-positionStatic-107 MuiAppBar-colorDefault-108"
+      >
+        <div
+          className="MuiTabs-root-164"
+        >
+          <div
+            className="MuiTabs-flexContainer-165"
+          >
+            <div
+              className="MuiTabs-scrollingContainer-166 MuiTabs-fixed-167"
+              onScroll={[Function]}
+              role="tablist"
+              style={
+                Object {
+                  "marginBottom": 0,
+                }
+              }
+            >
+              <div
+                className="MuiTabs-flexContainer-165"
+              >
+                <button
+                  aria-selected={true}
+                  className="MuiButtonBase-root-187 MuiTab-root-171 MuiTab-rootInherit-173 MuiTab-rootInheritSelected-180 MuiTab-fullWidth-182"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  style={undefined}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <span
+                    className="MuiTab-wrapper-183"
+                  >
+                    <span
+                      className="MuiTab-labelContainer-184"
+                    >
+                      <span
+                        className="MuiTab-label-185"
+                      >
+                        LOGIN
+                      </span>
+                    </span>
+                  </span>
+                  <span
+                    className="MuiTouchRipple-root-192"
+                  />
+                </button>
+                <button
+                  aria-selected={false}
+                  className="MuiButtonBase-root-187 MuiTab-root-171 MuiTab-rootInherit-173 MuiTab-fullWidth-182"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  role="tab"
+                  style={undefined}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <span
+                    className="MuiTab-wrapper-183"
+                  >
+                    <span
+                      className="MuiTab-labelContainer-184"
+                    >
+                      <span
+                        className="MuiTab-label-185"
+                      >
+                        SIGN UP
+                      </span>
+                    </span>
+                  </span>
+                  <span
+                    className="MuiTouchRipple-root-192"
+                  />
+                </button>
+              </div>
+              <span
+                className="MuiTabIndicator-root-189"
+                style={
+                  Object {
+                    "backgroundColor": "red",
+                    "left": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <div
+        className="WelcomePage-tabWrapper-102"
+      >
+        LoginForm
+      </div>
+    </div>
+  </div>
+  ./ErrorMessage
+</div>
+`;

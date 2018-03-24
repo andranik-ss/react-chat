@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Chat /> renders correctly  1`] = `
+<main
+  className="Chat-chatLayout-31"
+>
+  ChatMessageList
+  <div
+    className="Chat-messageInputWrapper-32"
+  >
+    <div
+      className="MuiPaper-root-34 MuiPaper-shadow6-42 MuiPaper-rounded-35 Chat-messageInput-33"
+    >
+      MessageInput
+    </div>
+  </div>
+</main>
+`;

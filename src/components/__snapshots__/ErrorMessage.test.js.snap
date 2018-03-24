@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorMessage /> renders correctly 1`] = `null`;
+
+exports[`<ErrorMessage /> renders correctly 2`] = `null`;

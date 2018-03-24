@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChatList /> renders correctly 1`] = `
+<a
+  className="MuiButtonBase-root-62 MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60"
+  href="/chat/1"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="button"
+  tabIndex={0}
+>
+  Avatar
+  <div
+    className="MuiListItemText-root-64"
+  >
+    <h3
+      className="MuiTypography-root-70 MuiTypography-subheading-77 MuiListItemText-primary-67"
+    >
+      test
+    </h3>
+    <p
+      className="MuiTypography-root-70 MuiTypography-body1-79 MuiTypography-colorTextSecondary-92 MuiListItemText-secondary-68"
+    >
+      2 days ago
+    </p>
+  </div>
+  <span
+    className="MuiTouchRipple-root-94"
+  />
+</a>
+`;
+
+exports[`<ChatList /> renders correctly active 1`] = `
+<a
+  className="MuiButtonBase-root-62 MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 ChatListItem-activeItem-51"
+  href="/chat/1"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="button"
+  tabIndex={0}
+>
+  Avatar
+  <div
+    className="MuiListItemText-root-64"
+  >
+    <h3
+      className="MuiTypography-root-70 MuiTypography-subheading-77 MuiListItemText-primary-67"
+    >
+      test
+    </h3>
+    <p
+      className="MuiTypography-root-70 MuiTypography-body1-79 MuiTypography-colorTextSecondary-92 MuiListItemText-secondary-68"
+    >
+      2 days ago
+    </p>
+  </div>
+  <span
+    className="MuiTouchRipple-root-94"
+  />
+</a>
+`;
+
+exports[`<ChatList /> renders correctly disabled 1`] = `
+<a
+  className="MuiButtonBase-root-62 MuiButtonBase-disabled-63 MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-disabled-57 MuiListItem-button-60"
+  href="/chat/1"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="button"
+  tabIndex={-1}
+>
+  Avatar
+  <div
+    className="MuiListItemText-root-64"
+  >
+    <h3
+      className="MuiTypography-root-70 MuiTypography-subheading-77 MuiListItemText-primary-67"
+    >
+      test
+    </h3>
+    <p
+      className="MuiTypography-root-70 MuiTypography-body1-79 MuiTypography-colorTextSecondary-92 MuiListItemText-secondary-68"
+    >
+      2 days ago
+    </p>
+  </div>
+</a>
+`;
