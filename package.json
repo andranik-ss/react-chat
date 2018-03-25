@@ -44,8 +44,7 @@
     "lint": "eslint 'src/**/*.js'",
     "lint:fix": "yarn lint -- --fix",
     "format": "prettier-eslint --write '**/*.{js,json}'",
-    "precommit": "lint-staged",
-    "prepush": "yarn test"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "**/*.js": ["eslint --fix", "prettier-eslint --write", "git add"],
