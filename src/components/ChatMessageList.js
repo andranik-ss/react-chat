@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import Typography from 'material-ui/Typography';
 import ChatMessage from './ChatMessage';
 
 const styles = theme => ({
@@ -51,7 +52,7 @@ class ChatMessageList extends React.Component {
   render() {
     const { classes, messages, user } = this.props;
 
-    return (
+    return messages && messages.length ? (
       <div
         className={classes.messagesWrapper}
         ref={(el) => {
@@ -61,6 +62,8 @@ class ChatMessageList extends React.Component {
         {messages &&
           messages.map(message => <ChatMessage {...message} key={message._id} user={user} />)}
       </div>
+    ) : (
+      <Typography variant='display1'>There is no messages yet...</Typography>
     );
   }
 }

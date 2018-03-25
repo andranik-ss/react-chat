@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import config from '../../config';
+import config from '../config';
 
 export default function callApi(endpoint, token, options, data) {
   const authHeaders = token ? { Authorization: `Bearer ${token}` } : {};
