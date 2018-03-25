@@ -42,12 +42,13 @@
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
     "lint": "eslint 'src/**/*.js'",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "yarn lint -- --fix",
     "format": "prettier-eslint --write '**/*.{js,json}'",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepush": "yarn test"
   },
   "lint-staged": {
-    "**/*.js": ["yarn lint:fix", "yarn format", "git add"],
-    "**/*.json": ["yarn format", "git add"]
+    "**/*.js": ["eslint --fix", "prettier-eslint --write", "git add"],
+    "**/*.json": ["prettier-eslint --write", "git add"]
   }
 }

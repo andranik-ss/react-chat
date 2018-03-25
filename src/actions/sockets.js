@@ -2,6 +2,7 @@
 import SocketIOClient from 'socket.io-client';
 import * as types from '../constants/sockets';
 import { redirect } from './services';
+import config from '../../config';
 
 export const missingSocketConnection = () => ({
   type: types.SOCKETS_CONNECTION_MISSING,
@@ -21,7 +22,7 @@ export const socketsConnect = () => (dispatch, getState) => {
     type: types.SOCKETS_CONNECTION_REQUEST,
   });
 
-  socket = SocketIOClient('ws://localhost:8000/', {
+  socket = SocketIOClient(config.SOCKETS_URI, {
     query: { token },
   });
 
