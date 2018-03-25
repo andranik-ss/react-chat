@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ChatMessageList /> renders correctly 1`] = `
-<div
-  className="ChatMessageList-messagesWrapper-2"
-/>
+<h1
+  className="MuiTypography-root-27 MuiTypography-display1-31"
+>
+  There is no messages yet...
+</h1>
 `;
