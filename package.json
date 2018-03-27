@@ -26,24 +26,27 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "fetch-mock": "^6.3.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier-eslint-cli": "^4.7.1",
-    "react-test-renderer": "^16.2.0"
+    "react-test-renderer": "^16.2.0",
+    "redux-mock-store": "^1.5.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "cross-env CI=true react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
-    "lint": "eslint 'src/**/*.js'",
-    "lint:fix": "yarn lint -- --fix",
-    "format": "prettier-eslint --write '**/*.{js,json}'",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier-eslint --write \"**/*.{js,json}\"",
     "precommit": "lint-staged"
   },
   "lint-staged": {
