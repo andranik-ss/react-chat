@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import 'isomorphic-fetch';
 import config from '../config';
 
 export default function callApi(endpoint, token, options, data) {

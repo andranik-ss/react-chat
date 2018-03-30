@@ -2,7 +2,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
-import 'isomorphic-fetch';
 import * as actions from './index';
 import * as types from '../constants/user';
 
@@ -35,7 +34,7 @@ describe('async actions', () => {
     fetchMock.restore();
   });
 
-  it('creates FETCH_TODOS_SUCCESS when fetching todos has been done', () => {
+  it('creates EDIT_USER_SUCCESS when post user data has been done', () => {
     const responseMock = {
       message: 'User has been updated!',
       success: true,
@@ -46,9 +45,9 @@ describe('async actions', () => {
       },
     };
 
-    fetchMock.getOnce('users/me', {
-      body: responseMock,
-      headers: { 'content-type': 'application/json' },
+    fetchMock.postOnce('*', {
+      body: JSON.stringify(responseMock),
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     });
 
     const expectedActions = [
@@ -65,7 +64,6 @@ describe('async actions', () => {
     const store = mockStore(fakeStore);
 
     return store.dispatch(actions.editUser(data)).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
