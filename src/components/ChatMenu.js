@@ -40,17 +40,17 @@ class ChatMenu extends React.Component {
     return (
       <React.Fragment>
         <IconButton
-          aria-label='More'
+          aria-label="More"
           aria-owns={anchorEl ? 'chat-menu' : null}
-          aria-haspopup='true'
+          aria-haspopup="true"
           onClick={this.handleClick}
-          color='inherit'
+          color="inherit"
           disabled={!isConnected}
         >
           <MoreVertIcon />
         </IconButton>
         <Menu
-          id='long-menu'
+          id="long-menu"
           anchorEl={this.state.anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
