@@ -8,5 +8,5 @@ export default combineReducers({
   auth,
   chats,
   messages,
-  services
+  services,
 });

@@ -13,7 +13,7 @@ const colorNames = [
   'orange',
   'deepOrange',
   'deepPurple',
-  'blueGrey'
+  'blueGrey',
 ];
 
 export default function colorFrom(string) {
@@ -27,7 +27,8 @@ export default function colorFrom(string) {
     const colorIndex = index % colorNames.length;
     return colors[colorNames[colorIndex]][500];
   } catch (e) {
+    // eslint-disable-next-line
     console.error(e);
-    return colors['blueGrey'][500];
+    return colors.blueGrey[500];
   }
 }

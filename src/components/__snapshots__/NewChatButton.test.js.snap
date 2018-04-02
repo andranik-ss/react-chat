@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NewChatButton /> renders correctly 1`] = `
+<button
+  className="MuiButtonBase-root-60 MuiButton-root-45 MuiButton-raised-50 MuiButton-fab-55 MuiButton-raisedPrimary-52 NewChatButton-newChatButton-43"
+  disabled={false}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="MuiButton-label-46"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root-62 MuiSvgIcon-fontSize-68"
+      color={undefined}
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </span>
+  <span
+    className="MuiTouchRipple-root-69"
+  />
+</button>
+`;
+
+exports[`<NewChatButton /> renders correctly disabled 1`] = `
+<button
+  className="MuiButtonBase-root-60 MuiButtonBase-disabled-61 MuiButton-root-45 MuiButton-raised-50 MuiButton-fab-55 MuiButton-raisedPrimary-52 MuiButton-disabled-54 NewChatButton-newChatButton-43"
+  disabled={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={-1}
+  type="button"
+>
+  <span
+    className="MuiButton-label-46"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root-62 MuiSvgIcon-fontSize-68"
+      color={undefined}
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
+  </span>
+</button>
+`;

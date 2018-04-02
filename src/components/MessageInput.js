@@ -1,18 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Input from 'material-ui/Input';
 
 class MessageInput extends React.Component {
+  static propTypes = {
+    disabled: PropTypes.bool.isRequired,
+    sendMessage: PropTypes.func.isRequired,
+  };
   state = {
-    value: ''
+    value: '',
   };
 
-  handleValueChange = event => {
+  handleValueChange = (event) => {
     this.setState({
-      value: event.target.value
+      value: event.target.value,
     });
   };
 
-  handleKeyPress = event => {
+  handleKeyPress = (event) => {
     const { value } = this.state;
 
     if (event.key === 'Enter' && value) {

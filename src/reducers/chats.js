@@ -1,5 +1,8 @@
-import * as types from '../constants';
+/* eslint no-use-before-define: 0,
+
+eslint no-underscore-dangle: 0 */
 import { combineReducers } from 'redux';
+import * as types from '../constants';
 
 function activeId(state = '', action) {
   switch (action.type) {
@@ -53,10 +56,10 @@ function byIds(state = {}, action) {
         ...action.payload.chats.reduce(
           (chats, current) => ({
             ...chats,
-            [current._id]: current
+            [getId(current)]: current,
           }),
-          {}
-        )
+          {},
+        ),
       };
     case types.JOIN_CHAT_SUCCESS:
     case types.CREATE_CHAT_SUCCESS:
@@ -64,13 +67,14 @@ function byIds(state = {}, action) {
     case types.RECIEVE_NEW_CHAT:
       return {
         ...state,
-        [getId(action.payload.chat)]: action.payload.chat
+        [getId(action.payload.chat)]: action.payload.chat,
       };
     case types.DELETE_CHAT_SUCCESS:
-    case types.RECIEVE_DELETED_CHAT:
+    case types.RECIEVE_DELETED_CHAT: {
       const newState = { ...state };
       delete newState[getId(action.payload.chat)];
       return newState;
+    }
     default:
       return state;
   }
@@ -80,13 +84,14 @@ export default combineReducers({
   activeId,
   allIds,
   myIds,
-  byIds
+  byIds,
 });
 
+// eslint-disable-next-line
 export const getId = chat => chat._id;
 export const getByIds = (state, ids) => ids.map(id => state.byIds[id]);
 export const getMessagesById = (state, id) =>
-  state.byIds[id].messages ? state.byIds[id].messages : [];
+  (state.byIds[id].messages ? state.byIds[id].messages : []);
 
 export const isChatCreator = (chat, user) => {
   try {

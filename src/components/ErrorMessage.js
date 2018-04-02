@@ -1,15 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Snackbar from 'material-ui/Snackbar';
 import IconButton from 'material-ui/IconButton';
 import CloseIcon from 'material-ui-icons/Close';
 
 class ErrorMessage extends React.Component {
-  state = {
-    open: false
+  static propTypes = {
+    error: PropTypes.instanceOf(Error),
   };
 
-  handleCloseSnackbar = (event, reason) => {
-    this.setState({ open: false });
+  static defaultProps = {
+    error: null,
+  };
+
+  state = {
+    open: false,
   };
 
   componentWillReceiveProps(nextProps) {
@@ -17,6 +22,10 @@ class ErrorMessage extends React.Component {
       this.setState({ open: true });
     }
   }
+
+  handleCloseSnackbar = () => {
+    this.setState({ open: false });
+  };
 
   render() {
     const { error } = this.props;
@@ -29,7 +38,7 @@ class ErrorMessage extends React.Component {
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'left'
+          horizontal: 'left',
         }}
         open={this.state.open}
         autoHideDuration={6000}
@@ -43,7 +52,7 @@ class ErrorMessage extends React.Component {
             onClick={this.handleCloseSnackbar}
           >
             <CloseIcon />
-          </IconButton>
+          </IconButton>,
         ]}
       />
     );

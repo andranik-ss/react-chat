@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { Redirect } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
@@ -14,20 +15,33 @@ const styles = theme => ({
   content: {
     display: 'flex',
     paddingTop: '64px',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   authForm: {
     marginTop: '24px',
-    width: '500px'
+    width: '500px',
   },
   tabWrapper: {
-    padding: theme.spacing.unit * 3
-  }
+    padding: theme.spacing.unit * 3,
+  },
 });
 
 class WelcomePage extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    login: PropTypes.func.isRequired,
+    signup: PropTypes.func.isRequired,
+    receiveAuth: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    error: PropTypes.instanceOf(Error),
+  };
+
+  static defaultProps = {
+    error: null,
+  };
+
   state = {
-    activeTab: 0
+    activeTab: 0,
   };
 
   componentDidMount() {
@@ -39,7 +53,9 @@ class WelcomePage extends React.Component {
   };
 
   render() {
-    const { classes, login, signup, isAuthenticated, error } = this.props;
+    const {
+      classes, login, signup, isAuthenticated, error,
+    } = this.props;
     const { activeTab } = this.state;
 
     if (isAuthenticated) {

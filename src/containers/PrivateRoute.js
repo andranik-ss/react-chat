@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -6,16 +7,20 @@ import { receiveAuth } from '../actions';
 import ProgressBar from '../components/ProgressBar';
 
 class PrivateRoute extends React.Component {
+  static propTypes = {
+    component: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    isChecked: PropTypes.bool.isRequired,
+    receiveAuth: PropTypes.func.isRequired,
+  };
+
   componentDidMount() {
     this.props.receiveAuth();
   }
 
   render() {
     const {
-      component: Component,
-      isAuthenticated,
-      isChecked,
-      ...rest
+      component: Component, isAuthenticated, isChecked, ...rest
     } = this.props;
 
     return (
@@ -28,7 +33,7 @@ class PrivateRoute extends React.Component {
             <Redirect
               to={{
                 pathname: '/welcome',
-                state: { from: props.location }
+                state: { from: props.location },
               }}
             />
           ))
@@ -40,17 +45,15 @@ class PrivateRoute extends React.Component {
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
-  isChecked: state.auth.isChecked
+  isChecked: state.auth.isChecked,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      receiveAuth
+      receiveAuth,
     },
-    dispatch
+    dispatch,
   );
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(PrivateRoute)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PrivateRoute));

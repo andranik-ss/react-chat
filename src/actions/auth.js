@@ -11,16 +11,11 @@ export function signup(username, password) {
     }
 
     dispatch({
-      type: types.SIGNUP_REQUEST
+      type: types.SIGNUP_REQUEST,
     });
 
-    return callApi(
-      'signup',
-      undefined,
-      { method: 'POST' },
-      { username, password }
-    )
-      .then(json => {
+    return callApi('signup', undefined, { method: 'POST' }, { username, password })
+      .then((json) => {
         if (!json.token) {
           throw new Error('Token has not been provided!');
         }
@@ -30,13 +25,13 @@ export function signup(username, password) {
 
         dispatch({
           type: types.SIGNUP_SUCCESS,
-          payload: json
+          payload: json,
         });
       })
-      .catch(reason => {
+      .catch((reason) => {
         dispatch({
           type: types.SIGNUP_FAILURE,
-          payload: reason
+          payload: reason,
         });
       });
   };
@@ -51,16 +46,11 @@ export function login(username, password) {
     }
 
     dispatch({
-      type: types.LOGIN_REQUEST
+      type: types.LOGIN_REQUEST,
     });
 
-    return callApi(
-      'login',
-      undefined,
-      { method: 'POST' },
-      { username, password }
-    )
-      .then(json => {
+    return callApi('login', undefined, { method: 'POST' }, { username, password })
+      .then((json) => {
         if (!json.token) {
           throw new Error('Token has not been provided!');
         }
@@ -70,15 +60,14 @@ export function login(username, password) {
 
         dispatch({
           type: types.LOGIN_SUCCESS,
-          payload: json
+          payload: json,
         });
       })
       .catch(reason =>
         dispatch({
           type: types.LOGIN_FAILURE,
-          payload: reason
-        })
-      );
+          payload: reason,
+        }));
   };
 }
 
@@ -91,23 +80,23 @@ export function logout() {
     }
 
     dispatch({
-      type: types.LOGOUT_REQUEST
+      type: types.LOGOUT_REQUEST,
     });
 
     return callApi('logout')
-      .then(json => {
+      .then((json) => {
         localStorage.removeItem('token');
         dispatch({
-          type: types.LOGOUT_SUCCESS
+          type: types.LOGOUT_SUCCESS,
+          payload: json,
         });
         dispatch(redirect('/welcome'));
       })
       .catch(reason =>
         dispatch({
           type: types.LOGOUT_FAILURE,
-          payload: reason
-        })
-      );
+          payload: reason,
+        }));
   };
 }
 
@@ -122,25 +111,24 @@ export function receiveAuth() {
     if (!token) {
       return dispatch({
         type: types.RECEIVE_AUTH_FAILURE,
-        payload: 'Authorization needed'
+        payload: 'Authorization needed',
       });
     }
 
     dispatch({
-      type: types.RECEIVE_AUTH_REQUEST
+      type: types.RECEIVE_AUTH_REQUEST,
     });
 
     return callApi('users/me', token)
       .then(json =>
         dispatch({
           type: types.RECEIVE_AUTH_SUCCESS,
-          payload: json
-        })
-      )
-      .catch(reason => {
+          payload: json,
+        }))
+      .catch((reason) => {
         dispatch({
           type: types.RECEIVE_AUTH_FAILURE,
-          payload: reason
+          payload: reason,
         });
       });
   };

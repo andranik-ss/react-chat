@@ -1,23 +1,21 @@
-import fetch from 'isomorphic-fetch';
-
-const server = 'http://localhost:8000';
-const version = 'v1';
+import 'isomorphic-fetch';
+import config from '../config';
 
 export default function callApi(endpoint, token, options, data) {
   const authHeaders = token ? { Authorization: `Bearer ${token}` } : {};
 
-  return fetch(`${server}/${version}/${endpoint}`, {
+  return fetch(`${config.API_URI}/${config.API_VERSION}/${endpoint}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      ...authHeaders
+      ...authHeaders,
     },
     body: JSON.stringify(data),
-    ...options
+    ...options,
   })
     .then(response => response.json())
-    .then(json => {
+    .then((json) => {
       if (!json.success) {
         throw new Error(json.message);
       }

@@ -1,22 +1,22 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
+import 'typeface-roboto/index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store';
 import './index.css';
-import 'typeface-roboto';
 
 const rootEl = document.getElementById('root');
 
 const store = configureStore();
 
-const render = Component => {
+const render = (Component) => {
   ReactDOM.render(
     <Provider store={store}>
       <Component />
     </Provider>,
-    rootEl
+    rootEl,
   );
 };
 

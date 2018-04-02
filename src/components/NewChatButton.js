@@ -1,10 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Dialog, {
-  DialogActions,
-  DialogContent,
-  DialogTitle
-} from 'material-ui/Dialog';
+import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import AddIcon from 'material-ui-icons/Add';
@@ -14,28 +11,35 @@ const styles = theme => ({
     position: 'absolute',
     left: 'auto',
     right: theme.spacing.unit * 3,
-    bottom: theme.spacing.unit * 3 + 48 // + bottom navigation
+    // eslint-disable-next-line
+    bottom: theme.spacing.unit * 3 + 48,
   },
   dialog: {
-    minWidth: '200px'
-  }
+    minWidth: '200px',
+  },
 });
 
 class NewChatButton extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    createChat: PropTypes.func.isRequired,
+    disabled: PropTypes.bool.isRequired,
+  };
+
   state = {
     newChat: {
       value: '',
-      isValid: true
+      isValid: true,
     },
-    open: false
+    open: false,
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     this.setState({
       newChat: {
         value: event.target.value,
-        isValid: true
-      }
+        isValid: true,
+      },
     });
   };
 
@@ -46,26 +50,25 @@ class NewChatButton extends React.Component {
         ...prevState,
         newChat: {
           value: '',
-          isValid: false
-        }
+          isValid: false,
+        },
       }));
     }
 
-    this.props.createChat(newChat.value).then(() =>
+    return this.props.createChat(newChat.value).then(() =>
       this.setState({
         open: false,
         newChat: {
           value: '',
-          isValid: true
-        }
-      })
-    );
+          isValid: true,
+        },
+      }));
   };
 
   handleNewChat = () => {
     this.setState(prevState => ({
       ...prevState,
-      open: !prevState.open
+      open: !prevState.open,
     }));
   };
 
@@ -84,12 +87,7 @@ class NewChatButton extends React.Component {
         >
           <AddIcon />
         </Button>
-        <Dialog
-          maxWidth='xs'
-          fullWidth
-          open={open}
-          onClose={this.handleNewChat}
-        >
+        <Dialog maxWidth='xs' fullWidth open={open} onClose={this.handleNewChat}>
           <DialogTitle>Create new chat</DialogTitle>
           <DialogContent>
             <TextField

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProgressBar /> renders correctly 1`] = `
+<div
+  className="MuiLinearProgress-root-17 MuiLinearProgress-secondaryColor-21 MuiLinearProgress-rootQuery-28"
+  role="progressbar"
+>
+  <div
+    className="MuiLinearProgress-bar-24 MuiLinearProgress-secondaryColorBar-22 MuiLinearProgress-indeterminateBar1-29"
+    style={Object {}}
+  />
+  <div
+    className="MuiLinearProgress-bar-24 MuiLinearProgress-secondaryColorBar-22 MuiLinearProgress-indeterminateBar2-30"
+    style={Object {}}
+  />
+</div>
+`;

@@ -1,4 +1,4 @@
-export default function(title) {
+export default function (title) {
   try {
     return title
       .split(' ')
@@ -7,6 +7,7 @@ export default function(title) {
       .join('')
       .substring(0, 2);
   } catch (error) {
+    // eslint-disable-next-line
     console.error(error);
     return '🚀';
   }

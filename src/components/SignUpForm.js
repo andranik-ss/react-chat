@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
@@ -7,63 +8,65 @@ const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   button: {
-    marginTop: theme.spacing.unit * 2
-  }
+    marginTop: theme.spacing.unit * 2,
+  },
 });
 
 class SignUpForm extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     username: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     password: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     repeatedPassword: {
       value: '',
-      isValid: true
-    }
+      isValid: true,
+    },
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     event.persist();
     const { name, value } = event.target;
     this.setState(prevState => ({
       [name]: {
         ...prevState[name],
-        value
-      }
+        value,
+      },
     }));
   };
 
   validate = () => {
-    const {
-      password: { value: pwd },
-      repeatedPassword: { value: repeatPwd }
-    } = this.state;
+    const { password: { value: pwd }, repeatedPassword: { value: repeatPwd } } = this.state;
 
     const isValid = pwd === repeatPwd;
 
     this.setState(prevState => ({
       password: {
-        ...prevState['password'],
-        isValid
+        ...prevState.password,
+        isValid,
       },
       repeatedPassword: {
-        ...prevState['repeatedPassword'],
-        isValid
-      }
+        ...prevState.repeatedPassword,
+        isValid,
+      },
     }));
 
     return isValid;
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     if (!this.validate()) {
@@ -116,12 +119,7 @@ class SignUpForm extends React.Component {
           onChange={this.handleInputChange}
           error={!repeatedPassword.isValid}
         />
-        <Button
-          variant='raised'
-          color='primary'
-          className={classes.button}
-          type='submit'
-        >
+        <Button variant='raised' color='primary' className={classes.button} type='submit'>
           SignUp
         </Button>
       </form>

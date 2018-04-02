@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoPaper /> renders correctly 1`] = `
+<div
+  className="MuiPaper-root-54 MuiPaper-shadow2-58 MuiPaper-rounded-55 InfoPaper-paper-53"
+>
+  <h1
+    className="MuiTypography-root-81 MuiTypography-display1-85 MuiTypography-gutterBottom-98"
+  >
+    Start messaging…
+  </h1>
+  <p
+    className="MuiTypography-root-81 MuiTypography-body1-90 MuiTypography-gutterBottom-98"
+  >
+    Use 
+    <strong>
+      Global
+    </strong>
+     to explore communities around here.
+  </p>
+  <p
+    className="MuiTypography-root-81 MuiTypography-body1-90 MuiTypography-gutterBottom-98"
+  >
+    Use 
+    <strong>
+      Recents
+    </strong>
+     to see your recent conversations.
+  </p>
+</div>
+`;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
@@ -7,37 +8,42 @@ const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   button: {
-    marginTop: theme.spacing.unit * 2
-  }
+    marginTop: theme.spacing.unit * 2,
+  },
 });
 
 class LoginForm extends React.Component {
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     username: {
       value: '',
-      isValid: true
+      isValid: true,
     },
     password: {
       value: '',
-      isValid: true
-    }
+      isValid: true,
+    },
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     event.persist();
     const { name, value } = event.target;
     this.setState(prevState => ({
       [name]: {
         ...prevState[name],
-        value
-      }
+        value,
+      },
     }));
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     const { username, password } = this.state;
@@ -74,12 +80,7 @@ class LoginForm extends React.Component {
           onChange={this.handleInputChange}
           error={!password.isValid}
         />
-        <Button
-          variant='raised'
-          color='primary'
-          className={classes.button}
-          type='submit'
-        >
+        <Button variant='raised' color='primary' className={classes.button} type='submit'>
           Login
         </Button>
       </form>
