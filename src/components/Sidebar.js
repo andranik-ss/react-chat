@@ -7,6 +7,8 @@ import TextField from 'material-ui/TextField';
 import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
 import RestoreIcon from 'material-ui-icons/Restore';
 import ExploreIcon from 'material-ui-icons/Explore';
+import IconButton from 'material-ui/IconButton';
+import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
 
 import ChatList from './ChatList';
 import NewChatButton from './NewChatButton';
@@ -15,12 +17,16 @@ const styles = theme => ({
   drawerPaper: {
     position: 'relative',
     height: '100%',
-    width: 320,
+    width: theme.drawerWidth,
   },
   drawerHeader: {
     ...theme.mixins.toolbar,
+    display: 'flex',
     paddingLeft: theme.spacing.unit * 3,
-    paddingRight: theme.spacing.unit * 3,
+    // paddingRight: theme.spacing.unit * 3,
+  },
+  drawerCloseButton: {
+    alignSelf: 'center',
   },
 });
 
@@ -36,6 +42,7 @@ class Sidebar extends React.Component {
       createChat: PropTypes.func.isRequired,
     }).isRequired,
     isConnected: PropTypes.bool.isRequired,
+    open: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -57,13 +64,14 @@ class Sidebar extends React.Component {
 
   render() {
     const {
-      classes, chats, actions, isConnected,
+      classes, chats, actions, isConnected, open,
     } = this.props;
     const { activeAction, searchValue } = this.state;
 
     return (
       <Drawer
-        variant='permanent'
+        variant='persistent'
+        open={open}
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -76,6 +84,9 @@ class Sidebar extends React.Component {
             onChange={this.handleSearchValueChange}
             value={searchValue}
           />
+          <IconButton className={classes.drawerCloseButton} onClick={actions.closeSidebar}>
+            <ChevronLeftIcon />
+          </IconButton>
         </div>
         <Divider />
         <ChatList

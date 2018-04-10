@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
@@ -8,36 +9,49 @@ import MessageInput from './MessageInput';
 import InfoPaper from './InfoPaper';
 
 const styles = theme => ({
-  chatLayout: {
+  content: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: '64px',
     height: '100%',
     overflow: 'hidden',
-    width: 'calc(100% - 320px)',
+    width: '100%',
+    marginLeft: -theme.drawerWidth,
+  },
+  'content-shift': {
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: 0,
+    },
   },
   messageInputWrapper: {
     position: 'fixed',
     left: 'auto',
     right: 0,
     bottom: 0,
-    width: 'calc(100% - 320px)',
+    width: '100%',
     padding: theme.spacing.unit * 3,
   },
   messageInput: {
     padding: theme.spacing.unit * 2,
   },
+  messageInputShift: {
+    [theme.breakpoints.up('sm')]: {
+      width: `calc(100% - ${theme.drawerWidth}px)`,
+    },
+  },
 });
 
 const Chat = ({
-  classes, messages, user, actions, activeChat, isConnected,
+  classes, messages, user, actions, activeChat, isConnected, hasShift,
 }) => (
-  <main className={classes.chatLayout}>
+  <main className={classNames(classes.content, hasShift && classes['content-shift'])}>
     {activeChat ? (
       <React.Fragment>
         <ChatMessageList messages={messages} user={user} />
-        <div className={classes.messageInputWrapper}>
+        <div
+          className={classNames(classes.messageInputWrapper, hasShift && classes.messageInputShift)}
+        >
           <Paper className={classes.messageInput} elevation={6}>
             {user.isCreator || user.isMember ? (
               <MessageInput sendMessage={actions.sendMessage} disabled={!isConnected} />
@@ -85,6 +99,7 @@ Chat.propTypes = {
     joinChat: PropTypes.func.isRequired,
     sendMessage: PropTypes.func.isRequired,
   }).isRequired,
+  hasShift: PropTypes.bool.isRequired,
 };
 
 Chat.defaultProps = {
