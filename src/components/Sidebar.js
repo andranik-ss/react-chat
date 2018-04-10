@@ -19,7 +19,7 @@ const styles = theme => ({
     height: '100%',
     width: theme.drawerWidth,
     [theme.breakpoints.down('md')]: {
-      width: theme.drawerWidth * 3 / 4,
+      width: theme.drawerWidth * 0.75,
     },
   },
   drawerHeader: {
