@@ -2,14 +2,14 @@
 
 exports[`<ChatHeader /> renders correctly 1`] = `
 <header
-  className="MuiPaper-root-100 MuiPaper-shadow4-106 MuiAppBar-root-92 MuiAppBar-positionFixed-93 MuiAppBar-colorPrimary-98 mui-fixed ChatHeader-appBar-88"
+  className="MuiPaper-root-102 MuiPaper-shadow4-108 MuiAppBar-root-94 MuiAppBar-positionFixed-95 MuiAppBar-colorPrimary-100 mui-fixed ChatHeader-appBar-89"
 >
   <div
-    className="MuiToolbar-root-127 MuiToolbar-gutters-128"
+    className="MuiToolbar-root-129 MuiToolbar-gutters-130 ChatHeader-toolbar-91"
   >
     <button
       aria-label="open drawer"
-      className="MuiButtonBase-root-135 MuiIconButton-root-129 MuiIconButton-colorInherit-130"
+      className="MuiButtonBase-root-137 MuiIconButton-root-131 MuiIconButton-colorInherit-132"
       disabled={false}
       onBlur={[Function]}
       onClick={undefined}
@@ -26,11 +26,11 @@ exports[`<ChatHeader /> renders correctly 1`] = `
       type="button"
     >
       <span
-        className="MuiIconButton-label-134"
+        className="MuiIconButton-label-136"
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-137 MuiSvgIcon-fontSize-143"
+          className="MuiSvgIcon-root-139 MuiSvgIcon-fontSize-145"
           color={undefined}
           focusable="false"
           viewBox="0 0 24 24"
@@ -41,12 +41,12 @@ exports[`<ChatHeader /> renders correctly 1`] = `
         </svg>
       </span>
       <span
-        className="MuiTouchRipple-root-144"
+        className="MuiTouchRipple-root-146"
       />
     </button>
     Avatar
     <h2
-      className="MuiTypography-root-151 MuiTypography-title-157 MuiTypography-colorInherit-170 ChatHeader-title-90"
+      className="MuiTypography-root-153 MuiTypography-title-159 MuiTypography-colorInherit-172 ChatHeader-title-92"
     >
       test
       ChatMenu
@@ -58,14 +58,14 @@ exports[`<ChatHeader /> renders correctly 1`] = `
 
 exports[`<ChatHeader /> renders correctly without active chat 1`] = `
 <header
-  className="MuiPaper-root-100 MuiPaper-shadow4-106 MuiAppBar-root-92 MuiAppBar-positionFixed-93 MuiAppBar-colorPrimary-98 mui-fixed ChatHeader-appBar-88"
+  className="MuiPaper-root-102 MuiPaper-shadow4-108 MuiAppBar-root-94 MuiAppBar-positionFixed-95 MuiAppBar-colorPrimary-100 mui-fixed ChatHeader-appBar-89"
 >
   <div
-    className="MuiToolbar-root-127 MuiToolbar-gutters-128"
+    className="MuiToolbar-root-129 MuiToolbar-gutters-130 ChatHeader-toolbar-91"
   >
     <button
       aria-label="open drawer"
-      className="MuiButtonBase-root-135 MuiIconButton-root-129 MuiIconButton-colorInherit-130"
+      className="MuiButtonBase-root-137 MuiIconButton-root-131 MuiIconButton-colorInherit-132"
       disabled={false}
       onBlur={[Function]}
       onClick={undefined}
@@ -82,11 +82,11 @@ exports[`<ChatHeader /> renders correctly without active chat 1`] = `
       type="button"
     >
       <span
-        className="MuiIconButton-label-134"
+        className="MuiIconButton-label-136"
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-137 MuiSvgIcon-fontSize-143"
+          className="MuiSvgIcon-root-139 MuiSvgIcon-fontSize-145"
           color={undefined}
           focusable="false"
           viewBox="0 0 24 24"
@@ -97,11 +97,11 @@ exports[`<ChatHeader /> renders correctly without active chat 1`] = `
         </svg>
       </span>
       <span
-        className="MuiTouchRipple-root-144"
+        className="MuiTouchRipple-root-146"
       />
     </button>
     <h2
-      className="MuiTypography-root-151 MuiTypography-title-157 MuiTypography-colorInherit-170 ChatHeader-title-90"
+      className="MuiTypography-root-153 MuiTypography-title-159 MuiTypography-colorInherit-172 ChatHeader-title-92"
     >
       DogeCodes React Chat
     </h2>
