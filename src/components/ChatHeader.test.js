@@ -33,6 +33,7 @@ const mockProps = {
     deleteChat: jest.fn(),
     editUser: jest.fn(),
   },
+  hasShift: false,
 };
 
 describe('<ChatHeader />', () => {

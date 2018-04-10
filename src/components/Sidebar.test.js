@@ -32,6 +32,7 @@ const mockProps = {
     createChat: jest.fn(),
   },
   isConnected: false,
+  open: true,
 };
 
 describe('<Sidebar />', () => {

@@ -2,14 +2,14 @@
 
 exports[`<Chat /> renders correctly  1`] = `
 <main
-  className="Chat-chatLayout-31"
+  className="Chat-content-33"
 >
   ChatMessageList
   <div
-    className="Chat-messageInputWrapper-32"
+    className="Chat-messageInputWrapper-35"
   >
     <div
-      className="MuiPaper-root-34 MuiPaper-shadow6-42 MuiPaper-rounded-35 Chat-messageInput-33"
+      className="MuiPaper-root-38 MuiPaper-shadow6-46 MuiPaper-rounded-39 Chat-messageInput-36"
     >
       MessageInput
     </div>
