@@ -14,9 +14,21 @@ import UserMenu from './UserMenu';
 const styles = theme => ({
   appBar: {
     position: 'fixed',
+    width: '100%',
   },
   appBarShift: {
-    width: `calc(100% - ${theme.drawerWidth}px)`,
+    [theme.breakpoints.up('md')]: {
+      width: `calc(100% - ${theme.drawerWidth}px)`,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      width: `calc(100% - ${theme.drawerWidth * 0.75}px)`,
+    },
+  },
+  toolbar: {
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: theme.spacing.unit,
+      paddingRight: theme.spacing.unit,
+    },
   },
   title: {
     flex: 1,
@@ -31,7 +43,7 @@ const ChatHeader = ({
   classes, actions, user, activeChat, isConnected, hasShift,
 }) => (
   <AppBar color='primary' className={classNames(classes.appBar, hasShift && classes.appBarShift)}>
-    <Toolbar>
+    <Toolbar className={classes.toolbar}>
       <IconButton
         color='inherit'
         aria-label='open drawer'

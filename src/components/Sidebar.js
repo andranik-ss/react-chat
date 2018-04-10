@@ -18,6 +18,9 @@ const styles = theme => ({
     position: 'relative',
     height: '100%',
     width: theme.drawerWidth,
+    [theme.breakpoints.down('md')]: {
+      width: theme.drawerWidth * 3 / 4,
+    },
   },
   drawerHeader: {
     ...theme.mixins.toolbar,

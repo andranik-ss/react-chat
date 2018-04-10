@@ -18,6 +18,9 @@ const styles = theme => ({
     overflow: 'hidden',
     width: '100%',
     marginLeft: -theme.drawerWidth,
+    [theme.breakpoints.down('md')]: {
+      marginLeft: -theme.drawerWidth * 0.75,
+    },
   },
   'content-shift': {
     [theme.breakpoints.up('sm')]: {
@@ -31,6 +34,9 @@ const styles = theme => ({
     bottom: 0,
     width: '100%',
     padding: theme.spacing.unit * 3,
+    [theme.breakpoints.down('md')]: {
+      padding: 0,
+    },
   },
   messageInput: {
     padding: theme.spacing.unit * 2,

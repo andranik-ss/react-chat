@@ -2,7 +2,7 @@ import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 const theme = createMuiTheme({
-  drawerWidth: 256,
+  drawerWidth: 330,
 });
 
 function Customize(WrappedComponent) {
