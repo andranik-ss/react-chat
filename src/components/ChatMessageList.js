@@ -13,6 +13,11 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 3,
     paddingBottom: '120px',
   },
+  noMessages: {
+    [theme.breakpoints.down('md')]: {
+      fontSize: '18px',
+    },
+  },
 });
 
 class ChatMessageList extends React.Component {

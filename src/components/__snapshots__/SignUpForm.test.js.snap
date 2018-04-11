@@ -2,44 +2,44 @@
 
 exports[`<SignUpForm /> renders correctly 1`] = `
 <form
-  className="SignUpForm-container-56"
+  className="SignUpForm-container-57"
   onSubmit={[Function]}
 >
   <div
     aria-describedby={undefined}
-    className="MuiFormControl-root-58 MuiFormControl-marginNormal-59 MuiFormControl-fullWidth-61"
+    className="MuiFormControl-root-59 MuiFormControl-marginNormal-60 MuiFormControl-fullWidth-62"
     onBlur={[Function]}
     onFocus={[Function]}
     username=""
   >
     <label
-      className="MuiFormLabel-root-68 MuiInputLabel-root-62 MuiInputLabel-formControl-63 MuiInputLabel-animated-66"
+      className="MuiFormLabel-root-68 MuiInputLabel-root-63 MuiInputLabel-formControl-64 MuiInputLabel-animated-67"
       data-shrink={false}
       htmlFor={undefined}
     >
       Username
       <span
-        className=""
+        className="MuiFormLabel-asterisk-72"
       >
          *
       </span>
     </label>
     <div
-      className="MuiInput-root-72 MuiInput-fullWidth-80 MuiInput-formControl-73 MuiInput-inkbar-74 MuiInput-underline-78"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      className="MuiInput-root-74 MuiInput-fullWidth-81 MuiInput-formControl-75 MuiInput-underline-78"
     >
       <input
         aria-invalid={false}
         aria-required={true}
         autoComplete={undefined}
         autoFocus={undefined}
-        className="MuiInput-input-81"
+        className="MuiInput-input-82"
         defaultValue={undefined}
         disabled={false}
         id={undefined}
         name="username"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder="Type your username ..."
@@ -53,39 +53,39 @@ exports[`<SignUpForm /> renders correctly 1`] = `
   </div>
   <div
     aria-describedby={undefined}
-    className="MuiFormControl-root-58 MuiFormControl-marginNormal-59 MuiFormControl-fullWidth-61"
+    className="MuiFormControl-root-59 MuiFormControl-marginNormal-60 MuiFormControl-fullWidth-62"
     onBlur={[Function]}
     onFocus={[Function]}
     username=""
   >
     <label
-      className="MuiFormLabel-root-68 MuiInputLabel-root-62 MuiInputLabel-formControl-63 MuiInputLabel-animated-66"
+      className="MuiFormLabel-root-68 MuiInputLabel-root-63 MuiInputLabel-formControl-64 MuiInputLabel-animated-67"
       data-shrink={false}
       htmlFor={undefined}
     >
       Password
       <span
-        className=""
+        className="MuiFormLabel-asterisk-72"
       >
          *
       </span>
     </label>
     <div
-      className="MuiInput-root-72 MuiInput-fullWidth-80 MuiInput-formControl-73 MuiInput-inkbar-74 MuiInput-underline-78"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      className="MuiInput-root-74 MuiInput-fullWidth-81 MuiInput-formControl-75 MuiInput-underline-78"
     >
       <input
         aria-invalid={false}
         aria-required={true}
         autoComplete={undefined}
         autoFocus={undefined}
-        className="MuiInput-input-81 MuiInput-inputType-84"
+        className="MuiInput-input-82 MuiInput-inputType-86"
         defaultValue={undefined}
         disabled={false}
         id={undefined}
         name="password"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder="Type your password ..."
@@ -99,39 +99,39 @@ exports[`<SignUpForm /> renders correctly 1`] = `
   </div>
   <div
     aria-describedby={undefined}
-    className="MuiFormControl-root-58 MuiFormControl-marginNormal-59 MuiFormControl-fullWidth-61"
+    className="MuiFormControl-root-59 MuiFormControl-marginNormal-60 MuiFormControl-fullWidth-62"
     onBlur={[Function]}
     onFocus={[Function]}
     username=""
   >
     <label
-      className="MuiFormLabel-root-68 MuiInputLabel-root-62 MuiInputLabel-formControl-63 MuiInputLabel-animated-66"
+      className="MuiFormLabel-root-68 MuiInputLabel-root-63 MuiInputLabel-formControl-64 MuiInputLabel-animated-67"
       data-shrink={false}
       htmlFor={undefined}
     >
       Repeat password
       <span
-        className=""
+        className="MuiFormLabel-asterisk-72"
       >
          *
       </span>
     </label>
     <div
-      className="MuiInput-root-72 MuiInput-fullWidth-80 MuiInput-formControl-73 MuiInput-inkbar-74 MuiInput-underline-78"
-      onBlur={[Function]}
-      onFocus={[Function]}
+      className="MuiInput-root-74 MuiInput-fullWidth-81 MuiInput-formControl-75 MuiInput-underline-78"
     >
       <input
         aria-invalid={false}
         aria-required={true}
         autoComplete={undefined}
         autoFocus={undefined}
-        className="MuiInput-input-81 MuiInput-inputType-84"
+        className="MuiInput-input-82 MuiInput-inputType-86"
         defaultValue={undefined}
         disabled={false}
         id={undefined}
         name="repeatedPassword"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder="Repeat your password ..."
@@ -144,7 +144,7 @@ exports[`<SignUpForm /> renders correctly 1`] = `
     </div>
   </div>
   <button
-    className="MuiButtonBase-root-102 MuiButton-root-87 MuiButton-raised-92 MuiButton-raisedPrimary-94 SignUpForm-button-57"
+    className="MuiButtonBase-root-103 MuiButton-root-88 MuiButton-raised-93 MuiButton-raisedPrimary-95 SignUpForm-button-58"
     disabled={false}
     onBlur={[Function]}
     onFocus={[Function]}
@@ -156,16 +156,16 @@ exports[`<SignUpForm /> renders correctly 1`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
-    tabIndex={0}
+    tabIndex="0"
     type="submit"
   >
     <span
-      className="MuiButton-label-88"
+      className="MuiButton-label-89"
     >
       SignUp
     </span>
     <span
-      className="MuiTouchRipple-root-104"
+      className="MuiTouchRipple-root-106"
     />
   </button>
 </form>

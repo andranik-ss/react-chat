@@ -18,7 +18,7 @@ exports[`<ChatMenu /> renders correctly 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  tabIndex={-1}
+  tabIndex="-1"
   type="button"
 >
   <span
@@ -26,7 +26,7 @@ exports[`<ChatMenu /> renders correctly 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-28 MuiSvgIcon-fontSize-34"
+      className="MuiSvgIcon-root-29"
       color={undefined}
       focusable="false"
       viewBox="0 0 24 24"

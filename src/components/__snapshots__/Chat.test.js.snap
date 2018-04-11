@@ -9,7 +9,7 @@ exports[`<Chat /> renders correctly  1`] = `
     className="Chat-messageInputWrapper-35"
   >
     <div
-      className="MuiPaper-root-38 MuiPaper-shadow6-46 MuiPaper-rounded-39 Chat-messageInput-36"
+      className="MuiPaper-root-38 MuiPaper-elevation6-46 MuiPaper-rounded-39 Chat-messageInput-36"
     >
       MessageInput
     </div>

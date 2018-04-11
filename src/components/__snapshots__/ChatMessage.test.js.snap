@@ -15,7 +15,7 @@ exports[`<ChatMessage /> renders correctly message 1`] = `
     T
   </div>
   <div
-    className="MuiPaper-root-70 MuiPaper-shadow2-74 MuiPaper-rounded-71 ChatMessage-message-63 ChatMessage-messageFromMe-64"
+    className="MuiPaper-root-70 MuiPaper-elevation2-74 MuiPaper-rounded-71 ChatMessage-message-63 ChatMessage-messageFromMe-64"
   >
     <span
       className="MuiTypography-root-97 MuiTypography-caption-107"
@@ -52,7 +52,7 @@ exports[`<ChatMessage /> renders message from other users 1`] = `
     S
   </div>
   <div
-    className="MuiPaper-root-70 MuiPaper-shadow2-74 MuiPaper-rounded-71 ChatMessage-message-63"
+    className="MuiPaper-root-70 MuiPaper-elevation2-74 MuiPaper-rounded-71 ChatMessage-message-63"
   >
     <span
       className="MuiTypography-root-97 MuiTypography-caption-107"
@@ -116,7 +116,7 @@ exports[`<ChatMessage /> renders name of other users correctly 1`] = `
     NS
   </div>
   <div
-    className="MuiPaper-root-70 MuiPaper-shadow2-74 MuiPaper-rounded-71 ChatMessage-message-63"
+    className="MuiPaper-root-70 MuiPaper-elevation2-74 MuiPaper-rounded-71 ChatMessage-message-63"
   >
     <span
       className="MuiTypography-root-97 MuiTypography-caption-107"
@@ -153,7 +153,7 @@ exports[`<ChatMessage /> renders name of user correctly 1`] = `
     NS
   </div>
   <div
-    className="MuiPaper-root-70 MuiPaper-shadow2-74 MuiPaper-rounded-71 ChatMessage-message-63"
+    className="MuiPaper-root-70 MuiPaper-elevation2-74 MuiPaper-rounded-71 ChatMessage-message-63"
   >
     <span
       className="MuiTypography-root-97 MuiTypography-caption-107"

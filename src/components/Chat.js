@@ -40,6 +40,9 @@ const styles = theme => ({
   },
   messageInput: {
     padding: theme.spacing.unit * 2,
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing.unit * 1.5,
+    },
   },
   messageInputShift: {
     [theme.breakpoints.up('sm')]: {

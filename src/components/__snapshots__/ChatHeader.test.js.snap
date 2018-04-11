@@ -2,7 +2,7 @@
 
 exports[`<ChatHeader /> renders correctly 1`] = `
 <header
-  className="MuiPaper-root-102 MuiPaper-shadow4-108 MuiAppBar-root-94 MuiAppBar-positionFixed-95 MuiAppBar-colorPrimary-100 mui-fixed ChatHeader-appBar-89"
+  className="MuiPaper-root-102 MuiPaper-elevation4-108 MuiAppBar-root-94 MuiAppBar-positionFixed-95 MuiAppBar-colorPrimary-100 mui-fixed ChatHeader-appBar-89"
 >
   <div
     className="MuiToolbar-root-129 MuiToolbar-gutters-130 ChatHeader-toolbar-91"
@@ -22,7 +22,7 @@ exports[`<ChatHeader /> renders correctly 1`] = `
       onTouchEnd={[Function]}
       onTouchMove={[Function]}
       onTouchStart={[Function]}
-      tabIndex={0}
+      tabIndex="0"
       type="button"
     >
       <span
@@ -30,7 +30,7 @@ exports[`<ChatHeader /> renders correctly 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-139 MuiSvgIcon-fontSize-145"
+          className="MuiSvgIcon-root-140"
           color={undefined}
           focusable="false"
           viewBox="0 0 24 24"
@@ -58,7 +58,7 @@ exports[`<ChatHeader /> renders correctly 1`] = `
 
 exports[`<ChatHeader /> renders correctly without active chat 1`] = `
 <header
-  className="MuiPaper-root-102 MuiPaper-shadow4-108 MuiAppBar-root-94 MuiAppBar-positionFixed-95 MuiAppBar-colorPrimary-100 mui-fixed ChatHeader-appBar-89"
+  className="MuiPaper-root-102 MuiPaper-elevation4-108 MuiAppBar-root-94 MuiAppBar-positionFixed-95 MuiAppBar-colorPrimary-100 mui-fixed ChatHeader-appBar-89"
 >
   <div
     className="MuiToolbar-root-129 MuiToolbar-gutters-130 ChatHeader-toolbar-91"
@@ -78,7 +78,7 @@ exports[`<ChatHeader /> renders correctly without active chat 1`] = `
       onTouchEnd={[Function]}
       onTouchMove={[Function]}
       onTouchStart={[Function]}
-      tabIndex={0}
+      tabIndex="0"
       type="button"
     >
       <span
@@ -86,7 +86,7 @@ exports[`<ChatHeader /> renders correctly without active chat 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-139 MuiSvgIcon-fontSize-145"
+          className="MuiSvgIcon-root-140"
           color={undefined}
           focusable="false"
           viewBox="0 0 24 24"

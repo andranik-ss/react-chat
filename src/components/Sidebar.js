@@ -1,7 +1,7 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
-import Drawer from 'material-ui/Drawer';
+import SwipeableDrawer from 'material-ui/SwipeableDrawer';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
@@ -72,9 +72,11 @@ class Sidebar extends React.Component {
     const { activeAction, searchValue } = this.state;
 
     return (
-      <Drawer
+      <SwipeableDrawer
         variant='persistent'
         open={open}
+        onOpen={actions.openSidebar}
+        onClose={actions.closeSidebar}
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -107,7 +109,7 @@ class Sidebar extends React.Component {
           <BottomNavigationAction label='My Chats' icon={<RestoreIcon />} />
           <BottomNavigationAction label='Explore' icon={<ExploreIcon />} />
         </BottomNavigation>
-      </Drawer>
+      </SwipeableDrawer>
     );
   }
 }

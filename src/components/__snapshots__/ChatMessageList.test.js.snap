@@ -2,7 +2,7 @@
 
 exports[`<ChatMessageList /> renders correctly 1`] = `
 <h1
-  className="MuiTypography-root-27 MuiTypography-display1-31"
+  className="MuiTypography-root-29 MuiTypography-display1-33"
 >
   There is no messages yet...
 </h1>

@@ -30,6 +30,8 @@ const mockProps = {
   },
   actions: {
     createChat: jest.fn(),
+    openSidebar: jest.fn(),
+    closeSidebar: jest.fn(),
   },
   isConnected: false,
   open: true,
