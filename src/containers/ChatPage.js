@@ -6,6 +6,7 @@ import * as socketActions from '../actions/sockets';
 import { editUser } from '../actions/user';
 import { logout } from '../actions/auth';
 import * as fromChats from '../reducers/chats';
+import * as fromMessages from '../reducers/messages';
 import ChatPage from '../components/ChatPage';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
       my: fromChats.getByIds(state.chats, state.chats.myIds),
       active: activeChat,
     },
-    messages: state.messages,
+    messages: fromMessages.getMessages(state),
     user: {
       ...state.auth.user,
       isCreator: fromChats.isChatCreator(activeChat, state.auth.user),

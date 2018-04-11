@@ -59,7 +59,7 @@ const ChatMessage = ({
           </Typography>
           {content}
           <Typography variant='caption' component='span'>
-            {moment(createdAt).fromNow()}
+            {moment(createdAt).isValid() && moment(createdAt).fromNow()}
           </Typography>
         </Typography>
       </div>
