@@ -1,3 +1,4 @@
+/* eslint no-underscore-dangle: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -54,7 +55,7 @@ const ChatHeader = ({
       </IconButton>
       {activeChat ? (
         <React.Fragment>
-          <Avatar colorFrom={activeChat.title}>{activeChat.title}</Avatar>
+          <Avatar colorFrom={activeChat._id}>{activeChat.title}</Avatar>
           <Typography variant='title' color='inherit' className={classes.title}>
             {activeChat.title}
             {(user.isCreator || user.isMember) && (

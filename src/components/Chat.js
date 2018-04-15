@@ -17,14 +17,13 @@ const styles = theme => ({
     height: '100%',
     overflow: 'hidden',
     width: '100%',
-    marginLeft: -theme.drawerWidth,
-    [theme.breakpoints.down('md')]: {
-      marginLeft: -theme.drawerWidth * 0.75,
-    },
   },
   'content-shift': {
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: 0,
+    [theme.breakpoints.up('md')]: {
+      marginLeft: theme.drawerWidth,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      marginLeft: theme.drawerWidth * 0.75,
     },
   },
   messageInputWrapper: {

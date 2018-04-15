@@ -3,6 +3,11 @@
 exports[`<Sidebar /> renders correctly 1`] = `
 <div
   className="MuiDrawer-docked-97"
+  style={
+    Object {
+      "width": 0,
+    }
+  }
 >
   <div
     className="MuiPaper-root-108 MuiPaper-elevation0-110 MuiDrawer-paper-98 Sidebar-drawerPaper-94 MuiDrawer-paperAnchorLeft-99 MuiDrawer-paperAnchorDockedLeft-103"
@@ -180,6 +185,11 @@ exports[`<Sidebar /> renders correctly 1`] = `
 exports[`<Sidebar /> renders correctly isConnected 1`] = `
 <div
   className="MuiDrawer-docked-97"
+  style={
+    Object {
+      "width": 0,
+    }
+  }
 >
   <div
     className="MuiPaper-root-108 MuiPaper-elevation0-110 MuiDrawer-paper-98 Sidebar-drawerPaper-94 MuiDrawer-paperAnchorLeft-99 MuiDrawer-paperAnchorDockedLeft-103"

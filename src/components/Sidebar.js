@@ -26,7 +26,6 @@ const styles = theme => ({
     ...theme.mixins.toolbar,
     display: 'flex',
     paddingLeft: theme.spacing.unit * 3,
-    // paddingRight: theme.spacing.unit * 3,
   },
   drawerCloseButton: {
     alignSelf: 'center',
@@ -80,6 +79,7 @@ class Sidebar extends React.Component {
         classes={{
           paper: classes.drawerPaper,
         }}
+        style={{ width: 0 }}
       >
         <div className={classes.drawerHeader}>
           <TextField
@@ -97,7 +97,6 @@ class Sidebar extends React.Component {
         <ChatList
           chats={this.filterChats(activeAction === 0 ? chats.my : chats.all)}
           activeChat={chats.active}
-          setActiveChat={actions.setActiveChat}
           disabled={!isConnected}
         />
         <NewChatButton createChat={actions.createChat} disabled={!isConnected} />

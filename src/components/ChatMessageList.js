@@ -68,7 +68,9 @@ class ChatMessageList extends React.Component {
           messages.map(message => <ChatMessage {...message} key={message._id} user={user} />)}
       </div>
     ) : (
-      <Typography variant='display1'>There is no messages yet...</Typography>
+      <Typography className={classes.noMessages} variant='display1'>
+        There is no messages yet...
+      </Typography>
     );
   }
 }
