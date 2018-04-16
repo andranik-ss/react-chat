@@ -44,8 +44,11 @@ const styles = theme => ({
     },
   },
   messageInputShift: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: `calc(100% - ${theme.drawerWidth}px)`,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      width: `calc(100% - ${theme.drawerWidth * 0.75}px)`,
     },
   },
 });
