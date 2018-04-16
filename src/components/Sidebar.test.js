@@ -7,6 +7,11 @@ import Sidebar from './Sidebar';
 jest.mock('./ChatList', () => () => 'ChatList');
 jest.mock('./NewChatButton', () => () => 'NewChatButton');
 
+global.matchMedia = () => ({
+  addListener: jest.fn(),
+  removeListener: jest.fn(),
+});
+
 const mockProps = {
   chats: {
     my: [

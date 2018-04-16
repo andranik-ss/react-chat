@@ -42,14 +42,36 @@ class Sidebar extends React.Component {
     }).isRequired,
     actions: PropTypes.shape({
       createChat: PropTypes.func.isRequired,
+      openSidebar: PropTypes.func.isRequired,
     }).isRequired,
     isConnected: PropTypes.bool.isRequired,
     open: PropTypes.bool.isRequired,
   };
 
-  state = {
-    activeAction: 0,
-    searchValue: '',
+  constructor(props) {
+    super(props);
+
+    this.mql = window.matchMedia('(max-width: 600px)');
+    this.mql.addListener(this.screenTest);
+
+    this.state = {
+      activeAction: 0,
+      searchValue: '',
+      isSwipeable: this.mql.matches,
+    };
+  }
+
+  componentWillUnmount = () => {
+    this.mql.removeListener(this.screenTest);
+  };
+
+  screenTest = (e) => {
+    this.setState({
+      isSwipeable: e.matches,
+    });
+    if (!e.matches) {
+      this.props.actions.openSidebar();
+    }
   };
 
   handleChangeActiveAction = (e, value) => this.setState({ activeAction: value });
@@ -68,11 +90,13 @@ class Sidebar extends React.Component {
     const {
       classes, chats, actions, isConnected, open,
     } = this.props;
-    const { activeAction, searchValue } = this.state;
+    const { activeAction, searchValue, isSwipeable } = this.state;
+
+    const drawerProps = isSwipeable ? {} : { variant: 'persistent' };
 
     return (
       <SwipeableDrawer
-        variant='persistent'
+        {...drawerProps}
         open={open}
         onOpen={actions.openSidebar}
         onClose={actions.closeSidebar}
