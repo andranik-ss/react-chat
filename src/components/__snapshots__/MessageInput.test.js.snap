@@ -2,7 +2,7 @@
 
 exports[`<MessageInput /> renders correctly 1`] = `
 <div
-  className="MuiInput-root-47 MessageInput-root-45 MuiInput-fullWidth-54 MuiInput-multiline-53 MuiInput-underline-51"
+  className="MuiInput-root-47 MessageInput-root-45 MuiInput-fullWidth-54 MuiInput-multiline-53"
   onKeyPress={[Function]}
 >
   <div
@@ -99,7 +99,7 @@ exports[`<MessageInput /> renders correctly 1`] = `
 
 exports[`<MessageInput /> renders correctly disabled 1`] = `
 <div
-  className="MuiInput-root-47 MessageInput-root-45 MuiInput-disabled-50 MuiInput-fullWidth-54 MuiInput-multiline-53 MuiInput-underline-51"
+  className="MuiInput-root-47 MessageInput-root-45 MuiInput-disabled-50 MuiInput-fullWidth-54 MuiInput-multiline-53"
   onKeyPress={[Function]}
 >
   <div

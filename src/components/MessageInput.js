@@ -66,6 +66,7 @@ class MessageInput extends React.Component {
           </InputAdornment>
         }
         classes={{ root: classes.root }}
+        disableUnderline
       />
     );
   }
