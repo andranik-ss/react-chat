@@ -39,6 +39,7 @@ const styles = theme => ({
   },
   content: {
     paddingRight: theme.spacing.unit * 5,
+    whiteSpace: 'pre-wrap',
   },
   time: {
     position: 'absolute',
