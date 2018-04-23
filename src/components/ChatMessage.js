@@ -20,6 +20,7 @@ const styles = theme => ({
     flexDirection: 'row-reverse',
   },
   message: {
+    position: 'relative',
     maxWidth: '70%',
     minWidth: '10%',
     padding: theme.spacing.unit,
@@ -36,6 +37,14 @@ const styles = theme => ({
   statusMessageUser: {
     display: 'inline',
   },
+  content: {
+    paddingRight: theme.spacing.unit * 5,
+  },
+  time: {
+    position: 'absolute',
+    right: theme.spacing.unit,
+    bottom: theme.spacing.unit,
+  },
 });
 
 const ChatMessage = ({
@@ -49,7 +58,7 @@ const ChatMessage = ({
   if (statusMessage) {
     return (
       <div className={classes.messageWrapper}>
-        <Typography className={classes.statusMessage}>
+        <div className={classes.statusMessage}>
           <Typography
             variant='caption'
             style={{ color: getColor(sender._id) }}
@@ -61,7 +70,7 @@ const ChatMessage = ({
           <Typography variant='caption' component='span'>
             {moment(createdAt).isValid() && moment(createdAt).fromNow()}
           </Typography>
-        </Typography>
+        </div>
       </div>
     );
   }
@@ -78,9 +87,11 @@ const ChatMessage = ({
         <Typography variant='caption' style={{ color: getColor(sender._id) }}>
           {getSenderName(sender)}
         </Typography>
-        {content}
-        <Typography variant='caption' component='span'>
-          {moment(createdAt).fromNow()}
+        <Typography className={classes.content} component='pre'>
+          {content}
+        </Typography>
+        <Typography className={classes.time} variant='caption' component='span'>
+          {moment(createdAt).format('HH:mm')}
         </Typography>
       </Paper>
     </div>

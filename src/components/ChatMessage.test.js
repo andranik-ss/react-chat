@@ -8,6 +8,7 @@ import ChatMessage from './ChatMessage';
 jest.mock('moment', () => () => ({
   fromNow: () => '2 days ago',
   isValid: () => true,
+  format: () => '15:00',
 }));
 
 const mockProps = {
