@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { Redirect } from 'react-router-dom';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import Paper from 'material-ui/Paper';
-import Tabs, { Tab } from 'material-ui/Tabs';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 import ErrorMessage from './ErrorMessage';
@@ -80,7 +81,7 @@ class WelcomePage extends React.Component {
               <Tabs
                 value={activeTab}
                 onChange={this.handleTabChange}
-                indicatorColor='red'
+                indicatorColor='secondary'
                 fullWidth
               >
                 <Tab label='LOGIN' />

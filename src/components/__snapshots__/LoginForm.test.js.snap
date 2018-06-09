@@ -2,37 +2,37 @@
 
 exports[`<LoginForm /> renders correctly 1`] = `
 <form
-  className="LoginForm-container-57"
+  className="LoginForm-container-62"
   onSubmit={[Function]}
 >
   <div
     aria-describedby={undefined}
-    className="MuiFormControl-root-59 MuiFormControl-marginNormal-60 MuiFormControl-fullWidth-62"
+    className="MuiFormControl-root-64 MuiFormControl-marginNormal-65 MuiFormControl-fullWidth-67"
     onBlur={[Function]}
     onFocus={[Function]}
     username=""
   >
     <label
-      className="MuiFormLabel-root-68 MuiInputLabel-root-63 MuiInputLabel-formControl-64 MuiInputLabel-animated-67"
+      className="MuiFormLabel-root-73 MuiInputLabel-root-68 MuiInputLabel-formControl-69 MuiInputLabel-animated-72"
       data-shrink={false}
       htmlFor={undefined}
     >
       Username
       <span
-        className="MuiFormLabel-asterisk-72"
+        className="MuiFormLabel-asterisk-77"
       >
          *
       </span>
     </label>
     <div
-      className="MuiInput-root-74 MuiInput-fullWidth-81 MuiInput-formControl-75 MuiInput-underline-78"
+      className="MuiInput-root-78 MuiInput-fullWidth-85 MuiInput-formControl-79 MuiInput-underline-82"
     >
       <input
         aria-invalid={false}
         aria-required={true}
         autoComplete={undefined}
         autoFocus={undefined}
-        className="MuiInput-input-82"
+        className="MuiInput-input-86"
         defaultValue={undefined}
         disabled={false}
         id={undefined}
@@ -53,32 +53,32 @@ exports[`<LoginForm /> renders correctly 1`] = `
   </div>
   <div
     aria-describedby={undefined}
-    className="MuiFormControl-root-59 MuiFormControl-marginNormal-60 MuiFormControl-fullWidth-62"
+    className="MuiFormControl-root-64 MuiFormControl-marginNormal-65 MuiFormControl-fullWidth-67"
     onBlur={[Function]}
     onFocus={[Function]}
     username=""
   >
     <label
-      className="MuiFormLabel-root-68 MuiInputLabel-root-63 MuiInputLabel-formControl-64 MuiInputLabel-animated-67"
+      className="MuiFormLabel-root-73 MuiInputLabel-root-68 MuiInputLabel-formControl-69 MuiInputLabel-animated-72"
       data-shrink={false}
       htmlFor={undefined}
     >
       Password
       <span
-        className="MuiFormLabel-asterisk-72"
+        className="MuiFormLabel-asterisk-77"
       >
          *
       </span>
     </label>
     <div
-      className="MuiInput-root-74 MuiInput-fullWidth-81 MuiInput-formControl-75 MuiInput-underline-78"
+      className="MuiInput-root-78 MuiInput-fullWidth-85 MuiInput-formControl-79 MuiInput-underline-82"
     >
       <input
         aria-invalid={false}
         aria-required={true}
         autoComplete={undefined}
         autoFocus={undefined}
-        className="MuiInput-input-82 MuiInput-inputType-86"
+        className="MuiInput-input-86 MuiInput-inputType-89"
         defaultValue={undefined}
         disabled={false}
         id={undefined}
@@ -98,7 +98,7 @@ exports[`<LoginForm /> renders correctly 1`] = `
     </div>
   </div>
   <button
-    className="MuiButtonBase-root-103 MuiButton-root-88 MuiButton-raised-93 MuiButton-raisedPrimary-95 LoginForm-button-58"
+    className="MuiButtonBase-root-113 MuiButton-root-91 MuiButton-contained-100 MuiButton-containedPrimary-101 MuiButton-raised-103 MuiButton-raisedPrimary-104 LoginForm-button-63"
     disabled={false}
     onBlur={[Function]}
     onFocus={[Function]}
@@ -114,12 +114,12 @@ exports[`<LoginForm /> renders correctly 1`] = `
     type="submit"
   >
     <span
-      className="MuiButton-label-89"
+      className="MuiButton-label-92"
     >
       Login
     </span>
     <span
-      className="MuiTouchRipple-root-106"
+      className="MuiTouchRipple-root-116"
     />
   </button>
 </form>

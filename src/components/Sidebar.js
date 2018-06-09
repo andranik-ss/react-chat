@@ -1,14 +1,15 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import SwipeableDrawer from 'material-ui/SwipeableDrawer';
-import Divider from 'material-ui/Divider';
-import TextField from 'material-ui/TextField';
-import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
-import RestoreIcon from 'material-ui-icons/Restore';
-import ExploreIcon from 'material-ui-icons/Explore';
-import IconButton from 'material-ui/IconButton';
-import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import Divider from '@material-ui/core/Divider';
+import TextField from '@material-ui/core/TextField';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import IconButton from '@material-ui/core/IconButton';
+import RestoreIcon from '@material-ui/icons/Restore';
+import ExploreIcon from '@material-ui/icons/Explore';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 import ChatList from './ChatList';
 import NewChatButton from './NewChatButton';

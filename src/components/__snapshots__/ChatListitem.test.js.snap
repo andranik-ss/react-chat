@@ -22,11 +22,11 @@ exports[`<ChatList /> renders correctly 1`] = `
   <div
     className="MuiListItemText-root-66"
   >
-    <h3
+    <span
       className="MuiTypography-root-72 MuiTypography-subheading-79 MuiListItemText-primary-69"
     >
       test
-    </h3>
+    </span>
     <p
       className="MuiTypography-root-72 MuiTypography-body1-81 MuiTypography-colorTextSecondary-94 MuiListItemText-secondary-70"
     >
@@ -61,11 +61,11 @@ exports[`<ChatList /> renders correctly active 1`] = `
   <div
     className="MuiListItemText-root-66"
   >
-    <h3
+    <span
       className="MuiTypography-root-72 MuiTypography-subheading-79 MuiListItemText-primary-69"
     >
       test
-    </h3>
+    </span>
     <p
       className="MuiTypography-root-72 MuiTypography-body1-81 MuiTypography-colorTextSecondary-94 MuiListItemText-secondary-70"
     >
@@ -100,11 +100,11 @@ exports[`<ChatList /> renders correctly disabled 1`] = `
   <div
     className="MuiListItemText-root-66"
   >
-    <h3
+    <span
       className="MuiTypography-root-72 MuiTypography-subheading-79 MuiListItemText-primary-69"
     >
       test
-    </h3>
+    </span>
     <p
       className="MuiTypography-root-72 MuiTypography-body1-81 MuiTypography-colorTextSecondary-94 MuiListItemText-secondary-70"
     >

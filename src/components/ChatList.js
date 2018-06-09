@@ -1,9 +1,9 @@
 /* eslint no-underscore-dangle: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import List from 'material-ui/List';
-import Typography from 'material-ui/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
 import ChatListItem from './ChatListItem';
 
 const styles = () => ({

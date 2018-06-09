@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import ChatHeader from './ChatHeader';
 import Sidebar from './Sidebar';
 import Chat from './Chat';
@@ -71,7 +71,9 @@ class ChatPage extends React.Component {
       actions: {
         fetchMyChats, fetchAllChats, setActiveChat, socketsConnect, mountChat,
       },
-      match: { params: { chatId: activeChatId } },
+      match: {
+        params: { chatId: activeChatId },
+      },
     } = this.props;
 
     Promise.all([fetchAllChats(), fetchMyChats()])
@@ -85,7 +87,10 @@ class ChatPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { match: { params }, actions: { setActiveChat, unmountChat, mountChat } } = this.props;
+    const {
+      match: { params },
+      actions: { setActiveChat, unmountChat, mountChat },
+    } = this.props;
     const { params: nextParams } = nextProps.match;
 
     if (nextParams.chatId && params.chatId !== nextParams.chatId) {

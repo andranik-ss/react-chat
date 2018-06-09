@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Dialog, { DialogActions, DialogContent, DialogTitle } from 'material-ui/Dialog';
-import TextField from 'material-ui/TextField';
-import Button from 'material-ui/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class UserProfile extends React.Component {
   static propTypes = {
@@ -23,7 +26,9 @@ class UserProfile extends React.Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    const { user: { username, lastName, firstName } } = nextProps;
+    const {
+      user: { username, lastName, firstName },
+    } = nextProps;
 
     this.setState({
       username,
@@ -42,7 +47,9 @@ class UserProfile extends React.Component {
   };
 
   handleCancel = () => {
-    const { user: { username, lastName, firstName } } = this.props;
+    const {
+      user: { username, lastName, firstName },
+    } = this.props;
 
     this.props.onClose();
     this.setState({

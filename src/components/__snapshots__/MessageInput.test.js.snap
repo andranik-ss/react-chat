@@ -2,11 +2,11 @@
 
 exports[`<MessageInput /> renders correctly 1`] = `
 <div
-  className="MuiInput-root-47 MessageInput-root-45 MuiInput-fullWidth-54 MuiInput-multiline-53"
+  className="MuiInput-root-46 MessageInput-root-44 MuiInput-fullWidth-53 MuiInput-multiline-52"
   onKeyPress={[Function]}
 >
   <div
-    className="MuiTextarea-root-61"
+    className="Textarea-root-59"
     style={
       Object {
         "height": 19,
@@ -15,7 +15,7 @@ exports[`<MessageInput /> renders correctly 1`] = `
   >
     <textarea
       aria-hidden="true"
-      className="MuiTextarea-shadow-63 MuiTextarea-textarea-62"
+      className="Textarea-shadow-61 Textarea-textarea-60"
       readOnly={true}
       rows="1"
       tabIndex={-1}
@@ -23,7 +23,7 @@ exports[`<MessageInput /> renders correctly 1`] = `
     />
     <textarea
       aria-hidden="true"
-      className="MuiTextarea-shadow-63 MuiTextarea-textarea-62"
+      className="Textarea-shadow-61 Textarea-textarea-60"
       defaultValue={undefined}
       readOnly={true}
       rows={1}
@@ -35,7 +35,7 @@ exports[`<MessageInput /> renders correctly 1`] = `
       aria-required={undefined}
       autoComplete={undefined}
       autoFocus={undefined}
-      className="MuiTextarea-textarea-62 MuiInput-input-55 MuiInput-inputMultiline-58"
+      className="Textarea-textarea-60 MuiInput-input-54 MuiInput-inputMultiline-56"
       defaultValue={undefined}
       disabled={false}
       id={undefined}
@@ -54,11 +54,11 @@ exports[`<MessageInput /> renders correctly 1`] = `
     />
   </div>
   <div
-    className="MuiInputAdornment-root-64 MessageInput-sendIcon-46 MuiInputAdornment-positionEnd-66"
+    className="MuiInputAdornment-root-62 MessageInput-sendIcon-45 MuiInputAdornment-positionEnd-64"
   >
     <button
       aria-label="Send message"
-      className="MuiButtonBase-root-73 MuiIconButton-root-67"
+      className="MuiButtonBase-root-71 MuiIconButton-root-65"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -75,22 +75,24 @@ exports[`<MessageInput /> renders correctly 1`] = `
       type="button"
     >
       <span
-        className="MuiIconButton-label-72"
+        className="MuiIconButton-label-70"
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-76"
+          className="MuiSvgIcon-root-74"
           color={undefined}
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <path
-            d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
-          />
+          <g>
+            <path
+              d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+            />
+          </g>
         </svg>
       </span>
       <span
-        className="MuiTouchRipple-root-82"
+        className="MuiTouchRipple-root-80"
       />
     </button>
   </div>
@@ -99,11 +101,11 @@ exports[`<MessageInput /> renders correctly 1`] = `
 
 exports[`<MessageInput /> renders correctly disabled 1`] = `
 <div
-  className="MuiInput-root-47 MessageInput-root-45 MuiInput-disabled-50 MuiInput-fullWidth-54 MuiInput-multiline-53"
+  className="MuiInput-root-46 MessageInput-root-44 MuiInput-disabled-49 MuiInput-fullWidth-53 MuiInput-multiline-52"
   onKeyPress={[Function]}
 >
   <div
-    className="MuiTextarea-root-61"
+    className="Textarea-root-59"
     style={
       Object {
         "height": 19,
@@ -112,7 +114,7 @@ exports[`<MessageInput /> renders correctly disabled 1`] = `
   >
     <textarea
       aria-hidden="true"
-      className="MuiTextarea-shadow-63 MuiTextarea-textarea-62"
+      className="Textarea-shadow-61 Textarea-textarea-60"
       readOnly={true}
       rows="1"
       tabIndex={-1}
@@ -120,7 +122,7 @@ exports[`<MessageInput /> renders correctly disabled 1`] = `
     />
     <textarea
       aria-hidden="true"
-      className="MuiTextarea-shadow-63 MuiTextarea-textarea-62"
+      className="Textarea-shadow-61 Textarea-textarea-60"
       defaultValue={undefined}
       readOnly={true}
       rows={1}
@@ -132,7 +134,7 @@ exports[`<MessageInput /> renders correctly disabled 1`] = `
       aria-required={undefined}
       autoComplete={undefined}
       autoFocus={undefined}
-      className="MuiTextarea-textarea-62 MuiInput-input-55 MuiInput-inputDisabled-57 MuiInput-inputMultiline-58"
+      className="Textarea-textarea-60 MuiInput-input-54 MuiInput-disabled-49 MuiInput-inputMultiline-56"
       defaultValue={undefined}
       disabled={true}
       id={undefined}
@@ -151,11 +153,11 @@ exports[`<MessageInput /> renders correctly disabled 1`] = `
     />
   </div>
   <div
-    className="MuiInputAdornment-root-64 MessageInput-sendIcon-46 MuiInputAdornment-positionEnd-66"
+    className="MuiInputAdornment-root-62 MessageInput-sendIcon-45 MuiInputAdornment-positionEnd-64"
   >
     <button
       aria-label="Send message"
-      className="MuiButtonBase-root-73 MuiIconButton-root-67"
+      className="MuiButtonBase-root-71 MuiIconButton-root-65"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -172,22 +174,24 @@ exports[`<MessageInput /> renders correctly disabled 1`] = `
       type="button"
     >
       <span
-        className="MuiIconButton-label-72"
+        className="MuiIconButton-label-70"
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-76"
+          className="MuiSvgIcon-root-74"
           color={undefined}
           focusable="false"
           viewBox="0 0 24 24"
         >
-          <path
-            d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
-          />
+          <g>
+            <path
+              d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+            />
+          </g>
         </svg>
       </span>
       <span
-        className="MuiTouchRipple-root-82"
+        className="MuiTouchRipple-root-80"
       />
     </button>
   </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MuiAvatar from 'material-ui/Avatar';
+import MuiAvatar from '@material-ui/core/Avatar';
 import titleInitials from '../utils/title-initials';
 import getColor from '../utils/color-from';
 

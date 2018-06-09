@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { withStyles } from 'material-ui';
+import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { ListItem, ListItemText } from 'material-ui/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from './Avatar';
 
 const styles = theme => ({

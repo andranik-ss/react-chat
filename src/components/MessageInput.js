@@ -1,9 +1,10 @@
 import React from 'react';
-import { withStyles } from 'material-ui';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import Input, { InputAdornment } from 'material-ui/Input';
-import IconButton from 'material-ui/IconButton';
-import Send from 'material-ui-icons/Send';
+import Input from '@material-ui/core/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import IconButton from '@material-ui/core/IconButton';
+import Send from '@material-ui/icons/Send';
 
 const styles = () => ({
   root: {
