@@ -15,7 +15,7 @@ exports[`<NewChatButton /> renders correctly 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  tabIndex={0}
+  tabIndex="0"
   type="button"
 >
   <span
@@ -23,7 +23,7 @@ exports[`<NewChatButton /> renders correctly 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-62 MuiSvgIcon-fontSize-68"
+      className="MuiSvgIcon-root-63"
       color={undefined}
       focusable="false"
       viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ exports[`<NewChatButton /> renders correctly disabled 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  tabIndex={-1}
+  tabIndex="-1"
   type="button"
 >
   <span
@@ -62,7 +62,7 @@ exports[`<NewChatButton /> renders correctly disabled 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-62 MuiSvgIcon-fontSize-68"
+      className="MuiSvgIcon-root-63"
       color={undefined}
       focusable="false"
       viewBox="0 0 24 24"

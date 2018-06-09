@@ -13,6 +13,11 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 3,
     paddingBottom: '120px',
   },
+  noMessages: {
+    [theme.breakpoints.down('md')]: {
+      fontSize: '18px',
+    },
+  },
 });
 
 class ChatMessageList extends React.Component {
@@ -63,7 +68,9 @@ class ChatMessageList extends React.Component {
           messages.map(message => <ChatMessage {...message} key={message._id} user={user} />)}
       </div>
     ) : (
-      <Typography variant='display1'>There is no messages yet...</Typography>
+      <Typography className={classes.noMessages} variant='display1'>
+        There is no messages yet...
+      </Typography>
     );
   }
 }

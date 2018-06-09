@@ -17,7 +17,7 @@ exports[`<UserMenu /> renders correctly 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  tabIndex={-1}
+  tabIndex="-1"
   type="button"
 >
   <span
@@ -25,7 +25,7 @@ exports[`<UserMenu /> renders correctly 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-35 MuiSvgIcon-fontSize-41"
+      className="MuiSvgIcon-root-36"
       color={undefined}
       focusable="false"
       viewBox="0 0 24 24"
@@ -55,7 +55,7 @@ exports[`<UserMenu /> renders correctly is connected 1`] = `
   onTouchEnd={[Function]}
   onTouchMove={[Function]}
   onTouchStart={[Function]}
-  tabIndex={0}
+  tabIndex="0"
   type="button"
 >
   <span
@@ -63,7 +63,7 @@ exports[`<UserMenu /> renders correctly is connected 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-35 MuiSvgIcon-fontSize-41"
+      className="MuiSvgIcon-root-36"
       color={undefined}
       focusable="false"
       viewBox="0 0 24 24"

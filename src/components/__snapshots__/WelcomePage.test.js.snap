@@ -3,35 +3,35 @@
 exports[`<WelcomePage /> renders correctly 1`] = `
 <div>
   <header
-    className="MuiPaper-root-111 MuiPaper-shadow4-117 MuiAppBar-root-103 MuiAppBar-positionFixed-104 MuiAppBar-colorPrimary-109 mui-fixed"
+    className="MuiPaper-root-114 MuiPaper-elevation4-120 MuiAppBar-root-106 MuiAppBar-positionFixed-107 MuiAppBar-colorPrimary-112 mui-fixed"
   >
     <div
-      className="MuiToolbar-root-138 MuiToolbar-gutters-139"
+      className="MuiToolbar-root-141 MuiToolbar-gutters-142"
     >
       <h2
-        className="MuiTypography-root-140 MuiTypography-title-146 MuiTypography-colorInherit-159 MuiTypography-noWrap-156"
+        className="MuiTypography-root-143 MuiTypography-title-149 MuiTypography-colorInherit-162 MuiTypography-noWrap-159"
       >
         DogeCodes React Chat
       </h2>
     </div>
   </header>
   <div
-    className="WelcomePage-content-100"
+    className="WelcomePage-content-103"
   >
     <div
-      className="MuiPaper-root-111 MuiPaper-shadow2-115 MuiPaper-rounded-112 WelcomePage-authForm-101"
+      className="MuiPaper-root-114 MuiPaper-elevation2-118 MuiPaper-rounded-115 WelcomePage-authForm-104"
     >
       <header
-        className="MuiPaper-root-111 MuiPaper-shadow4-117 MuiAppBar-root-103 MuiAppBar-positionStatic-107 MuiAppBar-colorDefault-108"
+        className="MuiPaper-root-114 MuiPaper-elevation4-120 MuiAppBar-root-106 MuiAppBar-positionStatic-110 MuiAppBar-colorDefault-111"
       >
         <div
-          className="MuiTabs-root-164"
+          className="MuiTabs-root-167"
         >
           <div
-            className="MuiTabs-flexContainer-165"
+            className="MuiTabs-flexContainer-168"
           >
             <div
-              className="MuiTabs-scrollingContainer-166 MuiTabs-fixed-167"
+              className="MuiTabs-scroller-169 MuiTabs-fixed-170"
               onScroll={[Function]}
               role="tablist"
               style={
@@ -41,11 +41,11 @@ exports[`<WelcomePage /> renders correctly 1`] = `
               }
             >
               <div
-                className="MuiTabs-flexContainer-165"
+                className="MuiTabs-flexContainer-168"
               >
                 <button
                   aria-selected={true}
-                  className="MuiButtonBase-root-187 MuiTab-root-171 MuiTab-rootInherit-173 MuiTab-rootInheritSelected-180 MuiTab-fullWidth-182"
+                  className="MuiButtonBase-root-192 MuiTab-root-176 MuiTab-textColorInherit-178 MuiTab-textColorInheritSelected-185 MuiTab-fullWidth-187"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -60,29 +60,29 @@ exports[`<WelcomePage /> renders correctly 1`] = `
                   onTouchStart={[Function]}
                   role="tab"
                   style={undefined}
-                  tabIndex={0}
+                  tabIndex="0"
                   type="button"
                 >
                   <span
-                    className="MuiTab-wrapper-183"
+                    className="MuiTab-wrapper-188"
                   >
                     <span
-                      className="MuiTab-labelContainer-184"
+                      className="MuiTab-labelContainer-189"
                     >
                       <span
-                        className="MuiTab-label-185"
+                        className="MuiTab-label-190"
                       >
                         LOGIN
                       </span>
                     </span>
                   </span>
                   <span
-                    className="MuiTouchRipple-root-192"
+                    className="MuiTouchRipple-root-198"
                   />
                 </button>
                 <button
                   aria-selected={false}
-                  className="MuiButtonBase-root-187 MuiTab-root-171 MuiTab-rootInherit-173 MuiTab-fullWidth-182"
+                  className="MuiButtonBase-root-192 MuiTab-root-176 MuiTab-textColorInherit-178 MuiTab-fullWidth-187"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -97,29 +97,29 @@ exports[`<WelcomePage /> renders correctly 1`] = `
                   onTouchStart={[Function]}
                   role="tab"
                   style={undefined}
-                  tabIndex={0}
+                  tabIndex="0"
                   type="button"
                 >
                   <span
-                    className="MuiTab-wrapper-183"
+                    className="MuiTab-wrapper-188"
                   >
                     <span
-                      className="MuiTab-labelContainer-184"
+                      className="MuiTab-labelContainer-189"
                     >
                       <span
-                        className="MuiTab-label-185"
+                        className="MuiTab-label-190"
                       >
                         SIGN UP
                       </span>
                     </span>
                   </span>
                   <span
-                    className="MuiTouchRipple-root-192"
+                    className="MuiTouchRipple-root-198"
                   />
                 </button>
               </div>
               <span
-                className="MuiTabIndicator-root-189"
+                className="MuiTabIndicator-root-195 MuiTabs-indicator-175"
                 style={
                   Object {
                     "backgroundColor": "red",
@@ -133,7 +133,7 @@ exports[`<WelcomePage /> renders correctly 1`] = `
         </div>
       </header>
       <div
-        className="WelcomePage-tabWrapper-102"
+        className="WelcomePage-tabWrapper-105"
       >
         LoginForm
       </div>

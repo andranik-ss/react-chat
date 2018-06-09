@@ -3,6 +3,7 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import PrivateRoute from '../containers/PrivateRoute';
 import ChatPage from '../containers/ChatPage';
 import WelcomePage from '../containers/WelcomePage';
+import Customize from '../containers/Customize';
 import history from '../utils/history';
 
 const App = () => (
@@ -15,4 +16,4 @@ const App = () => (
   </Router>
 );
 
-export default App;
+export default Customize(App);

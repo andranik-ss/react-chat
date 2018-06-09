@@ -20,6 +20,9 @@ const styles = theme => ({
   authForm: {
     marginTop: '24px',
     width: '500px',
+    [theme.breakpoints.down('xs')]: {
+      width: '95%',
+    },
   },
   tabWrapper: {
     padding: theme.spacing.unit * 3,

@@ -2,7 +2,7 @@
 
 exports[`<InfoPaper /> renders correctly 1`] = `
 <div
-  className="MuiPaper-root-54 MuiPaper-shadow2-58 MuiPaper-rounded-55 InfoPaper-paper-53"
+  className="MuiPaper-root-54 MuiPaper-elevation2-58 MuiPaper-rounded-55 InfoPaper-paper-53"
 >
   <h1
     className="MuiTypography-root-81 MuiTypography-display1-85 MuiTypography-gutterBottom-98"

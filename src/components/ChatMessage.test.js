@@ -5,7 +5,11 @@ import renderer from 'react-test-renderer';
 import ChatMessage from './ChatMessage';
 
 // Return a fixed timestamp when moment().fromNow() is called
-jest.mock('moment', () => () => ({ fromNow: () => '2 days ago' }));
+jest.mock('moment', () => () => ({
+  fromNow: () => '2 days ago',
+  isValid: () => true,
+  format: () => '15:00',
+}));
 
 const mockProps = {
   content: 'test message',

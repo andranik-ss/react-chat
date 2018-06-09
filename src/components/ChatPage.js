@@ -62,6 +62,10 @@ class ChatPage extends React.Component {
     error: null,
   };
 
+  state = {
+    open: true,
+  };
+
   componentDidMount() {
     const {
       actions: {
@@ -91,26 +95,41 @@ class ChatPage extends React.Component {
     }
   }
 
+  handleDrawerOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleDrawerClose = () => {
+    this.setState({ open: false });
+  };
+
   render() {
     const {
       classes, chats, messages, user, actions, error, isConnected,
     } = this.props;
 
+    const hasShift = this.state.open;
+
+    actions.openSidebar = this.handleDrawerOpen;
+    actions.closeSidebar = this.handleDrawerClose;
+
     return (
       <div className={classes.root}>
+        <Sidebar chats={chats} actions={actions} isConnected={isConnected} open={hasShift} />
         <ChatHeader
           user={user}
           actions={actions}
           activeChat={chats.active}
           isConnected={isConnected}
+          hasShift={hasShift}
         />
-        <Sidebar chats={chats} actions={actions} isConnected={isConnected} />
         <Chat
           messages={messages}
           user={user}
           actions={actions}
           activeChat={chats.active}
           isConnected={isConnected}
+          hasShift={hasShift}
         />
         <ErrorMessage error={error} />
       </div>

@@ -32,6 +32,7 @@ const mockProps = {
     isConnected: true,
     sendMessage: jest.fn(),
   },
+  hasShift: false,
 };
 
 describe('<Chat />', () => {

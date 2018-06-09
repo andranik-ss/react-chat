@@ -7,6 +7,11 @@ import Sidebar from './Sidebar';
 jest.mock('./ChatList', () => () => 'ChatList');
 jest.mock('./NewChatButton', () => () => 'NewChatButton');
 
+global.matchMedia = () => ({
+  addListener: jest.fn(),
+  removeListener: jest.fn(),
+});
+
 const mockProps = {
   chats: {
     my: [
@@ -30,8 +35,11 @@ const mockProps = {
   },
   actions: {
     createChat: jest.fn(),
+    openSidebar: jest.fn(),
+    closeSidebar: jest.fn(),
   },
   isConnected: false,
+  open: true,
 };
 
 describe('<Sidebar />', () => {

@@ -1,3 +1,4 @@
+import moment from 'moment';
 import * as types from '../constants';
 
 const initialState = [];
@@ -11,4 +12,33 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
+};
+
+// eslint-disable-next-line
+export const getMessages = state => {
+  let savedDate = new Date(2018, 1, 1);
+  return (
+    state.messages &&
+    state.messages.reduce((messages, current, index) => {
+      const currentDate = new Date(current.createdAt);
+      if (savedDate && moment(savedDate).isBefore(currentDate, 'day')) {
+        const timeMessage = {
+          ...current,
+          sender: {
+            ...current.sender,
+            username: '',
+            firstName: '',
+            lastName: '',
+          },
+          statusMessage: true,
+          createdAt: '',
+          content: moment(currentDate).format('LL'),
+          _id: index,
+        };
+        savedDate = currentDate;
+        return [...messages, timeMessage, current];
+      }
+      return [...messages, current];
+    }, [])
+  );
 };
