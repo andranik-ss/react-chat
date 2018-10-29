@@ -46,6 +46,17 @@ const styles = theme => ({
     right: theme.spacing.unit,
     bottom: theme.spacing.unit,
   },
+  hr: {
+    flex: 1,
+    marginLeft: theme.spacing.unit * 2,
+    marginRight: theme.spacing.unit * 2,
+  },
+  dateMessage: {
+    display: 'flex',
+    justifyContent: 'center',
+    color: 'grey',
+    padding: `${theme.spacing.unit}px ${theme.spacing.unit * 3}px`,
+  },
 });
 
 const ChatMessage = ({
@@ -54,6 +65,16 @@ const ChatMessage = ({
   const isMessageFromMe = sender._id === user._id;
 
   const getSenderName = ({ firstName, lastName, username }) => (firstName && lastName ? `${sender.firstName} ${sender.lastName}` : username);
+
+  if (statusMessage && createdAt === '') {
+    return (
+      <div className={classes.dateMessage}>
+        <Typography variant='caption' color='inherit'>
+          {content}
+        </Typography>
+      </div>
+    );
+  }
 
   if (statusMessage) {
     return (

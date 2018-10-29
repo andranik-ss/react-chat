@@ -2,10 +2,10 @@
 
 exports[`<ChatMessage /> renders correctly message 1`] = `
 <div
-  className="ChatMessage-messageWrapper-74 ChatMessage-messageWrapperFromMe-75"
+  className="ChatMessage-messageWrapper-76 ChatMessage-messageWrapperFromMe-77"
 >
   <div
-    className="MuiAvatar-root-82 MuiAvatar-colorDefault-83"
+    className="MuiAvatar-root-86 MuiAvatar-colorDefault-87"
     style={
       Object {
         "backgroundColor": "#8bc34a",
@@ -15,10 +15,10 @@ exports[`<ChatMessage /> renders correctly message 1`] = `
     T
   </div>
   <div
-    className="MuiPaper-root-85 MuiPaper-elevation2-89 MuiPaper-rounded-86 ChatMessage-message-76 ChatMessage-messageFromMe-77"
+    className="MuiPaper-root-89 MuiPaper-elevation2-93 MuiPaper-rounded-90 ChatMessage-message-78 ChatMessage-messageFromMe-79"
   >
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122"
+      className="MuiTypography-root-116 MuiTypography-caption-126"
       style={
         Object {
           "color": "#8bc34a",
@@ -28,12 +28,12 @@ exports[`<ChatMessage /> renders correctly message 1`] = `
       test
     </span>
     <pre
-      className="MuiTypography-root-112 MuiTypography-body1-121 ChatMessage-content-80"
+      className="MuiTypography-root-116 MuiTypography-body1-125 ChatMessage-content-82"
     >
       test message
     </pre>
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122 ChatMessage-time-81"
+      className="MuiTypography-root-116 MuiTypography-caption-126 ChatMessage-time-83"
     >
       15:00
     </span>
@@ -43,10 +43,10 @@ exports[`<ChatMessage /> renders correctly message 1`] = `
 
 exports[`<ChatMessage /> renders message from other users 1`] = `
 <div
-  className="ChatMessage-messageWrapper-74"
+  className="ChatMessage-messageWrapper-76"
 >
   <div
-    className="MuiAvatar-root-82 MuiAvatar-colorDefault-83"
+    className="MuiAvatar-root-86 MuiAvatar-colorDefault-87"
     style={
       Object {
         "backgroundColor": "#ffc107",
@@ -56,10 +56,10 @@ exports[`<ChatMessage /> renders message from other users 1`] = `
     S
   </div>
   <div
-    className="MuiPaper-root-85 MuiPaper-elevation2-89 MuiPaper-rounded-86 ChatMessage-message-76"
+    className="MuiPaper-root-89 MuiPaper-elevation2-93 MuiPaper-rounded-90 ChatMessage-message-78"
   >
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122"
+      className="MuiTypography-root-116 MuiTypography-caption-126"
       style={
         Object {
           "color": "#ffc107",
@@ -69,12 +69,12 @@ exports[`<ChatMessage /> renders message from other users 1`] = `
       someone
     </span>
     <pre
-      className="MuiTypography-root-112 MuiTypography-body1-121 ChatMessage-content-80"
+      className="MuiTypography-root-116 MuiTypography-body1-125 ChatMessage-content-82"
     >
       test message
     </pre>
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122 ChatMessage-time-81"
+      className="MuiTypography-root-116 MuiTypography-caption-126 ChatMessage-time-83"
     >
       15:00
     </span>
@@ -84,13 +84,13 @@ exports[`<ChatMessage /> renders message from other users 1`] = `
 
 exports[`<ChatMessage /> renders name in status message correctly 1`] = `
 <div
-  className="ChatMessage-messageWrapper-74"
+  className="ChatMessage-messageWrapper-76"
 >
   <div
-    className="ChatMessage-statusMessage-78"
+    className="ChatMessage-statusMessage-80"
   >
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122 ChatMessage-statusMessageUser-79"
+      className="MuiTypography-root-116 MuiTypography-caption-126 ChatMessage-statusMessageUser-81"
       style={
         Object {
           "color": "#ffc107",
@@ -101,7 +101,7 @@ exports[`<ChatMessage /> renders name in status message correctly 1`] = `
     </span>
     test message
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122"
+      className="MuiTypography-root-116 MuiTypography-caption-126"
     >
       2 days ago
     </span>
@@ -111,10 +111,10 @@ exports[`<ChatMessage /> renders name in status message correctly 1`] = `
 
 exports[`<ChatMessage /> renders name of other users correctly 1`] = `
 <div
-  className="ChatMessage-messageWrapper-74"
+  className="ChatMessage-messageWrapper-76"
 >
   <div
-    className="MuiAvatar-root-82 MuiAvatar-colorDefault-83"
+    className="MuiAvatar-root-86 MuiAvatar-colorDefault-87"
     style={
       Object {
         "backgroundColor": "#ffc107",
@@ -124,10 +124,10 @@ exports[`<ChatMessage /> renders name of other users correctly 1`] = `
     NS
   </div>
   <div
-    className="MuiPaper-root-85 MuiPaper-elevation2-89 MuiPaper-rounded-86 ChatMessage-message-76"
+    className="MuiPaper-root-89 MuiPaper-elevation2-93 MuiPaper-rounded-90 ChatMessage-message-78"
   >
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122"
+      className="MuiTypography-root-116 MuiTypography-caption-126"
       style={
         Object {
           "color": "#ffc107",
@@ -137,12 +137,12 @@ exports[`<ChatMessage /> renders name of other users correctly 1`] = `
       Name Surname
     </span>
     <pre
-      className="MuiTypography-root-112 MuiTypography-body1-121 ChatMessage-content-80"
+      className="MuiTypography-root-116 MuiTypography-body1-125 ChatMessage-content-82"
     >
       test message
     </pre>
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122 ChatMessage-time-81"
+      className="MuiTypography-root-116 MuiTypography-caption-126 ChatMessage-time-83"
     >
       15:00
     </span>
@@ -152,10 +152,10 @@ exports[`<ChatMessage /> renders name of other users correctly 1`] = `
 
 exports[`<ChatMessage /> renders name of user correctly 1`] = `
 <div
-  className="ChatMessage-messageWrapper-74"
+  className="ChatMessage-messageWrapper-76"
 >
   <div
-    className="MuiAvatar-root-82 MuiAvatar-colorDefault-83"
+    className="MuiAvatar-root-86 MuiAvatar-colorDefault-87"
     style={
       Object {
         "backgroundColor": "#ffc107",
@@ -165,10 +165,10 @@ exports[`<ChatMessage /> renders name of user correctly 1`] = `
     NS
   </div>
   <div
-    className="MuiPaper-root-85 MuiPaper-elevation2-89 MuiPaper-rounded-86 ChatMessage-message-76"
+    className="MuiPaper-root-89 MuiPaper-elevation2-93 MuiPaper-rounded-90 ChatMessage-message-78"
   >
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122"
+      className="MuiTypography-root-116 MuiTypography-caption-126"
       style={
         Object {
           "color": "#ffc107",
@@ -178,12 +178,12 @@ exports[`<ChatMessage /> renders name of user correctly 1`] = `
       Name Surname
     </span>
     <pre
-      className="MuiTypography-root-112 MuiTypography-body1-121 ChatMessage-content-80"
+      className="MuiTypography-root-116 MuiTypography-body1-125 ChatMessage-content-82"
     >
       test message
     </pre>
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122 ChatMessage-time-81"
+      className="MuiTypography-root-116 MuiTypography-caption-126 ChatMessage-time-83"
     >
       15:00
     </span>
@@ -193,13 +193,13 @@ exports[`<ChatMessage /> renders name of user correctly 1`] = `
 
 exports[`<ChatMessage /> renders status message 1`] = `
 <div
-  className="ChatMessage-messageWrapper-74"
+  className="ChatMessage-messageWrapper-76"
 >
   <div
-    className="ChatMessage-statusMessage-78"
+    className="ChatMessage-statusMessage-80"
   >
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122 ChatMessage-statusMessageUser-79"
+      className="MuiTypography-root-116 MuiTypography-caption-126 ChatMessage-statusMessageUser-81"
       style={
         Object {
           "color": "#8bc34a",
@@ -210,7 +210,7 @@ exports[`<ChatMessage /> renders status message 1`] = `
     </span>
     test message
     <span
-      className="MuiTypography-root-112 MuiTypography-caption-122"
+      className="MuiTypography-root-116 MuiTypography-caption-126"
     >
       2 days ago
     </span>
