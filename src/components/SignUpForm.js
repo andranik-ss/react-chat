@@ -77,8 +77,9 @@ class SignUpForm extends React.Component {
     }
 
     const { username, password } = this.state;
+    const { onSubmit } = this.props;
 
-    this.props.onSubmit(username.value, password.value);
+    onSubmit(username.value, password.value);
   };
 
   render() {
@@ -122,7 +123,7 @@ class SignUpForm extends React.Component {
           onChange={this.handleInputChange}
           error={!repeatedPassword.isValid}
         />
-        <Button variant='raised' color='primary' className={classes.button} type='submit'>
+        <Button variant='contained' color='primary' className={classes.button} type='submit'>
           SignUp
         </Button>
       </form>

@@ -15,7 +15,8 @@ class PrivateRoute extends React.Component {
   };
 
   componentDidMount() {
-    this.props.receiveAuth();
+    const { receiveAuth: checkAuth } = this.props;
+    checkAuth();
   }
 
   render() {
@@ -26,10 +27,9 @@ class PrivateRoute extends React.Component {
     return (
       <Route
         {...rest}
-        render={props =>
-          (isAuthenticated && isChecked && <Component {...props} />) ||
-          (isAuthenticated && !isChecked && <ProgressBar />) ||
-          (!isAuthenticated && (
+        render={props => (isAuthenticated && isChecked && <Component {...props} />)
+          || (isAuthenticated && !isChecked && <ProgressBar />)
+          || (!isAuthenticated && (
             <Redirect
               to={{
                 pathname: '/welcome',
@@ -48,12 +48,16 @@ const mapStateToProps = state => ({
   isChecked: state.auth.isChecked,
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      receiveAuth,
-    },
-    dispatch,
-  );
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    receiveAuth,
+  },
+  dispatch,
+);
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PrivateRoute));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(PrivateRoute),
+);

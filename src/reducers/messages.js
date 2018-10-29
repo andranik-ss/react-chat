@@ -18,8 +18,8 @@ export default (state = initialState, action) => {
 export const getMessages = state => {
   let savedDate = new Date(2018, 1, 1);
   return (
-    state.messages &&
-    state.messages.reduce((messages, current, index) => {
+    state.messages
+    && state.messages.reduce((messages, current, index) => {
       const currentDate = new Date(current.createdAt);
       if (savedDate && moment(savedDate).isBefore(currentDate, 'day')) {
         const timeMessage = {

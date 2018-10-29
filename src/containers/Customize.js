@@ -3,10 +3,13 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   drawerWidth: 330,
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 function Customize(WrappedComponent) {
-  return class extends React.Component {
+  return class WithCustomizing extends React.Component {
     constructor(props) {
       super(props);
 
@@ -14,6 +17,7 @@ function Customize(WrappedComponent) {
         a: 1,
       };
     }
+
     render() {
       return (
         <MuiThemeProvider theme={theme}>

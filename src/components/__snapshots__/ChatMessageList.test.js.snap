@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ChatMessageList /> renders correctly 1`] = `
-<h1
-  className="MuiTypography-root-29 MuiTypography-display1-33 ChatMessageList-noMessages-28"
+<h4
+  className="MuiTypography-root-40 MuiTypography-h4-55 ChatMessageList-noMessages-39"
 >
   There is no messages yet...
-</h1>
+</h4>
 `;

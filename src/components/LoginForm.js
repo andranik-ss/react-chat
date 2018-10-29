@@ -47,8 +47,9 @@ class LoginForm extends React.Component {
     event.preventDefault();
 
     const { username, password } = this.state;
+    const { onSubmit } = this.props;
 
-    this.props.onSubmit(username.value, password.value);
+    onSubmit(username.value, password.value);
   };
 
   render() {
@@ -80,7 +81,7 @@ class LoginForm extends React.Component {
           onChange={this.handleInputChange}
           error={!password.isValid}
         />
-        <Button variant='raised' color='primary' className={classes.button} type='submit'>
+        <Button variant='contained' color='primary' className={classes.button} type='submit'>
           Login
         </Button>
       </form>

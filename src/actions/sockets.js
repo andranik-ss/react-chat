@@ -12,7 +12,10 @@ export const missingSocketConnection = () => ({
 let socket = null;
 
 export const socketsConnect = () => (dispatch, getState) => {
-  const { services: { isFetching }, auth: { token } } = getState();
+  const {
+    services: { isFetching },
+    auth: { token },
+  } = getState();
 
   if (isFetching.sockets) {
     return Promise.resolve();

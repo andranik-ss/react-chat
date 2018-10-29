@@ -32,9 +32,11 @@ describe('<WelcomePage />', () => {
   /* eslint-disable react/jsx-indent */
   it('renders correctly', () => {
     const tree = renderer
-      .create(<MemoryRouter initialEntries={['/']}>
+      .create(
+        <MemoryRouter initialEntries={['/']}>
           <Route path='/(welcome)?' render={props => <WelcomePage {...mockProps} {...props} />} />
-              </MemoryRouter>)
+        </MemoryRouter>,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();

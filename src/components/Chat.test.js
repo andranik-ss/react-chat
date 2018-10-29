@@ -50,9 +50,11 @@ describe('<Chat />', () => {
   /* eslint-disable react/jsx-indent */
   it('renders correctly ', () => {
     const tree = renderer
-      .create(<MemoryRouter>
+      .create(
+        <MemoryRouter>
           <Chat {...mockProps} />
-              </MemoryRouter>)
+        </MemoryRouter>,
+      )
       .toJSON();
     /* eslint-enable react/jsx-indent */
 

@@ -42,7 +42,7 @@ class UserMenu extends React.Component {
 
   render() {
     const { actions, user, isConnected } = this.props;
-    const { anchorEl } = this.state;
+    const { anchorEl, editProfile } = this.state;
 
     return (
       <React.Fragment>
@@ -61,25 +61,11 @@ class UserMenu extends React.Component {
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
         >
-          <MenuItem
-            onClick={() => {
-              this.handleClose();
-              this.handleOpenProfile();
-            }}
-          >
-            Edit Profile
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              this.handleClose();
-              actions.logout();
-            }}
-          >
-            Logout
-          </MenuItem>
+          <MenuItem onClick={this.handleOpenProfile}>Edit Profile</MenuItem>
+          <MenuItem onClick={actions.logout}>Logout</MenuItem>
         </Menu>
         <UserProfile
-          open={this.state.editProfile}
+          open={editProfile}
           onClose={this.handleClose}
           editUser={actions.editUser}
           user={user}

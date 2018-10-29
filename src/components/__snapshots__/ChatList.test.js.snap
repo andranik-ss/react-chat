@@ -13,10 +13,10 @@ exports[`<ChatList /> renders without chats 1`] = `
 <ul
   className="MuiList-root-9 MuiList-padding-10 ChatList-chatsList-7"
 >
-  <h3
-    className="MuiTypography-root-13 MuiTypography-subheading-20 ChatList-noChats-8"
+  <h6
+    className="MuiTypography-root-13 MuiTypography-subtitle1-31 ChatList-noChats-8"
   >
     There is no chats yet...
-  </h3>
+  </h6>
 </ul>
 `;

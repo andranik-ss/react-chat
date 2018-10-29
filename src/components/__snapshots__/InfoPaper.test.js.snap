@@ -2,30 +2,34 @@
 
 exports[`<InfoPaper /> renders correctly 1`] = `
 <div
-  className="MuiPaper-root-54 MuiPaper-elevation2-58 MuiPaper-rounded-55 InfoPaper-paper-53"
+  className="MuiPaper-root-65 MuiPaper-elevation2-69 MuiPaper-rounded-66 InfoPaper-paper-64"
 >
-  <h1
-    className="MuiTypography-root-81 MuiTypography-display1-85 MuiTypography-gutterBottom-98"
+  <h4
+    className="MuiTypography-root-92 MuiTypography-h4-107 MuiTypography-gutterBottom-119"
   >
     Start messaging…
-  </h1>
+  </h4>
   <p
-    className="MuiTypography-root-81 MuiTypography-body1-90 MuiTypography-gutterBottom-98"
+    className="MuiTypography-root-92 MuiTypography-body1-101 MuiTypography-gutterBottom-119"
   >
-    Use 
+    Use
+     
     <strong>
       Global
     </strong>
-     to explore communities around here.
+     
+    to explore communities around here.
   </p>
   <p
-    className="MuiTypography-root-81 MuiTypography-body1-90 MuiTypography-gutterBottom-98"
+    className="MuiTypography-root-92 MuiTypography-body1-101 MuiTypography-gutterBottom-119"
   >
-    Use 
+    Use
+     
     <strong>
       Recents
     </strong>
-     to see your recent conversations.
+     
+    to see your recent conversations.
   </p>
 </div>
 `;

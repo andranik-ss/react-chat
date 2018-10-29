@@ -29,16 +29,15 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      ...chatActions,
-      logout,
-      editUser,
-      ...socketActions,
-    },
-    dispatch,
-  );
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    ...chatActions,
+    logout,
+    editUser,
+    ...socketActions,
+  },
+  dispatch,
+);
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const activeChatId = ownProps.match.params.chatId;
@@ -56,4 +55,10 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps, mergeProps)(ChatPage));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+    mergeProps,
+  )(ChatPage),
+);

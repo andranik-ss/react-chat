@@ -31,7 +31,7 @@ const ChatList = ({
         />
       ))
     ) : (
-      <Typography variant='subheading' className={classes.noChats}>
+      <Typography variant='subtitle1' className={classes.noChats}>
         There is no chats yet...
       </Typography>
     )}
@@ -40,11 +40,13 @@ const ChatList = ({
 
 ChatList.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  chats: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
-  })).isRequired,
+  chats: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      createdAt: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   activeChat: PropTypes.shape({
     _id: PropTypes.string.isRequired,
   }),

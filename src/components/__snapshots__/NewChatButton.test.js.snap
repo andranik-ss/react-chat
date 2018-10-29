@@ -2,7 +2,7 @@
 
 exports[`<NewChatButton /> renders correctly 1`] = `
 <button
-  className="MuiButtonBase-root-74 MuiButton-root-52 MuiButton-contained-61 MuiButton-fab-69 MuiButton-containedPrimary-62 MuiButton-raised-64 MuiButton-raisedPrimary-65 NewChatButton-newChatButton-50"
+  className="MuiButtonBase-root-91 MuiButton-root-65 MuiButton-fab-82 MuiButton-contained-76 MuiButton-containedPrimary-77 MuiButton-raised-79 MuiButton-raisedPrimary-80 NewChatButton-newChatButton-63"
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
@@ -19,31 +19,33 @@ exports[`<NewChatButton /> renders correctly 1`] = `
   type="button"
 >
   <span
-    className="MuiButton-label-53"
+    className="MuiButton-label-66"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-77"
-      color={undefined}
+      className="MuiSvgIcon-root-94"
       focusable="false"
+      role="presentation"
       viewBox="0 0 24 24"
     >
-      <g>
-        <path
-          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-        />
-      </g>
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-83"
+    className="MuiTouchRipple-root-118"
   />
 </button>
 `;
 
 exports[`<NewChatButton /> renders correctly disabled 1`] = `
 <button
-  className="MuiButtonBase-root-74 MuiButtonBase-disabled-75 MuiButton-root-52 MuiButton-contained-61 MuiButton-fab-69 MuiButton-containedPrimary-62 MuiButton-raised-64 MuiButton-raisedPrimary-65 MuiButton-disabled-68 NewChatButton-newChatButton-50"
+  className="MuiButtonBase-root-91 MuiButtonBase-disabled-92 MuiButton-root-65 MuiButton-fab-82 MuiButton-contained-76 MuiButton-containedPrimary-77 MuiButton-raised-79 MuiButton-raisedPrimary-80 MuiButton-disabled-85 NewChatButton-newChatButton-63"
   disabled={true}
   onBlur={[Function]}
   onClick={[Function]}
@@ -60,20 +62,22 @@ exports[`<NewChatButton /> renders correctly disabled 1`] = `
   type="button"
 >
   <span
-    className="MuiButton-label-53"
+    className="MuiButton-label-66"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-77"
-      color={undefined}
+      className="MuiSvgIcon-root-94"
       focusable="false"
+      role="presentation"
       viewBox="0 0 24 24"
     >
-      <g>
-        <path
-          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-        />
-      </g>
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
     </svg>
   </span>
 </button>

@@ -67,25 +67,29 @@ class Sidebar extends React.Component {
   };
 
   screenTest = (e) => {
+    const { actions } = this.props;
+
     this.setState({
       isSwipeable: e.matches,
     });
     if (!e.matches) {
-      this.props.actions.openSidebar();
+      actions.openSidebar();
     }
   };
 
   handleChangeActiveAction = (e, value) => this.setState({ activeAction: value });
 
-  handleSearchValueChange = event =>
-    this.setState({
-      searchValue: event.target.value,
-    });
+  handleSearchValueChange = event => this.setState({
+    searchValue: event.target.value,
+  });
 
-  filterChats = chats =>
-    chats
-      .filter(chat => chat.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
+  filterChats = (chats) => {
+    const { searchValue } = this.state;
+
+    return chats
+      .filter(chat => chat.title.toLowerCase().includes(searchValue.toLowerCase()))
       .sort((one, two) => (one.title.toLowerCase() <= two.title.toLowerCase() ? -1 : 1));
+  };
 
   render() {
     const {
@@ -125,11 +129,7 @@ class Sidebar extends React.Component {
           disabled={!isConnected}
         />
         <NewChatButton createChat={actions.createChat} disabled={!isConnected} />
-        <BottomNavigation
-          showLabels
-          value={this.state.activeAction}
-          onChange={this.handleChangeActiveAction}
-        >
+        <BottomNavigation showLabels value={activeAction} onChange={this.handleChangeActiveAction}>
           <BottomNavigationAction label='My Chats' icon={<RestoreIcon />} />
           <BottomNavigationAction label='Explore' icon={<ExploreIcon />} />
         </BottomNavigation>

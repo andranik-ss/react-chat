@@ -5,7 +5,10 @@ import * as types from '../constants/chats';
 
 export function fetchAllChats() {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.allChats) {
       return Promise.resolve();
@@ -16,22 +19,23 @@ export function fetchAllChats() {
     });
 
     return callApi('/chats', token)
-      .then(json =>
-        dispatch({
-          type: types.FETCH_ALL_CHATS_SUCCESS,
-          payload: json,
-        }))
-      .catch(reason =>
-        dispatch({
-          type: types.FETCH_ALL_CHATS_FAILURE,
-          payload: reason,
-        }));
+      .then(json => dispatch({
+        type: types.FETCH_ALL_CHATS_SUCCESS,
+        payload: json,
+      }))
+      .catch(reason => dispatch({
+        type: types.FETCH_ALL_CHATS_FAILURE,
+        payload: reason,
+      }));
   };
 }
 
 export function fetchMyChats() {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.myChats) {
       return Promise.resolve();
@@ -42,22 +46,23 @@ export function fetchMyChats() {
     });
 
     return callApi('/chats/my', token)
-      .then(json =>
-        dispatch({
-          type: types.FETCH_MY_CHATS_SUCCESS,
-          payload: json,
-        }))
-      .catch(reason =>
-        dispatch({
-          type: types.FETCH_MY_CHATS_FAILURE,
-          payload: reason,
-        }));
+      .then(json => dispatch({
+        type: types.FETCH_MY_CHATS_SUCCESS,
+        payload: json,
+      }))
+      .catch(reason => dispatch({
+        type: types.FETCH_MY_CHATS_FAILURE,
+        payload: reason,
+      }));
   };
 }
 
 export function fetchChat(chatId) {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.chat) {
       return Promise.resolve();
@@ -77,38 +82,39 @@ export function fetchChat(chatId) {
 
         return data;
       })
-      .catch(reason =>
-        dispatch({
-          type: types.FETCH_CHAT_FAILURE,
-          payload: reason,
-        }));
+      .catch(reason => dispatch({
+        type: types.FETCH_CHAT_FAILURE,
+        payload: reason,
+      }));
   };
 }
 
 export function setActiveChat(chatId) {
-  return dispatch =>
-    dispatch(fetchChat(chatId)).then((data) => {
-      if (!data) {
-        dispatch(redirect('/chat'));
+  return dispatch => dispatch(fetchChat(chatId)).then((data) => {
+    if (!data) {
+      dispatch(redirect('/chat'));
 
-        return dispatch({
-          type: types.UNSET_ACTIVE_CHAT,
-          payload: chatId,
-        });
-      }
-
-      dispatch({
-        type: types.SET_ACTIVE_CHAT,
-        payload: data,
+      return dispatch({
+        type: types.UNSET_ACTIVE_CHAT,
+        payload: chatId,
       });
+    }
 
-      return dispatch(redirect(`/chat/${data.chat._id}`));
+    dispatch({
+      type: types.SET_ACTIVE_CHAT,
+      payload: data,
     });
+
+    return dispatch(redirect(`/chat/${data.chat._id}`));
+  });
 }
 
 export function createChat(newChat) {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.createChat) {
       return Promise.resolve();
@@ -134,17 +140,19 @@ export function createChat(newChat) {
 
         return data;
       })
-      .catch(reason =>
-        dispatch({
-          type: types.CREATE_CHAT_FAILURE,
-          payload: reason,
-        }));
+      .catch(reason => dispatch({
+        type: types.CREATE_CHAT_FAILURE,
+        payload: reason,
+      }));
   };
 }
 
 export function joinChat(chatId) {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.joinChat) {
       return Promise.resolve();
@@ -164,16 +172,18 @@ export function joinChat(chatId) {
 
         return data;
       })
-      .catch(reason =>
-        dispatch({
-          type: types.JOIN_CHAT_FAILURE,
-          payload: reason,
-        }));
+      .catch(reason => dispatch({
+        type: types.JOIN_CHAT_FAILURE,
+        payload: reason,
+      }));
   };
 }
 export function leaveChat(chatId) {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.leaveChat) {
       return Promise.resolve();
@@ -193,16 +203,18 @@ export function leaveChat(chatId) {
 
         return data;
       })
-      .catch(reason =>
-        dispatch({
-          type: types.LEAVE_CHAT_FAILURE,
-          payload: reason,
-        }));
+      .catch(reason => dispatch({
+        type: types.LEAVE_CHAT_FAILURE,
+        payload: reason,
+      }));
   };
 }
 export function deleteChat(chatId) {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.deleteChat) {
       return Promise.resolve();
@@ -228,10 +240,9 @@ export function deleteChat(chatId) {
 
         return data;
       })
-      .catch(reason =>
-        dispatch({
-          type: types.DELETE_CHAT_FAILURE,
-          payload: reason,
-        }));
+      .catch(reason => dispatch({
+        type: types.DELETE_CHAT_FAILURE,
+        payload: reason,
+      }));
   };
 }

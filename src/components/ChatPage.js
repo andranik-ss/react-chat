@@ -34,12 +34,14 @@ class ChatPage extends React.Component {
       isMember: PropTypes.bool.isRequired,
       isCreator: PropTypes.bool.isRequired,
     }).isRequired,
-    messages: PropTypes.arrayOf(PropTypes.shape({
-      chatId: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
-      sender: PropTypes.object.isRequired,
-      createdAt: PropTypes.string.isRequired,
-    })).isRequired,
+    messages: PropTypes.arrayOf(
+      PropTypes.shape({
+        chatId: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+        sender: PropTypes.object.isRequired,
+        createdAt: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
     error: PropTypes.instanceOf(Error),
     isConnected: PropTypes.bool.isRequired,
     actions: PropTypes.shape({
@@ -113,7 +115,7 @@ class ChatPage extends React.Component {
       classes, chats, messages, user, actions, error, isConnected,
     } = this.props;
 
-    const hasShift = this.state.open;
+    const { open: hasShift } = this.state;
 
     actions.openSidebar = this.handleDrawerOpen;
     actions.closeSidebar = this.handleDrawerClose;

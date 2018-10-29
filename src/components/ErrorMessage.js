@@ -29,6 +29,7 @@ class ErrorMessage extends React.Component {
 
   render() {
     const { error } = this.props;
+    const { open } = this.state;
 
     if (!error) {
       return null;
@@ -40,7 +41,7 @@ class ErrorMessage extends React.Component {
           vertical: 'bottom',
           horizontal: 'left',
         }}
-        open={this.state.open}
+        open={open}
         autoHideDuration={6000}
         onClose={this.handleCloseSnackbar}
         message={<span>{error.message}</span>}

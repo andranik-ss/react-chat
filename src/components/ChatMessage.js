@@ -53,8 +53,7 @@ const ChatMessage = ({
 }) => {
   const isMessageFromMe = sender._id === user._id;
 
-  const getSenderName = ({ firstName, lastName, username }) =>
-    (firstName && lastName ? `${sender.firstName} ${sender.lastName}` : username);
+  const getSenderName = ({ firstName, lastName, username }) => (firstName && lastName ? `${sender.firstName} ${sender.lastName}` : username);
 
   if (statusMessage) {
     return (

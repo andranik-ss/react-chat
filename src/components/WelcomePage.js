@@ -49,7 +49,8 @@ class WelcomePage extends React.Component {
   };
 
   componentDidMount() {
-    this.props.receiveAuth();
+    const { receiveAuth } = this.props;
+    receiveAuth();
   }
 
   handleTabChange = (event, value) => {

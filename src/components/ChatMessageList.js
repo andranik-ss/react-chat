@@ -28,12 +28,14 @@ class ChatMessageList extends React.Component {
       lastName: PropTypes.string,
       username: PropTypes.string.isRequired,
     }).isRequired,
-    messages: PropTypes.arrayOf(PropTypes.shape({
-      chatId: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
-      sender: PropTypes.object.isRequired,
-      createdAt: PropTypes.string.isRequired,
-    })),
+    messages: PropTypes.arrayOf(
+      PropTypes.shape({
+        chatId: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+        sender: PropTypes.object.isRequired,
+        createdAt: PropTypes.string.isRequired,
+      }),
+    ),
   };
 
   static defaultProps = {
@@ -64,11 +66,11 @@ class ChatMessageList extends React.Component {
           this.messagesWrapper = el;
         }}
       >
-        {messages &&
-          messages.map(message => <ChatMessage {...message} key={message._id} user={user} />)}
+        {messages
+          && messages.map(message => <ChatMessage {...message} key={message._id} user={user} />)}
       </div>
     ) : (
-      <Typography className={classes.noMessages} variant='display1'>
+      <Typography className={classes.noMessages} variant='h4'>
         There is no messages yet...
       </Typography>
     );

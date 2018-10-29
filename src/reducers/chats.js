@@ -1,6 +1,8 @@
-/* eslint no-use-before-define: 0,
-
-eslint no-underscore-dangle: 0 */
+/*
+eslint no-use-before-define: 0,
+eslint no-max-len: 0,
+eslint no-underscore-dangle: 0
+*/
 import { combineReducers } from 'redux';
 import * as types from '../constants';
 
@@ -87,11 +89,10 @@ export default combineReducers({
   byIds,
 });
 
-// eslint-disable-next-line
-export const getId = chat => chat._id;
+export const getId = chat => chat._id; // eslint-disable-line
 export const getByIds = (state, ids) => ids.map(id => state.byIds[id]);
 export const getMessagesById = (state, id) =>
-  (state.byIds[id].messages ? state.byIds[id].messages : []);
+  (state.byIds[id].messages ? state.byIds[id].messages : []); // eslint-disable-line
 
 export const isChatCreator = (chat, user) => {
   try {

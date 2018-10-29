@@ -68,7 +68,7 @@ const Chat = ({
               <MessageInput sendMessage={actions.sendMessage} disabled={!isConnected} />
             ) : (
               <Button
-                variant='raised'
+                variant='contained'
                 color='primary'
                 fullWidth
                 onClick={actions.joinChat}
@@ -99,12 +99,14 @@ Chat.propTypes = {
     isMember: PropTypes.bool.isRequired,
     isCreator: PropTypes.bool.isRequired,
   }).isRequired,
-  messages: PropTypes.arrayOf(PropTypes.shape({
-    chatId: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    sender: PropTypes.object.isRequired,
-    createdAt: PropTypes.string.isRequired,
-  })).isRequired,
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      chatId: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      sender: PropTypes.object.isRequired,
+      createdAt: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   isConnected: PropTypes.bool.isRequired,
   actions: PropTypes.shape({
     joinChat: PropTypes.func.isRequired,

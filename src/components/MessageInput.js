@@ -13,6 +13,7 @@ const styles = () => ({
   },
   sendIcon: {
     alignSelf: 'flex-end',
+    marginBottom: '10px',
   },
 });
 
@@ -22,15 +23,17 @@ class MessageInput extends React.Component {
     sendMessage: PropTypes.func.isRequired,
     classes: PropTypes.objectOf(PropTypes.string).isRequired,
   };
+
   state = {
     value: '',
   };
 
   onClickSendMessage = () => {
     const { value } = this.state;
+    const { sendMessage } = this.props;
 
     if (value) {
-      this.props.sendMessage(value);
+      sendMessage(value);
       this.setState({ value: '' });
     }
   };
@@ -48,24 +51,25 @@ class MessageInput extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, disabled } = this.props;
+    const { value } = this.state;
 
     return (
       <Input
         fullWidth
         placeholder='Type your message…'
-        value={this.state.value}
+        value={value}
         onChange={this.handleValueChange}
         onKeyPress={this.handleKeyPress}
-        disabled={this.props.disabled}
+        disabled={disabled}
         multiline
-        endAdornment={
+        endAdornment={(
           <InputAdornment position='end' classes={{ root: classes.sendIcon }}>
             <IconButton aria-label='Send message' onClick={this.onClickSendMessage}>
               <Send />
             </IconButton>
           </InputAdornment>
-        }
+)}
         classes={{ root: classes.root }}
         disableUnderline
       />

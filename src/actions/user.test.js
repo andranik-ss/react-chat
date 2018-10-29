@@ -47,7 +47,10 @@ describe('async actions', () => {
 
     fetchMock.postOnce('*', {
       body: JSON.stringify(responseMock),
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
     });
 
     const expectedActions = [

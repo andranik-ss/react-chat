@@ -4,7 +4,10 @@ import callApi from '../utils/call-api';
 // eslint-disable-next-line
 export function editUser(data) {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.editUser) {
       return Promise.resolve();
@@ -22,10 +25,9 @@ export function editUser(data) {
           payload: json,
         });
       })
-      .catch(reason =>
-        dispatch({
-          type: types.EDIT_USER_FAILURE,
-          payload: reason,
-        }));
+      .catch(reason => dispatch({
+        type: types.EDIT_USER_FAILURE,
+        payload: reason,
+      }));
   };
 }

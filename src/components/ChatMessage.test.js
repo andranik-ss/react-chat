@@ -39,15 +39,17 @@ describe('<ChatMessage />', () => {
 
   it('renders name of user correctly', () => {
     const tree = renderer
-      .create(<ChatMessage
-        {...mockProps}
-        sender={{
+      .create(
+        <ChatMessage
+          {...mockProps}
+          sender={{
             _id: '12345',
             username: 'me',
             firstName: 'Name',
             lastName: 'Surname',
           }}
-      />)
+        />,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -55,13 +57,15 @@ describe('<ChatMessage />', () => {
 
   it('renders message from other users', () => {
     const tree = renderer
-      .create(<ChatMessage
-        {...mockProps}
-        sender={{
+      .create(
+        <ChatMessage
+          {...mockProps}
+          sender={{
             _id: '54321',
             username: 'someone',
           }}
-      />)
+        />,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -69,15 +73,17 @@ describe('<ChatMessage />', () => {
 
   it('renders name of other users correctly', () => {
     const tree = renderer
-      .create(<ChatMessage
-        {...mockProps}
-        sender={{
+      .create(
+        <ChatMessage
+          {...mockProps}
+          sender={{
             _id: '54321',
             username: 'someone',
             firstName: 'Name',
             lastName: 'Surname',
           }}
-      />)
+        />,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -91,16 +97,18 @@ describe('<ChatMessage />', () => {
 
   it('renders name in status message correctly', () => {
     const tree = renderer
-      .create(<ChatMessage
-        {...mockProps}
-        sender={{
+      .create(
+        <ChatMessage
+          {...mockProps}
+          sender={{
             _id: '54321',
             username: 'someone',
             firstName: 'Name',
             lastName: 'Surname',
           }}
-        statusMessage
-      />)
+          statusMessage
+        />,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();

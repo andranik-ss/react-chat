@@ -31,9 +31,11 @@ describe('<ChatList />', () => {
   /* eslint-disable react/jsx-indent */
   it('renders correctly', () => {
     const tree = renderer
-      .create(<MemoryRouter>
+      .create(
+        <MemoryRouter>
           <ChatListItem {...mockProps} />
-              </MemoryRouter>)
+        </MemoryRouter>,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -41,9 +43,11 @@ describe('<ChatList />', () => {
 
   it('renders correctly disabled', () => {
     const tree = renderer
-      .create(<MemoryRouter>
+      .create(
+        <MemoryRouter>
           <ChatListItem {...mockProps} disabled />
-              </MemoryRouter>)
+        </MemoryRouter>,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -51,9 +55,11 @@ describe('<ChatList />', () => {
 
   it('renders correctly active', () => {
     const tree = renderer
-      .create(<MemoryRouter>
+      .create(
+        <MemoryRouter>
           <ChatListItem {...mockProps} active />
-              </MemoryRouter>)
+        </MemoryRouter>,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();

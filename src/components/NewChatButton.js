@@ -48,6 +48,8 @@ class NewChatButton extends React.Component {
 
   handleCreate = () => {
     const { newChat } = this.state;
+    const { createChat } = this.props;
+
     if (newChat.value === '') {
       return this.setState(prevState => ({
         ...prevState,
@@ -58,14 +60,13 @@ class NewChatButton extends React.Component {
       }));
     }
 
-    return this.props.createChat(newChat.value).then(() =>
-      this.setState({
-        open: false,
-        newChat: {
-          value: '',
-          isValid: true,
-        },
-      }));
+    return createChat(newChat.value).then(() => this.setState({
+      open: false,
+      newChat: {
+        value: '',
+        isValid: true,
+      },
+    }));
   };
 
   handleNewChat = () => {

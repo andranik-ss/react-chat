@@ -1,5 +1,7 @@
 import React from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  Router, Route, Switch, Redirect,
+} from 'react-router-dom';
 import PrivateRoute from '../containers/PrivateRoute';
 import ChatPage from '../containers/ChatPage';
 import WelcomePage from '../containers/WelcomePage';

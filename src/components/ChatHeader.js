@@ -56,7 +56,7 @@ const ChatHeader = ({
       {activeChat ? (
         <React.Fragment>
           <Avatar colorFrom={activeChat._id}>{activeChat.title}</Avatar>
-          <Typography variant='title' color='inherit' className={classes.title}>
+          <Typography variant='h6' color='inherit' className={classes.title}>
             {activeChat.title}
             {(user.isCreator || user.isMember) && (
               <ChatMenu user={user} actions={actions} isConnected={isConnected} />
@@ -64,7 +64,7 @@ const ChatHeader = ({
           </Typography>
         </React.Fragment>
       ) : (
-        <Typography variant='title' color='inherit' className={classes.title}>
+        <Typography variant='h6' color='inherit' className={classes.title}>
           DogeCodes React Chat
         </Typography>
       )}

@@ -5,7 +5,7 @@ exports[`<ChatMenu /> renders correctly 1`] = `
   aria-haspopup="true"
   aria-label="More"
   aria-owns={null}
-  className="MuiButtonBase-root-26 MuiButtonBase-disabled-27 MuiIconButton-root-20 MuiIconButton-colorInherit-21 MuiIconButton-disabled-24"
+  className="MuiButtonBase-root-29 MuiButtonBase-disabled-30 MuiIconButton-root-23 MuiIconButton-colorInherit-24 MuiIconButton-disabled-27"
   disabled={true}
   onBlur={[Function]}
   onClick={[Function]}
@@ -22,20 +22,22 @@ exports[`<ChatMenu /> renders correctly 1`] = `
   type="button"
 >
   <span
-    className="MuiIconButton-label-25"
+    className="MuiIconButton-label-28"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-29"
-      color={undefined}
+      className="MuiSvgIcon-root-32"
       focusable="false"
+      role="presentation"
       viewBox="0 0 24 24"
     >
-      <g>
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </g>
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
     </svg>
   </span>
 </button>

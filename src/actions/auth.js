@@ -63,11 +63,10 @@ export function login(username, password) {
           payload: json,
         });
       })
-      .catch(reason =>
-        dispatch({
-          type: types.LOGIN_FAILURE,
-          payload: reason,
-        }));
+      .catch(reason => dispatch({
+        type: types.LOGIN_FAILURE,
+        payload: reason,
+      }));
   };
 }
 
@@ -92,17 +91,19 @@ export function logout() {
         });
         dispatch(redirect('/welcome'));
       })
-      .catch(reason =>
-        dispatch({
-          type: types.LOGOUT_FAILURE,
-          payload: reason,
-        }));
+      .catch(reason => dispatch({
+        type: types.LOGOUT_FAILURE,
+        payload: reason,
+      }));
   };
 }
 
 export function receiveAuth() {
   return (dispatch, getState) => {
-    const { services: { isFetching }, auth: { token } } = getState();
+    const {
+      services: { isFetching },
+      auth: { token },
+    } = getState();
 
     if (isFetching.receiveAuth) {
       return Promise.resolve();
@@ -120,11 +121,10 @@ export function receiveAuth() {
     });
 
     return callApi('users/me', token)
-      .then(json =>
-        dispatch({
-          type: types.RECEIVE_AUTH_SUCCESS,
-          payload: json,
-        }))
+      .then(json => dispatch({
+        type: types.RECEIVE_AUTH_SUCCESS,
+        payload: json,
+      }))
       .catch((reason) => {
         dispatch({
           type: types.RECEIVE_AUTH_FAILURE,

@@ -48,10 +48,12 @@ class UserProfile extends React.Component {
 
   handleCancel = () => {
     const {
-      user: { username, lastName, firstName },
+      user: {
+        username, lastName, firstName, onClose,
+      },
     } = this.props;
 
-    this.props.onClose();
+    onClose();
     this.setState({
       username,
       firstName,
