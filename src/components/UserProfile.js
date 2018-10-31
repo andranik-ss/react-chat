@@ -46,31 +46,9 @@ class UserProfile extends React.Component {
     }));
   };
 
-  handleCancel = () => {
-    const {
-      user: {
-        username, lastName, firstName, onClose,
-      },
-    } = this.props;
-
-    onClose();
-    this.setState({
-      username,
-      firstName,
-      lastName,
-    });
-  };
-
-  handleSave = () => {
-    const { editUser, onClose } = this.props;
-
-    onClose();
-    editUser(this.state);
-  };
-
   render() {
     const { username, firstName, lastName } = this.state;
-    const { open, onClose } = this.props;
+    const { open, onClose, editUser } = this.props;
 
     return (
       <Dialog maxWidth='xs' open={open} onClose={onClose}>
@@ -106,10 +84,16 @@ class UserProfile extends React.Component {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.handleCancel} color='primary'>
+          <Button onClick={onClose} color='primary'>
             Cancel
           </Button>
-          <Button onClick={this.handleSave} color='primary'>
+          <Button
+            onClick={() => {
+              editUser(this.state);
+              onClose();
+            }}
+            color='primary'
+          >
             Save
           </Button>
         </DialogActions>

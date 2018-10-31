@@ -34,10 +34,10 @@ class UserMenu extends React.Component {
   };
 
   handleOpenProfile = () => {
-    this.setState(prevState => ({
-      ...prevState,
+    this.setState({
+      anchorEl: null,
       editProfile: true,
-    }));
+    });
   };
 
   render() {
