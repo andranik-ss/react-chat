@@ -6,7 +6,6 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import ChatMessageList from './ChatMessageList';
 import MessageInput from './MessageInput';
-import InfoPaper from './InfoPaper';
 
 const styles = theme => ({
   content: {
@@ -54,44 +53,36 @@ const styles = theme => ({
 });
 
 const Chat = ({
-  classes, messages, user, actions, activeChat, isConnected, hasShift,
+  classes, messages, user, actions, isConnected, hasShift,
 }) => (
-  <main className={classNames(classes.content, hasShift && classes['content-shift'])}>
-    {activeChat ? (
-      <React.Fragment>
-        <ChatMessageList messages={messages} user={user} />
-        <div
-          className={classNames(classes.messageInputWrapper, hasShift && classes.messageInputShift)}
-        >
-          <Paper className={classes.messageInput} elevation={6}>
-            {user.isCreator || user.isMember ? (
-              <MessageInput sendMessage={actions.sendMessage} disabled={!isConnected} />
-            ) : (
-              <Button
-                variant='contained'
-                color='primary'
-                fullWidth
-                onClick={actions.joinChat}
-                disabled={!isConnected}
-              >
-                Join
-              </Button>
-            )}
-          </Paper>
-        </div>
-      </React.Fragment>
-    ) : (
-      <InfoPaper />
-    )}
-  </main>
+  <React.Fragment>
+    <ChatMessageList messages={messages} user={user} />
+    <div className={classNames(classes.messageInputWrapper, hasShift && classes.messageInputShift)}>
+      <Paper className={classes.messageInput} elevation={6}>
+        {user.isCreator || user.isMember ? (
+          <MessageInput sendMessage={actions.sendMessage} disabled={!isConnected} />
+        ) : (
+          <Button
+            variant='contained'
+            color='primary'
+            fullWidth
+            onClick={actions.joinChat}
+            disabled={!isConnected}
+          >
+            Join
+          </Button>
+        )}
+      </Paper>
+    </div>
+  </React.Fragment>
 );
+
+Chat.defaultProps = {
+  messages: null,
+};
 
 Chat.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  activeChat: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }),
   user: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
@@ -106,17 +97,13 @@ Chat.propTypes = {
       sender: PropTypes.object.isRequired,
       createdAt: PropTypes.string.isRequired,
     }),
-  ).isRequired,
+  ),
   isConnected: PropTypes.bool.isRequired,
   actions: PropTypes.shape({
     joinChat: PropTypes.func.isRequired,
     sendMessage: PropTypes.func.isRequired,
   }).isRequired,
   hasShift: PropTypes.bool.isRequired,
-};
-
-Chat.defaultProps = {
-  activeChat: null,
 };
 
 export default withStyles(styles)(Chat);

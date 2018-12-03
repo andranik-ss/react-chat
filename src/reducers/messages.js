@@ -9,6 +9,8 @@ export default (state = initialState, action) => {
       return [...state, action.payload.message];
     case types.FETCH_CHAT_SUCCESS:
       return action.payload.chat.messages;
+    case types.FETCH_CHAT_REQUEST:
+      return null;
     default:
       return state;
   }

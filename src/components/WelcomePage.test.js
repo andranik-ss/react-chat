@@ -14,6 +14,7 @@ const mockProps = {
   login: jest.fn(),
   receiveAuth: jest.fn(),
   isAuthenticated: false,
+  isFetching: false,
   error: null,
 };
 

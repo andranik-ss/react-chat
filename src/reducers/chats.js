@@ -9,7 +9,7 @@ import * as types from '../constants';
 function activeId(state = '', action) {
   switch (action.type) {
     case types.SET_ACTIVE_CHAT:
-      return getId(action.payload.chat);
+      return action.payload;
     case types.UNSET_ACTIVE_CHAT:
     case types.DELETE_CHAT_SUCCESS:
       return null;

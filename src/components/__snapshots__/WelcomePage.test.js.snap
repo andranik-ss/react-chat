@@ -8,11 +8,11 @@ exports[`<WelcomePage /> renders correctly 1`] = `
     <div
       className="MuiToolbar-root-152 MuiToolbar-regular-154 MuiToolbar-gutters-153"
     >
-      <h2
-        className="MuiTypography-root-156 MuiTypography-title-162 MuiTypography-colorInherit-185 MuiTypography-noWrap-182"
+      <h6
+        className="MuiTypography-root-156 MuiTypography-h6-173 MuiTypography-colorInherit-185 MuiTypography-noWrap-182"
       >
         DogeCodes React Chat
-      </h2>
+      </h6>
     </div>
   </header>
   <div

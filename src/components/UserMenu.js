@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import UserProfile from './UserProfile';
+import Spinner from './Spinner';
+
+const UserProfile = lazy(() => import('./UserProfile'));
 
 class UserMenu extends React.Component {
   static propTypes = {
@@ -45,7 +47,7 @@ class UserMenu extends React.Component {
     const { anchorEl, editProfile } = this.state;
 
     return (
-      <React.Fragment>
+      <>
         <IconButton
           aria-owns={anchorEl ? 'simple-menu' : null}
           aria-haspopup='true'
@@ -64,13 +66,15 @@ class UserMenu extends React.Component {
           <MenuItem onClick={this.handleOpenProfile}>Edit Profile</MenuItem>
           <MenuItem onClick={actions.logout}>Logout</MenuItem>
         </Menu>
-        <UserProfile
-          open={editProfile}
-          onClose={this.handleClose}
-          editUser={actions.editUser}
-          user={user}
-        />
-      </React.Fragment>
+        <Suspense fallback={<Spinner />}>
+          <UserProfile
+            open={editProfile}
+            onClose={this.handleClose}
+            editUser={actions.editUser}
+            user={user}
+          />
+        </Suspense>
+      </>
     );
   }
 }

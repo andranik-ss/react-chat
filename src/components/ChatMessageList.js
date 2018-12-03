@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ChatMessage from './ChatMessage';
+import Spinner from './Spinner';
 
 const styles = theme => ({
   messagesWrapper: {
@@ -58,6 +59,10 @@ class ChatMessageList extends React.Component {
 
   render() {
     const { classes, messages, user } = this.props;
+
+    if (!messages) {
+      return <Spinner />;
+    }
 
     return messages && messages.length ? (
       <div

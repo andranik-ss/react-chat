@@ -73,6 +73,7 @@ const mockProps = {
     },
   ],
   isConnected: true,
+  isFetching: false,
   error: null,
 };
 

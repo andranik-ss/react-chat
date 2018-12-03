@@ -4,6 +4,7 @@ const token = localStorage.getItem('token');
 
 const initialState = {
   isAuthenticated: !!token,
+  isFetching: false,
   user: null,
   token,
   isChecked: false,
@@ -12,9 +13,11 @@ const initialState = {
 export default function auth(state = initialState, action) {
   switch (action.type) {
     case types.RECEIVE_AUTH_REQUEST:
+    case types.LOGIN_REQUEST:
       return {
         ...state,
         isChecked: false,
+        isFetching: true,
       };
     case types.SIGNUP_SUCCESS:
     case types.LOGIN_SUCCESS:
@@ -22,6 +25,7 @@ export default function auth(state = initialState, action) {
         ...state,
         isAuthenticated: true,
         isChecked: true,
+        isFetching: false,
         user: action.payload.user,
         token: action.payload.token,
       };
@@ -29,6 +33,7 @@ export default function auth(state = initialState, action) {
       return {
         ...state,
         isAuthenticated: true,
+        isFetching: false,
         isChecked: true,
         user: action.payload.user,
       };

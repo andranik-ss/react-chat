@@ -60,20 +60,19 @@ export function fetchMyChats() {
 export function fetchChat(chatId) {
   return (dispatch, getState) => {
     const {
-      services: { isFetching },
       auth: { token },
     } = getState();
 
-    if (isFetching.chat) {
-      return Promise.resolve();
-    }
+    const abortController = new AbortController();
 
     dispatch({
       type: types.FETCH_CHAT_REQUEST,
-      payload: chatId,
+      payload: { chatId },
     });
 
-    return callApi(`/chats/${chatId}`, token)
+    const { signal } = abortController;
+
+    callApi(`/chats/${chatId}`, token, { signal })
       .then((data) => {
         dispatch({
           type: types.FETCH_CHAT_SUCCESS,
@@ -82,16 +81,21 @@ export function fetchChat(chatId) {
 
         return data;
       })
-      .catch(reason => dispatch({
-        type: types.FETCH_CHAT_FAILURE,
-        payload: reason,
-      }));
+      .catch((reason) => {
+        dispatch({
+          type: types.FETCH_CHAT_FAILURE,
+          payload: reason,
+        });
+        return reason;
+      });
+
+    return Promise.resolve(abortController);
   };
 }
 
 export function setActiveChat(chatId) {
-  return dispatch => dispatch(fetchChat(chatId)).then((data) => {
-    if (!data) {
+  return (dispatch) => {
+    if (!chatId) {
       dispatch(redirect('/chat'));
 
       return dispatch({
@@ -100,13 +104,11 @@ export function setActiveChat(chatId) {
       });
     }
 
-    dispatch({
+    return dispatch({
       type: types.SET_ACTIVE_CHAT,
-      payload: data,
+      payload: chatId,
     });
-
-    return dispatch(redirect(`/chat/${data.chat._id}`));
-  });
+  };
 }
 
 export function createChat(newChat) {
@@ -178,6 +180,7 @@ export function joinChat(chatId) {
       }));
   };
 }
+
 export function leaveChat(chatId) {
   return (dispatch, getState) => {
     const {
@@ -201,7 +204,7 @@ export function leaveChat(chatId) {
           payload: data,
         });
 
-        return data;
+        return dispatch(redirect('/chat'));
       })
       .catch(reason => dispatch({
         type: types.LEAVE_CHAT_FAILURE,
@@ -209,6 +212,7 @@ export function leaveChat(chatId) {
       }));
   };
 }
+
 export function deleteChat(chatId) {
   return (dispatch, getState) => {
     const {

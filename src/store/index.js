@@ -17,7 +17,12 @@ export default function configureStore() {
   // Add Redux DevTools if browser has that extension
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ serialize: true })
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+      actionSanitizer: action => ({
+        ...action,
+        type: action.type.toString(),
+      }),
+    })
     : compose;
   /* eslint-enable no-underscore-dangle */
 

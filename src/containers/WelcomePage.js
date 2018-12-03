@@ -5,6 +5,7 @@ import { login, signup, receiveAuth } from '../actions';
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
+  isFetching: state.auth.isFetching,
   error: state.services.errors.auth,
 });
 

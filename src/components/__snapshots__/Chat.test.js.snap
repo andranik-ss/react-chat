@@ -1,10 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Chat /> renders correctly  1`] = `
-<main
-  className="Chat-content-33"
->
-  ChatMessageList
+Array [
+  "ChatMessageList",
   <div
     className="Chat-messageInputWrapper-35"
   >
@@ -13,6 +11,6 @@ exports[`<Chat /> renders correctly  1`] = `
     >
       MessageInput
     </div>
-  </div>
-</main>
+  </div>,
+]
 `;

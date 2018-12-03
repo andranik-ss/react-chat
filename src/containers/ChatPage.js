@@ -26,39 +26,32 @@ const mapStateToProps = (state, ownProps) => {
     },
     error: state.services.errors.chat,
     isConnected: state.services.isConnected,
-  };
-};
-
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    ...chatActions,
-    logout,
-    editUser,
-    ...socketActions,
-  },
-  dispatch,
-);
-
-const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const activeChatId = ownProps.match.params.chatId;
-
-  return {
-    ...stateProps,
+    isFetching: Object.values(state.services.isFetching).includes(true),
     ...ownProps,
-    actions: {
-      ...dispatchProps,
-      joinChat: () => dispatchProps.joinChat(activeChatId),
-      leaveChat: () => dispatchProps.leaveChat(activeChatId),
-      deleteChat: () => dispatchProps.deleteChat(activeChatId),
-      sendMessage: content => dispatchProps.sendMessage(activeChatId, content),
-    },
   };
 };
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  actions: {
+    ...bindActionCreators(
+      {
+        ...chatActions,
+        ...socketActions,
+        joinChat: () => chatActions.joinChat(ownProps.match.params.chatId),
+        leaveChat: () => chatActions.leaveChat(ownProps.match.params.chatId),
+        deleteChat: () => chatActions.deleteChat(ownProps.match.params.chatId),
+        sendMessage: content => socketActions.sendMessage(ownProps.match.params.chatId, content),
+        logout,
+        editUser,
+      },
+      dispatch,
+    ),
+  },
+});
 
 export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps,
-    mergeProps,
   )(ChatPage),
 );

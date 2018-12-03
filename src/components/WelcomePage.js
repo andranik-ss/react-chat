@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import ProgressBar from './ProgressBar';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 import ErrorMessage from './ErrorMessage';
@@ -37,6 +38,7 @@ class WelcomePage extends React.Component {
     signup: PropTypes.func.isRequired,
     receiveAuth: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool.isRequired,
+    isFetching: PropTypes.bool.isRequired,
     error: PropTypes.instanceOf(Error),
   };
 
@@ -59,7 +61,7 @@ class WelcomePage extends React.Component {
 
   render() {
     const {
-      classes, login, signup, isAuthenticated, error,
+      classes, login, signup, isAuthenticated, isFetching, error,
     } = this.props;
     const { activeTab } = this.state;
 
@@ -70,8 +72,9 @@ class WelcomePage extends React.Component {
     return (
       <div>
         <AppBar color='primary'>
+          {isFetching && <ProgressBar />}
           <Toolbar>
-            <Typography variant='title' color='inherit' noWrap>
+            <Typography variant='h6' color='inherit' noWrap>
               DogeCodes React Chat
             </Typography>
           </Toolbar>

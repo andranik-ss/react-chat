@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import classNames from 'classnames';
 import ChatHeader from './ChatHeader';
 import Sidebar from './Sidebar';
-import Chat from './Chat';
 import ErrorMessage from './ErrorMessage';
+import InfoPaper from './InfoPaper';
+import Spinner from './Spinner';
+import ProgressBar from './ProgressBar';
+
+const Chat = lazy(() => import('./Chat'));
 
 const styles = theme => ({
   root: {
@@ -13,6 +18,32 @@ const styles = theme => ({
     width: '100%',
     height: '100%',
     backgroundColor: theme.palette.background.default,
+  },
+  content: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: '64px',
+    height: '100%',
+    overflow: 'hidden',
+    width: '100%',
+  },
+  'content-shift': {
+    [theme.breakpoints.up('md')]: {
+      marginLeft: theme.drawerWidth,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      marginLeft: theme.drawerWidth * 0.75,
+    },
+  },
+  overTop: {
+    position: 'fixed',
+    zIndex: 1101,
+    width: '100%',
+    height: '5px',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.primary.main,
+    transform: 'rotate(180deg)',
   },
 });
 
@@ -41,9 +72,10 @@ class ChatPage extends React.Component {
         sender: PropTypes.object.isRequired,
         createdAt: PropTypes.string.isRequired,
       }),
-    ).isRequired,
+    ),
     error: PropTypes.instanceOf(Error),
     isConnected: PropTypes.bool.isRequired,
+    isFetching: PropTypes.bool.isRequired,
     actions: PropTypes.shape({
       fetchMyChats: PropTypes.func.isRequired,
       fetchAllChats: PropTypes.func.isRequired,
@@ -62,6 +94,7 @@ class ChatPage extends React.Component {
 
   static defaultProps = {
     error: null,
+    messages: null,
   };
 
   state = {
@@ -71,7 +104,7 @@ class ChatPage extends React.Component {
   componentDidMount() {
     const {
       actions: {
-        fetchMyChats, fetchAllChats, setActiveChat, socketsConnect, mountChat,
+        fetchMyChats, fetchAllChats, setActiveChat, socketsConnect, mountChat, fetchChat,
       },
       match: {
         params: { chatId: activeChatId },
@@ -80,7 +113,9 @@ class ChatPage extends React.Component {
 
     Promise.all([fetchAllChats(), fetchMyChats()])
       .then(() => socketsConnect())
-      .then(() => {
+      .then(() => activeChatId && fetchChat(activeChatId))
+      .then((abortController) => {
+        this.previousFetch = abortController;
         if (activeChatId) {
           setActiveChat(activeChatId);
           mountChat(activeChatId);
@@ -91,14 +126,23 @@ class ChatPage extends React.Component {
   componentWillReceiveProps(nextProps) {
     const {
       match: { params },
-      actions: { setActiveChat, unmountChat, mountChat },
+      actions: {
+        setActiveChat, unmountChat, mountChat, fetchChat,
+      },
+      isFetching,
     } = this.props;
     const { params: nextParams } = nextProps.match;
 
     if (nextParams.chatId && params.chatId !== nextParams.chatId) {
-      setActiveChat(nextParams.chatId);
-      unmountChat(params.chatId);
-      mountChat(nextParams.chatId);
+      if (isFetching && this.previousFetch) {
+        this.previousFetch.abort();
+      }
+      fetchChat(nextParams.chatId).then((abortController) => {
+        this.previousFetch = abortController;
+        setActiveChat(nextParams.chatId);
+        unmountChat(params.chatId);
+        mountChat(nextParams.chatId);
+      });
     }
   }
 
@@ -112,7 +156,7 @@ class ChatPage extends React.Component {
 
   render() {
     const {
-      classes, chats, messages, user, actions, error, isConnected,
+      classes, chats, messages, user, actions, error, isConnected, isFetching,
     } = this.props;
 
     const { open: hasShift } = this.state;
@@ -122,6 +166,7 @@ class ChatPage extends React.Component {
 
     return (
       <div className={classes.root}>
+        {isFetching && <ProgressBar classes={{ root: classes.overTop }} />}
         <Sidebar chats={chats} actions={actions} isConnected={isConnected} open={hasShift} />
         <ChatHeader
           user={user}
@@ -130,14 +175,21 @@ class ChatPage extends React.Component {
           isConnected={isConnected}
           hasShift={hasShift}
         />
-        <Chat
-          messages={messages}
-          user={user}
-          actions={actions}
-          activeChat={chats.active}
-          isConnected={isConnected}
-          hasShift={hasShift}
-        />
+        <Suspense fallback={<Spinner />}>
+          <main className={classNames(classes.content, hasShift && classes['content-shift'])}>
+            {chats.active ? (
+              <Chat
+                messages={messages}
+                user={user}
+                actions={actions}
+                isConnected={isConnected}
+                hasShift={hasShift}
+              />
+            ) : (
+              <InfoPaper />
+            )}
+          </main>
+        </Suspense>
         <ErrorMessage error={error} />
       </div>
     );
