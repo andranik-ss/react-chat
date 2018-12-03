@@ -2,7 +2,7 @@
 
 exports[`<ChatList /> renders correctly 1`] = `
 <a
-  className="MuiButtonBase-root-76 MuiListItem-root-65 MuiListItem-default-68 MuiListItem-gutters-72 MuiListItem-button-73"
+  className="MuiButtonBase-root-78 MuiListItem-root-66 MuiListItem-default-69 MuiListItem-gutters-74 MuiListItem-button-75"
   href="/chat/1"
   onBlur={[Function]}
   onClick={[Function]}
@@ -20,28 +20,28 @@ exports[`<ChatList /> renders correctly 1`] = `
 >
   Avatar
   <div
-    className="MuiListItemText-root-79"
+    className="MuiListItemText-root-81"
   >
     <span
-      className="MuiTypography-root-85 MuiTypography-subheading-92 MuiListItemText-primary-82"
+      className="MuiTypography-root-87 MuiTypography-subheading-94 MuiListItemText-primary-84"
     >
       test
     </span>
     <p
-      className="MuiTypography-root-85 MuiTypography-body1-94 MuiTypography-colorTextSecondary-118 MuiListItemText-secondary-83"
+      className="MuiTypography-root-87 MuiTypography-body1-96 MuiTypography-colorTextSecondary-120 MuiListItemText-secondary-85"
     >
       2 days ago
     </p>
   </div>
   <span
-    className="MuiTouchRipple-root-120"
+    className="MuiTouchRipple-root-122"
   />
 </a>
 `;
 
 exports[`<ChatList /> renders correctly active 1`] = `
 <a
-  className="MuiButtonBase-root-76 MuiListItem-root-65 MuiListItem-default-68 MuiListItem-gutters-72 MuiListItem-button-73 ChatListItem-activeItem-64"
+  className="MuiButtonBase-root-78 MuiListItem-root-66 MuiListItem-default-69 MuiListItem-gutters-74 MuiListItem-button-75 ChatListItem-activeItem-65"
   href="/chat/1"
   onBlur={[Function]}
   onClick={[Function]}
@@ -59,28 +59,28 @@ exports[`<ChatList /> renders correctly active 1`] = `
 >
   Avatar
   <div
-    className="MuiListItemText-root-79"
+    className="MuiListItemText-root-81"
   >
     <span
-      className="MuiTypography-root-85 MuiTypography-subheading-92 MuiListItemText-primary-82"
+      className="MuiTypography-root-87 MuiTypography-subheading-94 MuiListItemText-primary-84"
     >
       test
     </span>
     <p
-      className="MuiTypography-root-85 MuiTypography-body1-94 MuiTypography-colorTextSecondary-118 MuiListItemText-secondary-83"
+      className="MuiTypography-root-87 MuiTypography-body1-96 MuiTypography-colorTextSecondary-120 MuiListItemText-secondary-85"
     >
       2 days ago
     </p>
   </div>
   <span
-    className="MuiTouchRipple-root-120"
+    className="MuiTouchRipple-root-122"
   />
 </a>
 `;
 
 exports[`<ChatList /> renders correctly disabled 1`] = `
 <a
-  className="MuiButtonBase-root-76 MuiButtonBase-disabled-77 MuiListItem-root-65 MuiListItem-default-68 MuiListItem-gutters-72 MuiListItem-disabled-70 MuiListItem-button-73"
+  className="MuiButtonBase-root-78 MuiButtonBase-disabled-79 MuiListItem-root-66 MuiListItem-default-69 MuiListItem-gutters-74 MuiListItem-disabled-72 MuiListItem-button-75"
   href="/chat/1"
   onBlur={[Function]}
   onClick={[Function]}
@@ -98,15 +98,15 @@ exports[`<ChatList /> renders correctly disabled 1`] = `
 >
   Avatar
   <div
-    className="MuiListItemText-root-79"
+    className="MuiListItemText-root-81"
   >
     <span
-      className="MuiTypography-root-85 MuiTypography-subheading-92 MuiListItemText-primary-82"
+      className="MuiTypography-root-87 MuiTypography-subheading-94 MuiListItemText-primary-84"
     >
       test
     </span>
     <p
-      className="MuiTypography-root-85 MuiTypography-body1-94 MuiTypography-colorTextSecondary-118 MuiListItemText-secondary-83"
+      className="MuiTypography-root-87 MuiTypography-body1-96 MuiTypography-colorTextSecondary-120 MuiListItemText-secondary-85"
     >
       2 days ago
     </p>

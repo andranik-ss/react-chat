@@ -2,7 +2,7 @@
 
 exports[`<Sidebar /> renders correctly 1`] = `
 <div
-  className="MuiDrawer-docked-114"
+  className="MuiDrawer-root-116 MuiDrawer-docked-117"
   style={
     Object {
       "width": 0,
@@ -10,7 +10,7 @@ exports[`<Sidebar /> renders correctly 1`] = `
   }
 >
   <div
-    className="MuiPaper-root-125 MuiPaper-elevation0-127 MuiDrawer-paper-115 Sidebar-drawerPaper-111 MuiDrawer-paperAnchorLeft-116 MuiDrawer-paperAnchorDockedLeft-120"
+    className="MuiPaper-root-128 MuiPaper-elevation0-130 MuiDrawer-paper-118 Sidebar-drawerPaper-113 MuiDrawer-paperAnchorLeft-119 MuiDrawer-paperAnchorDockedLeft-123"
     direction="right"
     style={
       Object {
@@ -19,18 +19,18 @@ exports[`<Sidebar /> renders correctly 1`] = `
     }
   >
     <div
-      className="Sidebar-drawerHeader-112"
+      className="Sidebar-drawerHeader-114"
     >
       <div
-        className="MuiFormControl-root-152 MuiFormControl-marginNormal-153 MuiFormControl-fullWidth-155"
+        className="MuiFormControl-root-155 MuiFormControl-marginNormal-156 MuiFormControl-fullWidth-158"
       >
         <div
-          className="MuiInputBase-root-169 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-fullWidth-178 MuiInput-fullWidth-163 MuiInputBase-formControl-170 MuiInput-formControl-157"
+          className="MuiInputBase-root-172 MuiInput-root-159 MuiInput-underline-163 MuiInputBase-fullWidth-181 MuiInput-fullWidth-166 MuiInputBase-formControl-173 MuiInput-formControl-160"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
-            className="MuiInputBase-input-179 MuiInput-input-164"
+            className="MuiInputBase-input-182 MuiInput-input-167"
             disabled={false}
             onBlur={[Function]}
             onChange={[Function]}
@@ -43,7 +43,7 @@ exports[`<Sidebar /> renders correctly 1`] = `
         </div>
       </div>
       <button
-        className="MuiButtonBase-root-192 MuiIconButton-root-186 Sidebar-drawerCloseButton-113"
+        className="MuiButtonBase-root-195 MuiIconButton-root-189 Sidebar-drawerCloseButton-115"
         disabled={false}
         onBlur={[Function]}
         onClick={[MockFunction]}
@@ -60,11 +60,11 @@ exports[`<Sidebar /> renders correctly 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-191"
+          className="MuiIconButton-label-194"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-195"
+            className="MuiSvgIcon-root-198"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -79,20 +79,20 @@ exports[`<Sidebar /> renders correctly 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-214"
+          className="MuiTouchRipple-root-218"
         />
       </button>
     </div>
     <hr
-      className="MuiDivider-root-204"
+      className="MuiDivider-root-207"
     />
     ChatList
     NewChatButton
     <div
-      className="MuiBottomNavigation-root-208"
+      className="MuiBottomNavigation-root-212"
     >
       <button
-        className="MuiButtonBase-root-192 MuiBottomNavigationAction-root-209 MuiBottomNavigationAction-selected-210"
+        className="MuiButtonBase-root-195 MuiBottomNavigationAction-root-213 MuiBottomNavigationAction-selected-214"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -108,11 +108,11 @@ exports[`<Sidebar /> renders correctly 1`] = `
         type="button"
       >
         <span
-          className="MuiBottomNavigationAction-wrapper-212"
+          className="MuiBottomNavigationAction-wrapper-216"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-195"
+            className="MuiSvgIcon-root-198"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -126,17 +126,17 @@ exports[`<Sidebar /> renders correctly 1`] = `
             />
           </svg>
           <span
-            className="MuiBottomNavigationAction-label-213 MuiBottomNavigationAction-selected-210"
+            className="MuiBottomNavigationAction-label-217 MuiBottomNavigationAction-selected-214"
           >
             My Chats
           </span>
         </span>
         <span
-          className="MuiTouchRipple-root-214"
+          className="MuiTouchRipple-root-218"
         />
       </button>
       <button
-        className="MuiButtonBase-root-192 MuiBottomNavigationAction-root-209"
+        className="MuiButtonBase-root-195 MuiBottomNavigationAction-root-213"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -152,11 +152,11 @@ exports[`<Sidebar /> renders correctly 1`] = `
         type="button"
       >
         <span
-          className="MuiBottomNavigationAction-wrapper-212"
+          className="MuiBottomNavigationAction-wrapper-216"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-195"
+            className="MuiSvgIcon-root-198"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -170,13 +170,13 @@ exports[`<Sidebar /> renders correctly 1`] = `
             />
           </svg>
           <span
-            className="MuiBottomNavigationAction-label-213"
+            className="MuiBottomNavigationAction-label-217"
           >
             Explore
           </span>
         </span>
         <span
-          className="MuiTouchRipple-root-214"
+          className="MuiTouchRipple-root-218"
         />
       </button>
     </div>
@@ -186,7 +186,7 @@ exports[`<Sidebar /> renders correctly 1`] = `
 
 exports[`<Sidebar /> renders correctly isConnected 1`] = `
 <div
-  className="MuiDrawer-docked-114"
+  className="MuiDrawer-root-116 MuiDrawer-docked-117"
   style={
     Object {
       "width": 0,
@@ -194,7 +194,7 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
   }
 >
   <div
-    className="MuiPaper-root-125 MuiPaper-elevation0-127 MuiDrawer-paper-115 Sidebar-drawerPaper-111 MuiDrawer-paperAnchorLeft-116 MuiDrawer-paperAnchorDockedLeft-120"
+    className="MuiPaper-root-128 MuiPaper-elevation0-130 MuiDrawer-paper-118 Sidebar-drawerPaper-113 MuiDrawer-paperAnchorLeft-119 MuiDrawer-paperAnchorDockedLeft-123"
     direction="right"
     style={
       Object {
@@ -203,18 +203,18 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
     }
   >
     <div
-      className="Sidebar-drawerHeader-112"
+      className="Sidebar-drawerHeader-114"
     >
       <div
-        className="MuiFormControl-root-152 MuiFormControl-marginNormal-153 MuiFormControl-fullWidth-155"
+        className="MuiFormControl-root-155 MuiFormControl-marginNormal-156 MuiFormControl-fullWidth-158"
       >
         <div
-          className="MuiInputBase-root-169 MuiInput-root-156 MuiInput-underline-160 MuiInputBase-fullWidth-178 MuiInput-fullWidth-163 MuiInputBase-formControl-170 MuiInput-formControl-157"
+          className="MuiInputBase-root-172 MuiInput-root-159 MuiInput-underline-163 MuiInputBase-fullWidth-181 MuiInput-fullWidth-166 MuiInputBase-formControl-173 MuiInput-formControl-160"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
-            className="MuiInputBase-input-179 MuiInput-input-164"
+            className="MuiInputBase-input-182 MuiInput-input-167"
             disabled={false}
             onBlur={[Function]}
             onChange={[Function]}
@@ -227,7 +227,7 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
         </div>
       </div>
       <button
-        className="MuiButtonBase-root-192 MuiIconButton-root-186 Sidebar-drawerCloseButton-113"
+        className="MuiButtonBase-root-195 MuiIconButton-root-189 Sidebar-drawerCloseButton-115"
         disabled={false}
         onBlur={[Function]}
         onClick={[MockFunction]}
@@ -244,11 +244,11 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-191"
+          className="MuiIconButton-label-194"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-195"
+            className="MuiSvgIcon-root-198"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -263,20 +263,20 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-214"
+          className="MuiTouchRipple-root-218"
         />
       </button>
     </div>
     <hr
-      className="MuiDivider-root-204"
+      className="MuiDivider-root-207"
     />
     ChatList
     NewChatButton
     <div
-      className="MuiBottomNavigation-root-208"
+      className="MuiBottomNavigation-root-212"
     >
       <button
-        className="MuiButtonBase-root-192 MuiBottomNavigationAction-root-209 MuiBottomNavigationAction-selected-210"
+        className="MuiButtonBase-root-195 MuiBottomNavigationAction-root-213 MuiBottomNavigationAction-selected-214"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -292,11 +292,11 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
         type="button"
       >
         <span
-          className="MuiBottomNavigationAction-wrapper-212"
+          className="MuiBottomNavigationAction-wrapper-216"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-195"
+            className="MuiSvgIcon-root-198"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -310,17 +310,17 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
             />
           </svg>
           <span
-            className="MuiBottomNavigationAction-label-213 MuiBottomNavigationAction-selected-210"
+            className="MuiBottomNavigationAction-label-217 MuiBottomNavigationAction-selected-214"
           >
             My Chats
           </span>
         </span>
         <span
-          className="MuiTouchRipple-root-214"
+          className="MuiTouchRipple-root-218"
         />
       </button>
       <button
-        className="MuiButtonBase-root-192 MuiBottomNavigationAction-root-209"
+        className="MuiButtonBase-root-195 MuiBottomNavigationAction-root-213"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -336,11 +336,11 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
         type="button"
       >
         <span
-          className="MuiBottomNavigationAction-wrapper-212"
+          className="MuiBottomNavigationAction-wrapper-216"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-195"
+            className="MuiSvgIcon-root-198"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -354,13 +354,13 @@ exports[`<Sidebar /> renders correctly isConnected 1`] = `
             />
           </svg>
           <span
-            className="MuiBottomNavigationAction-label-213"
+            className="MuiBottomNavigationAction-label-217"
           >
             Explore
           </span>
         </span>
         <span
-          className="MuiTouchRipple-root-214"
+          className="MuiTouchRipple-root-218"
         />
       </button>
     </div>

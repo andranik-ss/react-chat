@@ -2,31 +2,31 @@
 
 exports[`<SignUpForm /> renders correctly 1`] = `
 <form
-  className="SignUpForm-container-87"
+  className="SignUpForm-container-91"
   onSubmit={[Function]}
 >
   <div
-    className="MuiFormControl-root-89 MuiFormControl-marginNormal-90 MuiFormControl-fullWidth-92"
+    className="MuiFormControl-root-93 MuiFormControl-marginNormal-94 MuiFormControl-fullWidth-96"
     username=""
   >
     <label
-      className="MuiFormLabel-root-100 MuiFormLabel-required-105 MuiInputLabel-root-93 MuiInputLabel-formControl-94 MuiInputLabel-animated-97"
+      className="MuiFormLabel-root-108 MuiFormLabel-required-113 MuiInputLabel-required-101 MuiInputLabel-root-97 MuiInputLabel-formControl-102 MuiInputLabel-animated-105"
       data-shrink={false}
     >
       Username
       <span
-        className="MuiFormLabel-asterisk-106"
+        className="MuiFormLabel-asterisk-114"
       >
          *
       </span>
     </label>
     <div
-      className="MuiInputBase-root-120 MuiInput-root-107 MuiInput-underline-111 MuiInputBase-fullWidth-129 MuiInput-fullWidth-114 MuiInputBase-formControl-121 MuiInput-formControl-108"
+      className="MuiInputBase-root-128 MuiInput-root-115 MuiInput-underline-119 MuiInputBase-fullWidth-137 MuiInput-fullWidth-122 MuiInputBase-formControl-129 MuiInput-formControl-116"
       onClick={[Function]}
     >
       <input
         aria-invalid={false}
-        className="MuiInputBase-input-130 MuiInput-input-115"
+        className="MuiInputBase-input-138 MuiInput-input-123"
         disabled={false}
         name="username"
         onBlur={[Function]}
@@ -39,27 +39,27 @@ exports[`<SignUpForm /> renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="MuiFormControl-root-89 MuiFormControl-marginNormal-90 MuiFormControl-fullWidth-92"
+    className="MuiFormControl-root-93 MuiFormControl-marginNormal-94 MuiFormControl-fullWidth-96"
     username=""
   >
     <label
-      className="MuiFormLabel-root-100 MuiFormLabel-required-105 MuiInputLabel-root-93 MuiInputLabel-formControl-94 MuiInputLabel-animated-97"
+      className="MuiFormLabel-root-108 MuiFormLabel-required-113 MuiInputLabel-required-101 MuiInputLabel-root-97 MuiInputLabel-formControl-102 MuiInputLabel-animated-105"
       data-shrink={false}
     >
       Password
       <span
-        className="MuiFormLabel-asterisk-106"
+        className="MuiFormLabel-asterisk-114"
       >
          *
       </span>
     </label>
     <div
-      className="MuiInputBase-root-120 MuiInput-root-107 MuiInput-underline-111 MuiInputBase-fullWidth-129 MuiInput-fullWidth-114 MuiInputBase-formControl-121 MuiInput-formControl-108"
+      className="MuiInputBase-root-128 MuiInput-root-115 MuiInput-underline-119 MuiInputBase-fullWidth-137 MuiInput-fullWidth-122 MuiInputBase-formControl-129 MuiInput-formControl-116"
       onClick={[Function]}
     >
       <input
         aria-invalid={false}
-        className="MuiInputBase-input-130 MuiInput-input-115 MuiInputBase-inputType-133 MuiInput-inputType-118"
+        className="MuiInputBase-input-138 MuiInput-input-123 MuiInputBase-inputType-141 MuiInput-inputType-126"
         disabled={false}
         name="password"
         onBlur={[Function]}
@@ -72,27 +72,27 @@ exports[`<SignUpForm /> renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="MuiFormControl-root-89 MuiFormControl-marginNormal-90 MuiFormControl-fullWidth-92"
+    className="MuiFormControl-root-93 MuiFormControl-marginNormal-94 MuiFormControl-fullWidth-96"
     username=""
   >
     <label
-      className="MuiFormLabel-root-100 MuiFormLabel-required-105 MuiInputLabel-root-93 MuiInputLabel-formControl-94 MuiInputLabel-animated-97"
+      className="MuiFormLabel-root-108 MuiFormLabel-required-113 MuiInputLabel-required-101 MuiInputLabel-root-97 MuiInputLabel-formControl-102 MuiInputLabel-animated-105"
       data-shrink={false}
     >
       Repeat password
       <span
-        className="MuiFormLabel-asterisk-106"
+        className="MuiFormLabel-asterisk-114"
       >
          *
       </span>
     </label>
     <div
-      className="MuiInputBase-root-120 MuiInput-root-107 MuiInput-underline-111 MuiInputBase-fullWidth-129 MuiInput-fullWidth-114 MuiInputBase-formControl-121 MuiInput-formControl-108"
+      className="MuiInputBase-root-128 MuiInput-root-115 MuiInput-underline-119 MuiInputBase-fullWidth-137 MuiInput-fullWidth-122 MuiInputBase-formControl-129 MuiInput-formControl-116"
       onClick={[Function]}
     >
       <input
         aria-invalid={false}
-        className="MuiInputBase-input-130 MuiInput-input-115 MuiInputBase-inputType-133 MuiInput-inputType-118"
+        className="MuiInputBase-input-138 MuiInput-input-123 MuiInputBase-inputType-141 MuiInput-inputType-126"
         disabled={false}
         name="repeatedPassword"
         onBlur={[Function]}
@@ -105,7 +105,7 @@ exports[`<SignUpForm /> renders correctly 1`] = `
     </div>
   </div>
   <button
-    className="MuiButtonBase-root-163 MuiButton-root-137 MuiButton-contained-148 MuiButton-containedPrimary-149 MuiButton-raised-151 MuiButton-raisedPrimary-152 SignUpForm-button-88"
+    className="MuiButtonBase-root-171 MuiButton-root-145 MuiButton-contained-156 MuiButton-containedPrimary-157 MuiButton-raised-159 MuiButton-raisedPrimary-160 SignUpForm-button-92"
     disabled={false}
     onBlur={[Function]}
     onFocus={[Function]}
@@ -121,12 +121,12 @@ exports[`<SignUpForm /> renders correctly 1`] = `
     type="submit"
   >
     <span
-      className="MuiButton-label-138"
+      className="MuiButton-label-146"
     >
       SignUp
     </span>
     <span
-      className="MuiTouchRipple-root-166"
+      className="MuiTouchRipple-root-174"
     />
   </button>
 </form>

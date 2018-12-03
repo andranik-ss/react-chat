@@ -4,7 +4,7 @@ exports[`<UserMenu /> renders correctly 1`] = `
 <button
   aria-haspopup="true"
   aria-owns={null}
-  className="MuiButtonBase-root-38 MuiButtonBase-disabled-39 MuiIconButton-root-32 MuiIconButton-colorInherit-33 MuiIconButton-disabled-36"
+  className="MuiButtonBase-root-39 MuiButtonBase-disabled-40 MuiIconButton-root-33 MuiIconButton-colorInherit-34 MuiIconButton-disabled-37"
   disabled={true}
   onBlur={[Function]}
   onClick={[Function]}
@@ -21,11 +21,11 @@ exports[`<UserMenu /> renders correctly 1`] = `
   type="button"
 >
   <span
-    className="MuiIconButton-label-37"
+    className="MuiIconButton-label-38"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-41"
+      className="MuiSvgIcon-root-42"
       focusable="false"
       role="presentation"
       viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ exports[`<UserMenu /> renders correctly is connected 1`] = `
 <button
   aria-haspopup="true"
   aria-owns={null}
-  className="MuiButtonBase-root-38 MuiIconButton-root-32 MuiIconButton-colorInherit-33"
+  className="MuiButtonBase-root-39 MuiIconButton-root-33 MuiIconButton-colorInherit-34"
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
@@ -63,11 +63,11 @@ exports[`<UserMenu /> renders correctly is connected 1`] = `
   type="button"
 >
   <span
-    className="MuiIconButton-label-37"
+    className="MuiIconButton-label-38"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-41"
+      className="MuiSvgIcon-root-42"
       focusable="false"
       role="presentation"
       viewBox="0 0 24 24"
@@ -82,7 +82,7 @@ exports[`<UserMenu /> renders correctly is connected 1`] = `
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-67"
+    className="MuiTouchRipple-root-69"
   />
 </button>
 `;

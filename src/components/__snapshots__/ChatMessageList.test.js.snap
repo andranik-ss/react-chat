@@ -1,9 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ChatMessageList /> renders correctly 1`] = `
-<h4
-  className="MuiTypography-root-40 MuiTypography-h4-55 ChatMessageList-noMessages-39"
->
-  There is no messages yet...
-</h4>
+<div>
+  <div
+    className="MuiCircularProgress-root-15 MuiCircularProgress-colorPrimary-18 MuiCircularProgress-indeterminate-17"
+    role="progressbar"
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  >
+    <svg
+      className="MuiCircularProgress-svg-20"
+      viewBox="22 22 44 44"
+    >
+      <circle
+        className="MuiCircularProgress-circle-21 MuiCircularProgress-circleIndeterminate-23"
+        cx={44}
+        cy={44}
+        fill="none"
+        r={20.2}
+        strokeWidth={3.6}
+        style={Object {}}
+      />
+    </svg>
+  </div>
+</div>
 `;
