@@ -14,6 +14,7 @@ const mockProps = {
   active: false,
   disabled: false,
   createdAt: '2018-03-08T13:57:58.706Z',
+  unread: 0,
 };
 
 describe('<ChatList />', () => {

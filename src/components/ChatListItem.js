@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Badge from '@material-ui/core/Badge';
 import Avatar from './Avatar';
 
 const styles = theme => ({
@@ -14,7 +15,7 @@ const styles = theme => ({
 });
 
 const ChatListItem = ({
-  classes, disabled, title, chatId, active, createdAt,
+  classes, disabled, title, chatId, active, createdAt, unread,
 }) => (
   <ListItem
     button
@@ -23,7 +24,13 @@ const ChatListItem = ({
     className={active ? classes.activeItem : ''}
     disabled={disabled}
   >
-    <Avatar colorFrom={chatId}>{title}</Avatar>
+    {unread > 0 ? (
+      <Badge badgeContent={unread} color='secondary'>
+        <Avatar colorFrom={chatId}>{title}</Avatar>
+      </Badge>
+    ) : (
+      <Avatar colorFrom={chatId}>{title}</Avatar>
+    )}
     <ListItemText primary={title} secondary={moment(createdAt).fromNow()} />
   </ListItem>
 );
@@ -35,6 +42,7 @@ ChatListItem.propTypes = {
   chatId: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
   createdAt: PropTypes.string.isRequired,
+  unread: PropTypes.number.isRequired,
 };
 
 export default withStyles(styles)(ChatListItem);

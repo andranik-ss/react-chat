@@ -56,6 +56,13 @@ export const socketsConnect = () => (dispatch, getState) => {
     });
   });
 
+  socket.on('message-was-read', ({ message }) => {
+    dispatch({
+      type: types.RECIEVE_READ_MESSAGE,
+      payload: { message },
+    });
+  });
+
   socket.on('new-chat', ({ chat }) => {
     dispatch({
       type: types.RECIEVE_NEW_CHAT,
@@ -96,6 +103,29 @@ export const sendMessage = (activeId, content) => (dispatch) => {
         payload: {
           chatId: activeId,
           content,
+        },
+      });
+    },
+  );
+};
+
+export const readMessage = (chatId, messageId) => (dispatch) => {
+  if (!socket) {
+    dispatch(missingSocketConnection());
+  }
+
+  socket.emit(
+    'read-message',
+    {
+      chatId,
+      messageId,
+    },
+    () => {
+      dispatch({
+        type: types.READ_MESSAGE,
+        payload: {
+          chatId,
+          messageId,
         },
       });
     },
