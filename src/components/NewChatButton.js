@@ -7,6 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 
 const styles = theme => ({
@@ -82,15 +83,14 @@ class NewChatButton extends React.Component {
 
     return (
       <React.Fragment>
-        <Button
-          variant='fab'
+        <Fab
           color='primary'
           className={classes.newChatButton}
           onClick={this.handleNewChat}
           disabled={disabled}
         >
           <AddIcon />
-        </Button>
+        </Fab>
         <Dialog maxWidth='xs' fullWidth open={open} onClose={this.handleNewChat}>
           <DialogTitle>Create new chat</DialogTitle>
           <DialogContent>

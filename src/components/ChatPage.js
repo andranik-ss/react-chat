@@ -104,7 +104,7 @@ class ChatPage extends React.Component {
   componentDidMount() {
     const {
       actions: {
-        fetchMyChats, fetchAllChats, setActiveChat, socketsConnect, mountChat, fetchChat,
+        fetchMyChats, fetchAllChats, setActiveChat, socketsConnect, fetchChat, mountChat,
       },
       match: {
         params: { chatId: activeChatId },
@@ -112,11 +112,12 @@ class ChatPage extends React.Component {
     } = this.props;
 
     Promise.all([fetchAllChats(), fetchMyChats()])
-      .then(() => socketsConnect())
-      .then(() => activeChatId && fetchChat(activeChatId))
-      .then((abortController) => {
-        this.previousFetch = abortController;
+      .then(() => {
+        socketsConnect();
+      })
+      .then(() => {
         if (activeChatId) {
+          fetchChat(activeChatId);
           setActiveChat(activeChatId);
           mountChat(activeChatId);
         }
@@ -129,22 +130,43 @@ class ChatPage extends React.Component {
       actions: {
         setActiveChat, unmountChat, mountChat, fetchChat,
       },
-      isFetching,
+      chats: { my },
+      isConnected,
     } = this.props;
-    const { params: nextParams } = nextProps.match;
+    const {
+      match: { params: nextParams },
+      chats: { my: nextMy },
+      isConnected: nextIsConnected,
+    } = nextProps;
 
     if (nextParams.chatId && params.chatId !== nextParams.chatId) {
-      if (isFetching && this.previousFetch) {
-        this.previousFetch.abort();
-      }
-      fetchChat(nextParams.chatId).then((abortController) => {
-        this.previousFetch = abortController;
-        setActiveChat(nextParams.chatId);
-        unmountChat(params.chatId);
-        mountChat(nextParams.chatId);
+      setActiveChat(nextParams.chatId);
+    }
+
+    if (nextIsConnected && nextIsConnected !== isConnected) {
+      nextMy.forEach((chat) => {
+        mountChat(this.getId(chat));
+        fetchChat(this.getId(chat));
+      });
+    }
+
+    if (nextMy && isConnected) {
+      nextMy
+        .filter(next => my.findIndex(cur => this.getId(next) === this.getId(cur)) === -1)
+        .forEach((chat) => {
+          mountChat(this.getId(chat));
+          fetchChat(this.getId(chat));
+        });
+      my.filter(
+        next => nextMy.findIndex(cur => this.getId(next) === this.getId(cur)) === -1,
+      ).forEach((chat) => {
+        unmountChat(this.getId(chat));
       });
     }
   }
+
+  // eslint-disable-next-line
+  getId = obj => obj._id;
 
   handleDrawerOpen = () => {
     this.setState({ open: true });

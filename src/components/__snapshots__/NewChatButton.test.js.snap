@@ -2,7 +2,7 @@
 
 exports[`<NewChatButton /> renders correctly 1`] = `
 <button
-  className="MuiButtonBase-root-92 MuiButton-root-66 MuiButton-fab-83 MuiButton-contained-77 MuiButton-containedPrimary-78 MuiButton-raised-80 MuiButton-raisedPrimary-81 NewChatButton-newChatButton-64"
+  className="MuiButtonBase-root-60 MuiFab-root-50 MuiFab-primary-52 NewChatButton-newChatButton-48"
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
@@ -19,11 +19,11 @@ exports[`<NewChatButton /> renders correctly 1`] = `
   type="button"
 >
   <span
-    className="MuiButton-label-67"
+    className="MuiFab-label-51"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-95"
+      className="MuiSvgIcon-root-63"
       focusable="false"
       role="presentation"
       viewBox="0 0 24 24"
@@ -38,14 +38,14 @@ exports[`<NewChatButton /> renders correctly 1`] = `
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-120"
+    className="MuiTouchRipple-root-88"
   />
 </button>
 `;
 
 exports[`<NewChatButton /> renders correctly disabled 1`] = `
 <button
-  className="MuiButtonBase-root-92 MuiButtonBase-disabled-93 MuiButton-root-66 MuiButton-fab-83 MuiButton-contained-77 MuiButton-containedPrimary-78 MuiButton-raised-80 MuiButton-raisedPrimary-81 MuiButton-disabled-86 NewChatButton-newChatButton-64"
+  className="MuiButtonBase-root-60 MuiButtonBase-disabled-61 MuiFab-root-50 MuiFab-primary-52 MuiFab-disabled-56 NewChatButton-newChatButton-48"
   disabled={true}
   onBlur={[Function]}
   onClick={[Function]}
@@ -62,11 +62,11 @@ exports[`<NewChatButton /> renders correctly disabled 1`] = `
   type="button"
 >
   <span
-    className="MuiButton-label-67"
+    className="MuiFab-label-51"
   >
     <svg
       aria-hidden="true"
-      className="MuiSvgIcon-root-95"
+      className="MuiSvgIcon-root-63"
       focusable="false"
       role="presentation"
       viewBox="0 0 24 24"
