@@ -12,6 +12,11 @@ const styles = theme => ({
   activeItem: {
     backgroundColor: theme.palette.grey[200],
   },
+  badge: {
+    border: `2px solid ${
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900]
+    }`,
+  },
 });
 
 const ChatListItem = ({
@@ -25,7 +30,7 @@ const ChatListItem = ({
     disabled={disabled}
   >
     {unread > 0 ? (
-      <Badge badgeContent={unread} color='secondary'>
+      <Badge classes={{ badge: classes.badge }} badgeContent={unread} color='secondary'>
         <Avatar colorFrom={chatId}>{title}</Avatar>
       </Badge>
     ) : (

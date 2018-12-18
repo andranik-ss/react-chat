@@ -14,10 +14,9 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     chats: {
-      all: fromChats.getByIds(state.chats, state.chats.allIds),
-      my: fromChats.getByIds(state.chats, state.chats.myIds),
+      all: fromChats.getByIds(state, state.chats.allIds),
+      my: fromChats.getByIds(state, state.chats.myIds),
       active: activeChat,
-      unread: fromMessages.getUnreadMessages(state),
     },
     messages: fromMessages.getMessages(state),
     user: {

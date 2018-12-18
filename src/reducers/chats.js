@@ -90,7 +90,18 @@ export default combineReducers({
 });
 
 export const getId = chat => chat._id; // eslint-disable-line
-export const getByIds = (state, ids) => ids.map(id => state.byIds[id]);
+export const getByIds = (state, ids) => ids.map((id) => {
+  const chat = state.chats.byIds[id];
+  const unread = state.auth && state.auth.user && state.messages
+    ? state.messages
+      .filter(message => message.chatId === id)
+      .reduce(
+        (count, message) => count + (message.hasRead.includes(getId(state.auth.user)) ? 0 : 1),
+        0,
+      )
+    : 0;
+  return { ...chat, unread };
+});
 export const getMessagesById = (state, id) =>
   (state.byIds[id].messages ? state.byIds[id].messages : []); // eslint-disable-line
 
