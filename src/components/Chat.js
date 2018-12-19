@@ -56,7 +56,7 @@ const Chat = ({
   classes, messages, user, actions, isConnected, hasShift,
 }) => (
   <React.Fragment>
-    <ChatMessageList messages={messages} user={user} />
+    <ChatMessageList messages={messages} user={user} readMessage={actions.readMessage} />
     <div className={classNames(classes.messageInputWrapper, hasShift && classes.messageInputShift)}>
       <Paper className={classes.messageInput} elevation={6}>
         {user.isCreator || user.isMember ? (

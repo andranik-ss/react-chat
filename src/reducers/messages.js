@@ -46,6 +46,7 @@ export const getMessages = state => {
             statusMessage: true,
             createdAt: '',
             content: moment(currentDate).format('LL'),
+            timeMessage: true,
             _id: index,
           };
           savedDate = currentDate;

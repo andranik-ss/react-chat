@@ -113,7 +113,7 @@ export const readMessage = (chatId, messageId) => (dispatch) => {
   if (!socket) {
     dispatch(missingSocketConnection());
   }
-
+  // console.log('emit readMessage', chatId, messageId);
   socket.emit(
     'read-message',
     {

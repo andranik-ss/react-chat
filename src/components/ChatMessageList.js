@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ChatMessage from './ChatMessage';
+import withRead from './withRead';
 import Spinner from './Spinner';
 
 const styles = theme => ({
@@ -37,6 +38,7 @@ class ChatMessageList extends React.Component {
         createdAt: PropTypes.string.isRequired,
       }),
     ),
+    readMessage: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -58,7 +60,9 @@ class ChatMessageList extends React.Component {
   };
 
   render() {
-    const { classes, messages, user } = this.props;
+    const {
+      classes, messages, user, readMessage,
+    } = this.props;
 
     if (!messages) {
       return <Spinner />;
@@ -72,7 +76,14 @@ class ChatMessageList extends React.Component {
         }}
       >
         {messages
-          && messages.map(message => <ChatMessage {...message} key={message._id} user={user} />)}
+          && messages.map(message => (
+            <ChatMessageWithRead
+              {...message}
+              key={message._id}
+              user={user}
+              readMessage={readMessage}
+            />
+          ))}
       </div>
     ) : (
       <Typography className={classes.noMessages} variant='h4'>
@@ -81,5 +92,7 @@ class ChatMessageList extends React.Component {
     );
   }
 }
+
+const ChatMessageWithRead = withRead(ChatMessage);
 
 export default withStyles(styles)(ChatMessageList);
