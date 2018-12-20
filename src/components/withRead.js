@@ -10,7 +10,6 @@ function withRead(WrappedComponent) {
       const {
         _id: messageId,
         user: { _id: userId },
-        chatId,
         timeMessage,
         hasRead,
         readMessage,
@@ -18,7 +17,7 @@ function withRead(WrappedComponent) {
 
       if (!hasRead.includes(userId) && !timeMessage) {
         this.timerId = setTimeout(() => {
-          readMessage(chatId, messageId);
+          readMessage(messageId);
         }, 2000);
       }
     }
@@ -30,9 +29,12 @@ function withRead(WrappedComponent) {
     }
 
     render() {
-      const { readMessage, ...props } = this.props;
+      const {
+        hasRead,
+        user: { _id: userId },
+      } = this.props;
 
-      return <WrappedComponent {...props} />;
+      return <WrappedComponent {...this.props} read={hasRead.includes(userId)} />;
     }
   }
 

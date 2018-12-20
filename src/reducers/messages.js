@@ -10,7 +10,10 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case types.RECIEVE_MESSAGE:
     case types.RECIEVE_READ_MESSAGE:
-      return [...state, action.payload.message];
+      return [
+        ...state.filter(i => getId(i) !== getId(action.payload.message)),
+        action.payload.message,
+      ];
     case types.FETCH_CHAT_SUCCESS:
       // eslint-disable-next-line
       const newMessages = action.payload.chat.messages.filter(
@@ -32,6 +35,7 @@ export const getMessages = state => {
     state.messages
     && state.messages
       .filter(message => message.chatId === state.chats.activeId)
+      .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
       .reduce((messages, current, index) => {
         const currentDate = new Date(current.createdAt);
         if (savedDate && moment(savedDate).isBefore(currentDate, 'day')) {

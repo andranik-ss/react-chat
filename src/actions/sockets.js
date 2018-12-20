@@ -109,22 +109,19 @@ export const sendMessage = (activeId, content) => (dispatch) => {
   );
 };
 
-export const readMessage = (chatId, messageId) => (dispatch) => {
+export const readMessage = messageId => (dispatch) => {
   if (!socket) {
     dispatch(missingSocketConnection());
   }
-  // console.log('emit readMessage', chatId, messageId);
   socket.emit(
     'read-message',
     {
-      chatId,
       messageId,
     },
     () => {
       dispatch({
         type: types.READ_MESSAGE,
         payload: {
-          chatId,
           messageId,
         },
       });

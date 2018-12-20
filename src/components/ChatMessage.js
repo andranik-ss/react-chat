@@ -6,6 +6,8 @@ import moment from 'moment';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import DoneAll from '@material-ui/icons/DoneAll';
+import blue from '@material-ui/core/colors/blue';
 import Avatar from './Avatar';
 import getColor from '../utils/color-from';
 
@@ -38,13 +40,15 @@ const styles = theme => ({
     display: 'inline',
   },
   content: {
-    paddingRight: theme.spacing.unit * 5,
+    paddingRight: theme.spacing.unit * 10,
     whiteSpace: 'pre-wrap',
   },
   time: {
+    display: 'flex',
     position: 'absolute',
     right: theme.spacing.unit,
-    bottom: theme.spacing.unit,
+    bottom: theme.spacing.unit / 4,
+    color: 'grey',
   },
   hr: {
     flex: 1,
@@ -57,10 +61,15 @@ const styles = theme => ({
     color: 'grey',
     padding: `${theme.spacing.unit}px ${theme.spacing.unit * 3}px`,
   },
+  icon: {
+    color: blue[500],
+    marginLeft: theme.spacing.unit,
+    fontSize: 18,
+  },
 });
 
 const ChatMessage = ({
-  classes, sender, user, content, createdAt, statusMessage,
+  classes, sender, user, content, createdAt, statusMessage, read,
 }) => {
   const isMessageFromMe = sender._id === user._id;
 
@@ -105,15 +114,20 @@ const ChatMessage = ({
     >
       <Avatar colorFrom={sender._id}>{getSenderName(sender)}</Avatar>
       <Paper className={classnames(classes.message, isMessageFromMe && classes.messageFromMe)}>
-        <Typography variant='caption' style={{ color: getColor(sender._id) }}>
-          {getSenderName(sender)}
-        </Typography>
-        <Typography className={classes.content} component='pre'>
-          {content}
-        </Typography>
-        <Typography className={classes.time} variant='caption' component='span'>
-          {moment(createdAt).format('HH:mm')}
-        </Typography>
+        <div>
+          <Typography variant='caption' style={{ color: getColor(sender._id) }}>
+            {getSenderName(sender)}
+          </Typography>
+          <Typography className={classes.content} component='pre'>
+            {content}
+          </Typography>
+        </div>
+        <div className={classes.time}>
+          <Typography variant='caption' color='textSecondary' component='span'>
+            {moment(createdAt).format('HH:mm')}
+          </Typography>
+          {read && <DoneAll className={classes.icon} />}
+        </div>
       </Paper>
     </div>
   );
