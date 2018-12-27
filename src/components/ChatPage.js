@@ -141,6 +141,9 @@ class ChatPage extends React.Component {
 
     if (nextParams.chatId && params.chatId !== nextParams.chatId) {
       setActiveChat(nextParams.chatId);
+      if (nextMy.findIndex(cur => nextParams.chatId === this.getId(cur)) === -1) {
+        fetchChat(nextParams.chatId);
+      }
     }
 
     if (nextIsConnected && nextIsConnected !== isConnected) {
