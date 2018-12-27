@@ -13,6 +13,7 @@ const mockProps = {
   actions: {
     fetchAllChats: jest.fn(),
     fetchMyChats: jest.fn(),
+    fetchChat: jest.fn(),
     setActiveChat: jest.fn(),
     socketsConnect: jest.fn(),
     mountChat: jest.fn(),

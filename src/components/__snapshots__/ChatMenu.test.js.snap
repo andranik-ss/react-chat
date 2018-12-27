@@ -9,6 +9,7 @@ exports[`<ChatMenu /> renders correctly 1`] = `
   disabled={true}
   onBlur={[Function]}
   onClick={[Function]}
+  onContextMenu={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
   onKeyUp={[Function]}

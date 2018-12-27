@@ -75,6 +75,7 @@ exports[`<LoginForm /> renders correctly 1`] = `
     className="MuiButtonBase-root-171 MuiButton-root-145 MuiButton-contained-156 MuiButton-containedPrimary-157 MuiButton-raised-159 MuiButton-raisedPrimary-160 LoginForm-button-92"
     disabled={false}
     onBlur={[Function]}
+    onContextMenu={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onKeyUp={[Function]}
