@@ -13,3 +13,7 @@ deploy:
   skip_cleanup: true
   app: as-chat
   api-key: f4698a5a-831f-4c34-bb14-e1db3c99366c
+  on:
+    branch:
+      - develop
+      - master

@@ -2,6 +2,8 @@
   "name": "react-chat",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://chat.simonyan.org",
+  "homepage:heroku": "https://as-chat.herokuapp.com",
   "dependencies": {
     "@material-ui/core": "^3.3.1",
     "@material-ui/icons": "^3.0.1",
