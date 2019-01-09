@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - 'stable'
+cache:
+  directories:
+    - node_modules
+script:
+  - yarn install
+  - yarn test
+  - yarn build
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  app: as-chat
+  api-key: f4698a5a-831f-4c34-bb14-e1db3c99366c
