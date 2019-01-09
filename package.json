@@ -2,6 +2,8 @@
   "name": "react-chat",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://chat.simonyan.org",
+  "homepage:heroku": "https://as-chat.herokuapp.com",
   "dependencies": {
     "@material-ui/core": "^3.3.1",
     "@material-ui/icons": "^3.0.1",
@@ -40,7 +42,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cross-env CI=true react-scripts test",
+    "test": "react-scripts test",
+    "test:dev": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.js\"",
     "lint:fix": "yarn lint --fix",
@@ -48,8 +51,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
