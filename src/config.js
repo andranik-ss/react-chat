@@ -1,4 +1,4 @@
-const PROD = true; // process.env.NODE_ENV === 'production';
+const PROD = process.env.NODE_ENV === 'production';
 
 module.exports = {
   API_URI: PROD ? 'https://chat-api.simonyan.org' : 'http://localhost:8000',
