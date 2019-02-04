@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import 'typeface-roboto/index.css';
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorker from './serviceWorker';
 import configureStore from './store';
 import './index.css';
 
@@ -28,4 +28,4 @@ if (module.hot) {
   });
 }
 
-registerServiceWorker();
+serviceWorker.register();
